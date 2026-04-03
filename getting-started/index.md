@@ -2,13 +2,23 @@
 title: Getting Started
 nav_order: 1
 has_children: true
+has_toc: false
 permalink: /getting-started/
+description: Start with the LiquidJava basics, from overview to installation and a first verification run.
+cards:
+  - title: Overview
+    url: /getting-started/overview/
+    description: Learn what LiquidJava adds to Java and how the documentation is organized.
+  - title: Installation
+    url: /getting-started/installation/
+    description: Set up the API, verifier, and editor tooling needed to start checking Java code.
+  - title: Quickstart
+    url: /getting-started/quickstart/
+    description: Follow a short end-to-end example that introduces refinements and verification feedback.
 ---
 
 # Getting Started
 
 Start here if you are new to LiquidJava.
 
-- [Overview]({{ '/getting-started/overview/' | relative_url }})
-- [Installation]({{ '/getting-started/installation/' | relative_url }})
-- [Quickstart]({{ '/getting-started/quickstart/' | relative_url }})
+{% include card_grid.html cards=page.cards %}

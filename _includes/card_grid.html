@@ -1,0 +1,13 @@
+<div class="{{ include.grid_class | default: 'card-grid' }}">
+  {% assign heading_level = include.heading_level | default: 'h3' %}
+  {% for card in include.cards %}
+    <div class="{{ include.card_class | default: 'card-panel' }}">
+      <{{ heading_level }}>
+        <a href="{{ card.url | relative_url }}">{{ card.title }}</a>
+      </{{ heading_level }}>
+      {% if card.description %}
+        <p>{{ card.description }}</p>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
