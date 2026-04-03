@@ -17,6 +17,9 @@ cards:
   - title: Command Line
     url: /cli/
     description: Run the verifier directly from the terminal for local checks, debugging, and CI workflows.
+  - title: Diagnostics
+    url: /diagnostics/
+    description: Understand LiquidJava errors, warnings, diagnostic structure, and custom diagnostic messages.
   - title: Examples
     url: /examples/
     description: Explore focused code snippets that demonstrate how to use LiquidJava.
