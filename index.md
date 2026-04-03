@@ -12,10 +12,10 @@ cards:
     url: /reference/
     description: Look up LiquidJava concepts, annotations, and protocol rules in a more formal, detailed format.
   - title: VS Code Extension
-    url: /tooling/vscode-extension/
+    url: /vscode/
     description: Find out about real-time diagnostics, syntax highlighting, and more in the editor.
   - title: Command Line
-    url: /tooling/cli/
+    url: /cli/
     description: Run the verifier directly from the terminal for local checks, debugging, and CI workflows.
   - title: Examples
     url: /examples/
