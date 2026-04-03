@@ -16,13 +16,6 @@ heading_anchors: true
 
 favicon_ico: "/assets/images/favicon.ico"
 
-aux_links:
-  liquid-java: https://github.com/liquid-java/liquidjava
-  vscode-liquidjava: https://github.com/liquid-java/vscode-liquidjava
-  liquidjava-examples: https://github.com/liquid-java/liquidjava-examples
-  liquidjava-tutorial: https://github.com/liquid-java/liquidjava-tutorial
-aux_links_new_tab: true
-
 gh_edit_link: true
 gh_edit_repository: https://github.com/liquid-java/liquidjava-docs
 gh_edit_branch: main
