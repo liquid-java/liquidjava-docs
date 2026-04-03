@@ -59,7 +59,7 @@ If no `to` transition is written, LiquidJava defaults the constructor to the fir
 
 Constructors must always be present for typestate checking to work correctly, because they are the point where the initial state values are assigned. Otherwise, the initial values are not set and the verifier won't be able to track the state of the object across method calls, which can lead to unexpected type errors.
 
-When refining interfaces, there is no real constructor, but LiquidJava still needs an initialization point. In those cases, if the type is named `Interface`, it must declare a method with the signature `public void Interface()` so the initial values are set correctly. This method plays the role of a constructor for the typestate system.
+When refining interfaces, which cannot have a constructor, LiquidJava still needs an initialization point. In those cases, the refinement interface must declare a method whose name matches the class we are refining. For example, an interface named `ArrayListRefinements` that is refining `java.util.ArrayList` should declare the method `public void ArrayList()`. This method plays the role of a constructor for the typestate system and ensures the initial values are set correctly.
 
 
 ## Multiple StateSets

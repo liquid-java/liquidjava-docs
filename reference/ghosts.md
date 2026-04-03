@@ -28,7 +28,7 @@ public interface StackRefinements<E> {
     @StateRefinement(from="size() > 0")
     public E peek();
 }
-````
+```
 
 ```java
 Stack<String> s = new Stack<>();
