@@ -29,4 +29,4 @@ bundle exec jekyll build
 
 ## Publishing
 
-The site is configured to publish at `https://liquid-java.github.io/liquidjava-docs`.
+The site is configured as a GitHub Pages project site at `https://rcosta358.github.io/liquidjava-docs`.
