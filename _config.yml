@@ -1,5 +1,4 @@
 title: LiquidJava Docs
-description: Documentation for LiquidJava, a refinement type checker for Java with support for liquid types and typestates
 theme: just-the-docs
 color_scheme: liquidjava
 liquidjava_api_version: 0.0.4
@@ -15,7 +14,7 @@ permalink: pretty
 search_enabled: true
 heading_anchors: true
 
-favicon_ico: "/assets/images/iconLJ.png"
+favicon_ico: "/assets/images/favicon.ico"
 
 aux_links:
   liquid-java: https://github.com/liquid-java/liquidjava
