@@ -8,45 +8,84 @@ nav_order: 3
 
 Beyond basic refinements, LiquidJava supports object state modeling through typestates. This lets you describe when a method can or cannot be called based on the state of the object.
 
-## Example
+The possible states of a class are declared with `@StateSet`, and the state transitions are described with `@StateRefinement(from = "...", to = "...")`:
+- `from` describes the **precondition** - the object state in which the method can be invoked
+- `to` describes the **postcondition** - the state the object will have after the method is called
 
 ```java
-import liquidjava.specification.StateRefinement;
-import liquidjava.specification.StateSet;
+import liquidjava.specification.*;
 
 @StateSet({"open", "closed"})
-public class MyFile {
-    @StateRefinement(to = "open(this)")
-    public MyFile() {}
+public class File {
+    @StateRefinement(to = "open()")
+    public File() {}
 
-    @StateRefinement(from = "open(this)", msg = "file must be open to read")
+    @StateRefinement(from = "open()")
     public void read() {}
 
-    @StateRefinement(from = "open(this)", to = "closed(this)", msg = "file must be open to close")
+    @StateRefinement(from = "open()", to = "closed()")
     public void close() {}
 }
-
-MyFile f = new MyFile();
-f.read();
-f.close();
-f.read(); // type error: file must be open to read
 ```
 
-This encodes a simple protocol:
+```java
+File f = new File();
+f.read();
+f.close();
+f.read(); // type error!
+```
 
-- construction produces an open file
-- `read` requires the file to be open
-- `close` requires the file to be open and transitions it to closed
+If a class follows an implicit protocol that can be described by a DFA, the protocol can be encoded in LiquidJava so that methods are enforced to be called in the correct order.
 
-An illegal call sequence, such as reading after closing, becomes a verification error. As with refinements, you can provide custom error messages to make violations easier to diagnose.
+## Syntax
 
-## Why This Matters
+Note that states are functions. These take a single parameter, which is the object being refined. Since we are describing the state of the current object, we use `this` as the parameter, which is being used implicitly in the example above. Actually, all of these are equivalent: `open()`, `this.open()`, and `open(this)`.
 
-Typestates are especially helpful for:
+## State Initialization
 
-- files and sockets
-- locks and synchronization primitives
-- lifecycle-driven components
-- APIs with strict call ordering rules
+Constructors can only declare a `to` transition, since they are responsible for establishing the initial state of the object.
 
-Continue with [Ghost Variables]({{ '/reference/ghost-variables/' | relative_url }}) and [External Refinements]({{ '/reference/external-refinements/' | relative_url }}) for protocols that need richer tracking.
+```java
+import liquidjava.specification.*;
+
+@StateSet({"new", "ready"})
+public class Buffer {
+    @StateRefinement(to="ready()")
+    public Buffer() {}
+}
+```
+
+If no `to` transition is written, LiquidJava defaults the constructor to the first state listed in the corresponding `@StateSet`.
+
+Constructors must always be present for typestate checking to work correctly, because they are the point where the initial state values are assigned. Otherwise, the initial values are not set and the verifier won't be able to track the state of the object across method calls, which can lead to unexpected type errors.
+
+When refining interfaces, there is no real constructor, but LiquidJava still needs an initialization point. In those cases, if the type is named `Interface`, it must declare a method with the signature `public void Interface()` so the initial values are set correctly. This method plays the role of a constructor for the typestate system.
+
+
+## Multiple StateSets
+
+Classes can declare more than one `@StateSet` annotation. This is useful when the object has independent, orthogonal dimensions of state.
+
+```java
+import liquidjava.specification.*;
+
+@StateSet({"open", "closed"})
+@StateSet({"clean", "dirty"})
+public class Device {
+    @StateRefinement(to="open() && clean()")
+    public Device() {}
+
+    @StateRefinement(from="open() && clean()", to="open() && dirty()")
+    public void use() {}
+
+    @StateRefinement(from="open() && dirty()", to="open() && clean()")
+    public void clean() {}
+
+    @StateRefinement(from="open() && clean()", to="closed() && clean()")
+    public void close() {}
+}
+```
+
+Each state set is exclusive: at any moment, the object can only be in one state from that specific set. In the example above, the object cannot be both `open` and `closed`, and it cannot be both `clean` and `dirty`.
+
+When a transition affects multiple orthogonal states, the states must be combined with `&&` in the `from` and `to` annotations. In the example above, the `use` method transitions from `open && clean` to `open && dirty`, and the `close` method transitions from `open && clean` to `closed && clean`.

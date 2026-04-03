@@ -11,7 +11,7 @@ LiquidJava is an additional type checker for Java. It extends Java with three ma
 
 - **Liquid types** to restrict the values variables, parameters, and return values can have using logical predicates.
 - **Typestates** to describe valid object protocols across method calls.
-- **Ghost variables** to track extra state when typestates aren't enough.
+- **Ghosts** to track extra state when typestates aren't enough.
 
 These make it possible to catch bugs that the standard Java type system cannot, including:
 
@@ -23,8 +23,6 @@ These make it possible to catch bugs that the standard Java type system cannot, 
 ## Example
 
 ```java
-import liquidjava.specification.*;
-
 public class Example {
     public static int divide(int a, @Refinement("b != 0") int b) {
         return a / b;

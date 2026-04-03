@@ -4,7 +4,7 @@ nav_order: 2
 has_children: true
 has_toc: false
 permalink: /reference/
-description: Browse the LiquidJava reference for refinements, aliases, state refinements, ghost variables, and external refinements.
+description: Browse the LiquidJava reference for refinements, aliases, state refinements, ghosts, and external refinements.
 cards:
   - title: Refinements
     url: /reference/refinements/
@@ -15,8 +15,8 @@ cards:
   - title: State Refinements
     url: /reference/state-refinements/
     description: Learn how to model protocol-oriented object states and valid method transitions.
-  - title: Ghost Variables
-    url: /reference/ghost-variables/
+  - title: Ghosts
+    url: /reference/ghosts/
     description: Learn how to track logical state that helps express and verify richer object invariants.
   - title: External Refinements
     url: /reference/external-refinements/

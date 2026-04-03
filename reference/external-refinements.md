@@ -1,35 +1,42 @@
 ---
 title: External Refinements
 parent: Reference
-nav_order: 5
+nav_order: 4
 ---
 
 # External Refinements
 
-External refinements let you attach a LiquidJava model to an existing class that you do not own.
+External refinements let us add refinements to an existing class that we cannot modify.
 
-Use `@ExternalRefinementsFor` to describe the behavior of a library type in a separate interface. This lets you keep using the original library API in ordinary Java code while LiquidJava checks the extra specification in the background.
+For this, we use the `@ExternalRefinementsFor` annotation to specify the qualified name of the class we want to refine in a separate interface. This lets us refine external classes from the Java standard library, third-party dependencies, or shared APIs without modifying their source code.
 
 ```java
 import liquidjava.specification.*;
+import java.net.*;
 
 @ExternalRefinementsFor("java.net.Socket")
-@StateSet({"unconnected, bound, connected, closed"})
+@StateSet({"unconnected", "bound", "connected", "closed"})
 public interface SocketRefinements {
-    @StateRefinement(to = "unconnected(this)")
+    @StateRefinement(to="unconnected()")
     public void Socket();
-
-    @StateRefinement(from = "unconnected(this)", to = "bound(this)")
-    public void bind(SocketAddress bindpoint);
-
-    @StateRefinement(from = "bound(this)", to = "connected(this)")
-    public void connect(SocketAddress endpoint);
-
-    @StateRefinement(from = "!closed(this)", to = "closed(this)")
+    
+    @StateRefinement(from="unconnected()", to="bound()")
+    public void bind(SocketAddress add);
+    
+    @StateRefinement(from="bound()", to="connected()")
+    public void connect(SocketAddress add);
+    
+    @StateRefinement(from="connected()")
+    public void sendUrgentData(int n);
+    
+    @StateRefinement(from="!closed()", to="closed()")
     public void close();
 }
 ```
 
-This pattern is useful when you want to verify protocols for standard-library classes, third-party dependencies, or shared APIs without modifying their source code.
+```java
+Socket socket = new Socket();
+socket.connect(new InetSocketAddress("example.com", 80)); // type error!
+socket.close();
+```
 
-The [Examples]({{ '/examples/' | relative_url }}) page links to runnable repositories that include this style of modeling.

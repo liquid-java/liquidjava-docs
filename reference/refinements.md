@@ -15,13 +15,13 @@ import liquidjava.specification.*;
 
 public class RefinementExamples {
     @Refinement("x > 0") // x must be greater than 0
-    int x;
+    int x = 1;
 
     @Refinement("0 <= _ && _ <= 100") // y must be between 0 and 100
-    int y;
+    int y = 50;
 
     @Refinement("z % 2 == 0 ? z >= 0 : z < 0") // z must be positive if even, negative if odd
-    int z;
+    int z = 4;
 
     @Refinement("_ >= 0") // the return value must be non-negative
     int absDiv(int a, @Refinement("b != 0") int b) { // b must be non-zero
@@ -33,7 +33,7 @@ public class RefinementExamples {
 
 ## Predicate Syntax
 
-The predicates allowed inside a refinement belong to quantifier-free linear integer arithmetic. In practice, this means you can write boolean expressions over integer values using comparisons, logical connectives, arithmetic operators, and conditional expressions. You can also call ghost variables and aliases from refinements, which we cover in later sections.
+The predicates allowed inside a refinement belong to quantifier-free linear integer arithmetic. In practice, this means you can write boolean expressions over integer values using comparisons, logical connectives, arithmetic operators, and conditional expressions. You can also call ghosts and aliases from refinements, which we cover in later sections.
 
 | Form | Syntax | Example |
 | --- | --- | --- |
