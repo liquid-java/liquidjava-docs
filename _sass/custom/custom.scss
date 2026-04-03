@@ -62,10 +62,10 @@
 .main-content pre.highlight,
 .main-content div.highlighter-rouge {
   overflow: hidden;
-  border: 1px solid rgba(17, 24, 39, 0.12);
+  border: 1px solid rgba(38, 48, 68, 0.45);
   border-radius: 1rem;
-  background: #111827;
-  box-shadow: 0 16px 34px rgba(15, 23, 42, 0.14);
+  background: linear-gradient(180deg, #172033 0%, #111827 100%);
+  box-shadow: 0 18px 36px rgba(15, 23, 42, 0.18);
 }
 
 .main-content pre,
@@ -73,8 +73,8 @@
 .main-content div.highlighter-rouge pre,
 .main-content div.highlighter-rouge code,
 .main-content .highlight {
-  color: #e5e7eb;
-  background: #111827;
+  color: #e6edf7;
+  background: transparent;
 }
 
 .main-content pre {
@@ -82,15 +82,25 @@
   line-height: 1.6;
 }
 
+.main-content .highlight .err {
+  color: #ffd6d6;
+  background: rgba(180, 62, 71, 0.28);
+}
+
+.main-content .highlight .n,
+.main-content .highlight .nx {
+  color: #dce6f2;
+}
+
 .main-content .highlight .w {
-  color: #e5e7eb;
+  color: #e6edf7;
 }
 
 .main-content .highlight .c,
 .main-content .highlight .cm,
 .main-content .highlight .c1,
 .main-content .highlight .cs {
-  color: #94a3b8;
+  color: #7f90ad;
   font-style: italic;
 }
 
@@ -99,8 +109,17 @@
 .main-content .highlight .kn,
 .main-content .highlight .kp,
 .main-content .highlight .kr,
-.main-content .highlight .kt {
-  color: #c4b5fd;
+.main-content .highlight .ow {
+  color: #ffb86c;
+}
+
+.main-content .highlight .kt,
+.main-content .highlight .nb,
+.main-content .highlight .nc,
+.main-content .highlight .nd,
+.main-content .highlight .ne,
+.main-content .highlight .nf {
+  color: #7dd3fc;
 }
 
 .main-content .highlight .s,
@@ -109,32 +128,40 @@
 .main-content .highlight .sc,
 .main-content .highlight .dl,
 .main-content .highlight .sd,
-.main-content .highlight .s2 {
-  color: #a7f3d0;
+.main-content .highlight .s2,
+.main-content .highlight .se,
+.main-content .highlight .sh,
+.main-content .highlight .sx {
+  color: #a7f3c1;
 }
 
 .main-content .highlight .mi,
 .main-content .highlight .mf,
 .main-content .highlight .mh,
 .main-content .highlight .il,
-.main-content .highlight .mo {
-  color: #f9d58b;
+.main-content .highlight .mo,
+.main-content .highlight .m {
+  color: #f6c177;
 }
 
 .main-content .highlight .na,
-.main-content .highlight .nc,
-.main-content .highlight .nd,
-.main-content .highlight .nf,
-.main-content .highlight .ne,
 .main-content .highlight .nn,
-.main-content .highlight .nt {
-  color: #93c5fd;
+.main-content .highlight .nt,
+.main-content .highlight .nv,
+.main-content .highlight .vc,
+.main-content .highlight .vg,
+.main-content .highlight .vi {
+  color: #c4b5fd;
 }
 
 .main-content .highlight .o,
-.main-content .highlight .ow,
 .main-content .highlight .p {
-  color: #cbd5e1;
+  color: #c9d4e5;
+}
+
+.main-content .highlight .bp,
+.main-content .highlight .fm {
+  color: #f29e9e;
 }
 
 .main-content blockquote {
