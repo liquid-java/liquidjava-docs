@@ -35,7 +35,7 @@ In the example above:
 
 So the counterexample explains exactly why LiquidJava cannot prove that `x / 2` is always positive even when `x > 0`. To fix this error, we would need to either change the return expression to allow to return zero with the refinement `_ >= 0`, or strengthen the parameter refinement to require `x > 1`.
 
-## Internal Instance Variables
+## Understanding Internal Variables
 
 Names such as `#ret²` are internal variables introduced by LiquidJava during verification. The small superscript number is a counter used to keep those generated variables unique.
 
