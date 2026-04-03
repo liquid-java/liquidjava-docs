@@ -1,10 +1,10 @@
 ---
-title: Typestates
+title: State Refinements
 parent: Reference
 nav_order: 3
 ---
 
-# Typestates
+# State Refinements
 
 Beyond basic refinements, LiquidJava supports object state modeling through typestates. This lets you describe when a method can or cannot be called based on the state of the object.
 

@@ -35,4 +35,4 @@ Aliases are a good fit for constraints such as:
 - value classes such as positive or non-negative integers
 - project-wide concepts that appear in many files
 
-For object protocols, move on to [Typestates]({{ '/reference/typestates/' | relative_url }}).
+For object protocols, move on to [State Refinements]({{ '/reference/state-refinements/' | relative_url }}).

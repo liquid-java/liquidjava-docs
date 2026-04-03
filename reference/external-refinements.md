@@ -11,10 +11,10 @@ External refinements let you attach a LiquidJava model to an existing class that
 Use `@ExternalRefinementsFor` to describe the behavior of a library type in a separate interface. This lets you keep using the original library API in ordinary Java code while LiquidJava checks the extra specification in the background.
 
 ```java
-import liquidjava.specification.ExternalRefinementsFor;
-import liquidjava.specification.StateRefinement;
+import liquidjava.specification.*;
 
 @ExternalRefinementsFor("java.net.Socket")
+@StateSet({"unconnected, bound, connected, closed"})
 public interface SocketRefinements {
     @StateRefinement(to = "unconnected(this)")
     public void Socket();

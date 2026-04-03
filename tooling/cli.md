@@ -35,7 +35,7 @@ mvn exec:java -pl liquidjava-verifier \
 ## Example Outcomes
 
 - A correct file should pass verification.
-- A file that violates a refinement or typestate should produce an error that points to the failed contract.
+- A file that violates a refinement should produce an error that points to the failed contract.
 
 ## When to Use the CLI
 
