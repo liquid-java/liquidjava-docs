@@ -8,9 +8,9 @@ nav_order: 3
 
 Beyond basic refinements, LiquidJava supports object state modeling through typestates. This lets you describe when a method can or cannot be called based on the state of the object.
 
-The possible states of a class are declared with `@StateSet`, and the state transitions are described with `@StateRefinement(from = "...", to = "...")`:
-- `from` describes the **precondition** - the object state in which the method can be invoked
-- `to` describes the **postcondition** - the state the object will have after the method is called
+The possible states of a class are declared with `@StateSet`, and the state transitions are described with `@StateRefinement(from="...", to="...")`.
+- The `from` describes the **precondition** - the object state in which the method can be invoked
+- The `to` describes the **postcondition** - the state the object will have after the method is called
 
 ```java
 import liquidjava.specification.*;
@@ -55,7 +55,7 @@ public class Buffer {
 }
 ```
 
-If no `to` transition is written, LiquidJava defaults the constructor to the first state listed in the corresponding `@StateSet`.
+If no `to` transition is declared, LiquidJava defaults the constructor to the first state listed in the corresponding `@StateSet`.
 
 Constructors must always be present for typestate checking to work correctly, because they are the point where the initial state values are assigned. Otherwise, the initial values are not set and the verifier won't be able to track the state of the object across method calls, which can lead to unexpected type errors.
 
@@ -88,4 +88,4 @@ public class Device {
 
 Each state set is exclusive: at any moment, the object can only be in one state from that specific set. In the example above, the object cannot be both `open` and `closed`, and it cannot be both `clean` and `dirty`.
 
-When a transition affects multiple orthogonal states, the states must be combined with `&&` in the `from` and `to` annotations. In the example above, the `use` method transitions from `open && clean` to `open && dirty`, and the `close` method transitions from `open && clean` to `closed && clean`.
+When using more than one state set, the states must be combined with `&&` in the `from` and `to` annotations, as shown in the example above. This is because the object must always be in exactly one state from each set, so we need to specify the full state of the object in the preconditions and postconditions.

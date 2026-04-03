@@ -45,5 +45,5 @@ Refinement predicates use a language similar to Java, where you can write boolea
 | Literals | `true` `false` `0` `1.5` | `@Refinement("_ == true") boolean ok = true;` |
 
 LiquidJava currently only supports a small set of types in refinements:
-- Primitive types: `int`, `boolean`, `long`, `double`, `float`
-- Boxed types: `Boolean`, `Integer`, `Double`
+- The primitive types `int` `boolean` `long` `double` `float`
+- The boxed types `Boolean` `Integer` `Double`

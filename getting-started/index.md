@@ -6,12 +6,12 @@ has_toc: false
 permalink: /getting-started/
 description: Start with the LiquidJava basics, from overview to setup and a first verification run.
 cards:
-  - title: Overview
-    url: /getting-started/overview/
-    description: Learn what LiquidJava adds to Java.
   - title: Setup
     url: /getting-started/setup/
     description: Set up the dependency, verifier, and VS Code extension to start using LiquidJava.
+  - title: Overview
+    url: /getting-started/overview/
+    description: Learn what LiquidJava adds to Java.
 ---
 
 # Getting Started
