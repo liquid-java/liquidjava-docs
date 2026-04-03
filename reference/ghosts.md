@@ -16,7 +16,6 @@ import liquidjava.specification.*;
 @ExternalRefinementsFor("java.util.Stack")
 @Ghost("int size")
 public interface StackRefinements<E> {
-
     @StateRefinement(to="size() == 0")
     public void Stack();
 

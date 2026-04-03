@@ -33,7 +33,7 @@ public class RefinementExamples {
 
 ## Predicate Syntax
 
-The predicates allowed inside a refinement belong to quantifier-free linear integer arithmetic. In practice, this means you can write boolean expressions over integer values using comparisons, logical connectives, arithmetic operators, and conditional expressions. You can also call ghosts and aliases from refinements, which we cover in later sections.
+Refinement predicates use a language similar to Java, where you can write boolean expressions using comparisons, logical connectives, arithmetic operators, conditional expressions, and calls to ghosts or aliases, which we cover in later sections.
 
 | Form | Syntax | Example |
 | --- | --- | --- |
