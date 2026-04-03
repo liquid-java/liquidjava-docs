@@ -3,7 +3,7 @@ title: LiquidJava Docs
 layout: default
 nav_exclude: true
 has_toc: false
-description: Start with installation, runnable examples, and reference material for LiquidJava.
+description: Start with setup, runnable examples, and reference material for LiquidJava.
 cards:
   - title: VS Code Extension
     url: /tooling/vscode-extension/
@@ -27,7 +27,7 @@ cards:
   <p>LiquidJava is an additional type system with liquid types for Java that allows expressing constraints that the program must follow to catch more bugs before executing the program.</p>
 
   <div class="home-actions">
-    <a class="home-button primary" href="{{ '/getting-started/installation/' | relative_url }}">Install LiquidJava</a>
+    <a class="home-button primary" href="{{ '/getting-started/setup/' | relative_url }}">Install LiquidJava</a>
     <a class="home-button secondary" href="{{ '/getting-started/overview/' | relative_url }}">Learn More</a>
   </div>
 

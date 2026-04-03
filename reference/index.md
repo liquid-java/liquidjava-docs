@@ -25,6 +25,6 @@ cards:
 
 # LiquidJava Reference
 
-LiquidJava extends Java with logical refinements and object protocol specifications. This section covers the core annotation model:
+LiquidJava extends Java with logical refinements and object protocol specifications. This section covers the core annotation model.
 
 {% include card_grid.html cards=page.cards %}

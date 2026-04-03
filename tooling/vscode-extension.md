@@ -17,9 +17,9 @@ The VS Code extension is the smoothest way to work with LiquidJava day to day.
 
 ## Install
 
-1. Install [LiquidJava on the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=AlcidesFonseca.liquid-java) or [Open VSX](https://open-vsx.org/extension/AlcidesFonseca/liquid-java).
-2. Install [Language Support for Java by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.java).
-3. Open a Java project that includes the `liquidjava-api` dependency.
+- Install [LiquidJava on the VS Code Marketplace](https://marketplace.visualstudio.com/items?itemName=AlcidesFonseca.liquid-java) or [Open VSX](https://open-vsx.org/extension/AlcidesFonseca/liquid-java).
+- Install [Language Support for Java by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.java).
+- Open a Java project that includes the `liquidjava-api` dependency.
 
 ## Example Dependency
 

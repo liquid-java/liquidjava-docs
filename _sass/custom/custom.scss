@@ -169,6 +169,20 @@
   background: rgba(107, 114, 128, 0.08);
 }
 
+.main-content ul,
+.main-content ol {
+  padding-left: 1.5rem;
+}
+
+.main-content ul {
+  list-style: disc;
+}
+
+.main-content li > ul,
+.main-content li > ol {
+  margin-top: 0.35rem;
+}
+
 .card-grid {
   display: grid;
   gap: 1rem;

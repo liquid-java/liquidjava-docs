@@ -2,7 +2,7 @@
 title: Overview
 parent: Getting Started
 nav_order: 1
-description: Learn what LiquidJava adds to Java, which problems it solves, and where to go next in the docs.
+description: Learn what LiquidJava adds to Java.
 ---
 
 # Overview
@@ -13,7 +13,7 @@ LiquidJava is an additional type checker for Java. It extends Java with three ma
 - **Typestates** to describe valid object protocols across method calls.
 - **Ghost variables** to track extra state when typestates aren't enough.
 
-At a high level, LiquidJava helps catch mistakes that the standard Java type system cannot, including:
+These make it possible to catch bugs that the standard Java type system cannot, including:
 
 - Division by zero
 - Array index out-of-bounds
