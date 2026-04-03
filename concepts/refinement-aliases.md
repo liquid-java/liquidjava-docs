@@ -1,6 +1,6 @@
 ---
 title: Refinement Aliases
-parent: Reference
+parent: Concepts
 nav_order: 2
 ---
 

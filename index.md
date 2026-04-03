@@ -3,13 +3,13 @@ title: LiquidJava Docs
 layout: default
 nav_exclude: true
 has_toc: false
-description: Start with setup, runnable examples, and reference material for LiquidJava.
+description: Documentation for LiquidJava, a lightweight verification system for Java using liquid types.
 cards:
   - title: Getting Started
     url: /getting-started/
     description: Learn the basics, set up your environment, and run your first LiquidJava verification.
-  - title: Reference
-    url: /reference/
+  - title: Concepts
+    url: /concepts/
     description: Look up LiquidJava concepts, annotations, and protocol rules in a more formal, detailed format.
   - title: VS Code Extension
     url: /vscode/

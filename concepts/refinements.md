@@ -1,6 +1,6 @@
 ---
 title: Refinements
-parent: Reference
+parent: Concepts
 nav_order: 1
 ---
 

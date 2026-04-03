@@ -1,6 +1,6 @@
 ---
 title: Ghosts
-parent: Reference
+parent: Concepts
 nav_order: 5
 ---
 
