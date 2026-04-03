@@ -16,10 +16,14 @@ description: Find LiquidJava papers, posters, and source repositories for deeper
 - [Usability-Oriented Design of Liquid Types for Java](https://icse2023.paperlessevents.com.au/share/Gamboa-85), ICSE 2023 digital poster session
 - [LiquidJava: Adding Lightweight Verification to Java](https://catarinagamboa.github.io/assets/docs/poster_LiquidJava.pdf), INForum 2021
 
-## GitHub   Repositories
+## GitHub Repositories
 
 - [liquidjava](https://github.com/liquid-java/liquidjava)
 - [vscode-liquidjava](https://github.com/liquid-java/vscode-liquidjava)
 - [liquidjava-examples](https://github.com/liquid-java/liquidjava-examples)
 - [liquidjava-tutorial](https://github.com/liquid-java/liquidjava-tutorial)
 - [liquid-java-external-libs](https://github.com/liquid-java/liquid-java-external-libs)
+
+## Website
+
+- [LiquidJava Website](https://liquid-java.github.io)
