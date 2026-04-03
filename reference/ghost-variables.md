@@ -1,12 +1,12 @@
 ---
-title: Ghost Variables and External Refinements
+title: Ghost Variables
 parent: Reference
 nav_order: 4
 ---
 
-# Ghost Variables and External Refinements
+# Ghost Variables
 
-Some protocols need more than a small set of named states. LiquidJava supports ghost variables for tracking extra specification-only state, and external refinements for modeling libraries you do not own.
+Some protocols need more than a small set of named states. LiquidJava supports ghost variables for tracking extra specification-only state.
 
 The following example refines `java.util.Stack` with a ghost `size` variable:
 
@@ -47,8 +47,4 @@ The `size` variable is not a runtime field. It exists only in the specification 
 - resource counters
 - derived state that should not exist in production code
 
-## External Refinements
-
-Use `@ExternalRefinementsFor` to attach a LiquidJava model to an existing class. This lets you keep using the original library API in ordinary Java code while LiquidJava checks the extra specification in the background.
-
-The [Examples]({{ '/examples/' | relative_url }}) page links to runnable repositories that include this style of modeling.
+Ghost variables are especially helpful when named states alone are too coarse to capture the protocol you want to verify.

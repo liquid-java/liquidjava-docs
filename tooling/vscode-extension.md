@@ -1,7 +1,6 @@
 ---
 title: VS Code Extension
-parent: Tooling
-nav_order: 1
+nav_order: 6
 description: Install the LiquidJava VS Code extension for live verification, syntax highlighting, and protocol visualizations.
 ---
 

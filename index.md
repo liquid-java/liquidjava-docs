@@ -11,7 +11,7 @@ description: Start with installation, quickstart, runnable examples, and referen
 
   <div class="home-actions">
     <a class="home-button primary" href="{{ '/getting-started/installation/' | relative_url }}">Install LiquidJava</a>
-    <a class="home-button secondary" href="{{ '/getting-started/quickstart/' | relative_url }}">Get Started</a>
+    <a class="home-button secondary" href="{{ '/getting-started/quickstart/' | relative_url }}">Learn More</a>
   </div>
 
   <div class="home-banner">
@@ -27,6 +27,10 @@ description: Start with installation, quickstart, runnable examples, and referen
   <div class="home-card">
     <h3><a href="{{ '/tooling/vscode-extension/' | relative_url }}">VS Code Extension</a></h3>
     <p>Use real-time diagnostics, syntax highlighting, and state-machine visualizations directly in the editor.</p>
+  </div>
+  <div class="home-card">
+    <h3><a href="{{ '/tooling/cli/' | relative_url }}">Command Line</a></h3>
+    <p>Run the verifier directly from the terminal for local checks, debugging, and CI workflows.</p>
   </div>
   <div class="home-card">
     <h3><a href="{{ '/reference/' | relative_url }}">Reference</a></h3>

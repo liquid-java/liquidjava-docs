@@ -67,7 +67,7 @@ Run the verifier again. The file should now pass.
 - Read [Refinements]({{ '/reference/refinements/' | relative_url }}) to see the core annotation model.
 - Read [Typestates]({{ '/reference/typestates/' | relative_url }}) for object protocols.
 - Read [Refinement Aliases]({{ '/reference/refinement-aliases/' | relative_url }}) for reusable predicates.
-- Read [Ghost Variables and External Refinements]({{ '/reference/ghost-variables-and-external-refinements/' | relative_url }}) for more advanced modeling techniques.
+- Read [Ghost Variables]({{ '/reference/ghost-variables/' | relative_url }}) and [External Refinements]({{ '/reference/external-refinements/' | relative_url }}) for more advanced modeling techniques.
 - Explore the [liquidjava-tutorial]({{ site.liquidjava_tutorial_url }}) repository for hands-on exercises that build on these concepts.
 
 {: .tip }

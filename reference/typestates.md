@@ -49,4 +49,4 @@ Typestates are especially helpful for:
 - lifecycle-driven components
 - APIs with strict call ordering rules
 
-Continue with [Ghost Variables and External Refinements]({{ '/reference/ghost-variables-and-external-refinements/' | relative_url }}) for protocols that need richer tracking.
+Continue with [Ghost Variables]({{ '/reference/ghost-variables/' | relative_url }}) and [External Refinements]({{ '/reference/external-refinements/' | relative_url }}) for protocols that need richer tracking.

@@ -1,11 +1,10 @@
 ---
-title: CLI Verifier
-parent: Tooling
-nav_order: 2
+title: Command Line
+nav_order: 5
 description: Run the LiquidJava verifier from the command line for local checks, debugging, and CI workflows.
 ---
 
-# CLI Verifier
+# Command Line
 
 LiquidJava ships with a command-line entry point for verifying Java files or projects outside the editor flow.
 

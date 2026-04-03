@@ -13,4 +13,5 @@ LiquidJava extends Java with logical refinements and object protocol specificati
 - [Refinements]({{ '/reference/refinements/' | relative_url }})
 - [Refinement Aliases]({{ '/reference/refinement-aliases/' | relative_url }})
 - [Typestates]({{ '/reference/typestates/' | relative_url }})
-- [Ghost Variables and External Refinements]({{ '/reference/ghost-variables-and-external-refinements/' | relative_url }})
+- [Ghost Variables]({{ '/reference/ghost-variables/' | relative_url }})
+- [External Refinements]({{ '/reference/external-refinements/' | relative_url }})
