@@ -1,7 +1,7 @@
 ---
 title: Overview
 parent: Getting Started
-nav_order: 1
+nav_order: 2
 description: Learn what LiquidJava adds to Java.
 ---
 
