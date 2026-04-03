@@ -1,0 +1,63 @@
+{%- assign nav_pages = site.html_pages
+      | where_exp: "item", "item.title != nil"
+      | where_exp: "item", "item.nav_exclude != true" -%}
+
+{%- if page.parent -%}
+  {%- assign pager_candidates = nav_pages | where: "parent", page.parent -%}
+  {%- if page.grand_parent -%}
+    {%- assign pager_candidates = pager_candidates | where: "grand_parent", page.grand_parent -%}
+  {%- endif -%}
+  {%- if page.ancestor -%}
+    {%- assign pager_candidates = pager_candidates | where: "ancestor", page.ancestor -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign pager_candidates = nav_pages | where_exp: "item", "item.parent == nil" -%}
+{%- endif -%}
+
+{%- include components/nav/sorted.html pages=pager_candidates -%}
+{%- assign pager_pages = nav_sorted -%}
+
+{%- assign current_index = -1 -%}
+{%- for pager_page in pager_pages -%}
+  {%- if pager_page.url == page.url -%}
+    {%- assign current_index = forloop.index0 -%}
+    {%- break -%}
+  {%- endif -%}
+{%- endfor -%}
+
+{%- if current_index >= 0 -%}
+  {%- assign previous_page = nil -%}
+  {%- assign next_page = nil -%}
+
+  {%- if current_index > 0 -%}
+    {%- assign previous_index = current_index | minus: 1 -%}
+    {%- assign previous_page = pager_pages[previous_index] -%}
+  {%- endif -%}
+
+  {%- assign pager_count = pager_pages | size -%}
+  {%- assign last_index = pager_count | minus: 1 -%}
+  {%- if current_index < last_index -%}
+    {%- assign next_index = current_index | plus: 1 -%}
+    {%- assign next_page = pager_pages[next_index] -%}
+  {%- endif -%}
+
+  {%- if previous_page or next_page -%}
+    <nav class="page-nav" aria-label="Page navigation">
+      {%- if previous_page -%}
+        <a class="page-nav-link page-nav-link-prev" href="{{ previous_page.url | relative_url }}">
+          <span class="page-nav-label">Previous</span>
+          <span class="page-nav-title">{{ previous_page.title }}</span>
+        </a>
+      {%- else -%}
+        <span></span>
+      {%- endif -%}
+
+      {%- if next_page -%}
+        <a class="page-nav-link page-nav-link-next" href="{{ next_page.url | relative_url }}">
+          <span class="page-nav-label">Next</span>
+          <span class="page-nav-title">{{ next_page.title }}</span>
+        </a>
+      {%- endif -%}
+    </nav>
+  {%- endif -%}
+{%- endif -%}
