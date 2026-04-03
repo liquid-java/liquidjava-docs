@@ -2,7 +2,7 @@
 title: LiquidJava Docs
 layout: default
 nav_exclude: true
-description: Start with installation, quickstart, tutorials, runnable examples, and reference material for LiquidJava.
+description: Start with installation, quickstart, runnable examples, and reference material for LiquidJava.
 ---
 
 <div>
@@ -33,16 +33,11 @@ description: Start with installation, quickstart, tutorials, runnable examples, 
     <p>Look up LiquidJava concepts, annotations, and protocol rules in a more formal, detailed format.</p>
   </div>
   <div class="home-card">
-    <h3><a href="{{ '/tutorial/' | relative_url }}">Tutorial</a></h3>
-    <p>Work through the guided LiquidJava exercises part by part, from refinements to ghost variables.</p>
-  </div>
-  <div class="home-card">
     <h3><a href="{{ '/examples/' | relative_url }}">Examples</a></h3>
     <p>Open runnable demo projects through Codespaces, dev containers, or a local Maven setup.</p>
   </div>
   <div class="home-card">
-    <h3><a href="{{ '/resources/' | relative_url }}">Papers and Repositories</a></h3>
-    <p>Jump from the docs into the research papers, poster material, source repositories, and tutorial exercises.</p>
+    <h3><a href="{{ '/resources/' | relative_url }}">Resources</a></h3>
+    <p>Explore related research papers, poster material, and source repositories.</p>
   </div>
 </div>
-

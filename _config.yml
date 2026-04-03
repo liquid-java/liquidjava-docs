@@ -7,7 +7,6 @@ liquidjava_repo_url: https://github.com/liquid-java/liquidjava
 liquidjava_examples_url: https://github.com/liquid-java/liquidjava-examples
 liquidjava_examples_codespaces_url: https://codespaces.new/liquid-java/liquidjava-examples
 liquidjava_tutorial_url: https://github.com/liquid-java/liquidjava-tutorial
-liquidjava_tutorial_src_url: https://github.com/liquid-java/liquidjava-tutorial/blob/main/src/main/java/com/tutorial
 
 url: https://liquid-java.github.io
 baseurl: /liquidjava-docs

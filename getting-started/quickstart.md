@@ -68,7 +68,7 @@ Run the verifier again. The file should now pass.
 - Read [Typestates]({{ '/reference/typestates/' | relative_url }}) for object protocols.
 - Read [Refinement Aliases]({{ '/reference/refinement-aliases/' | relative_url }}) for reusable predicates.
 - Read [Ghost Variables and External Refinements]({{ '/reference/ghost-variables-and-external-refinements/' | relative_url }}) for more advanced modeling techniques.
-- Follow the [Tutorial]({{ '/tutorial/' | relative_url }}) for hands-on exercises that build on these concepts.
+- Explore the [liquidjava-tutorial]({{ site.liquidjava_tutorial_url }}) repository for hands-on exercises that build on these concepts.
 
 {: .tip }
 If you prefer an editor-first workflow, the [VS Code extension]({{ '/tooling/vscode-extension/' | relative_url }}) surfaces the same checks with live diagnostics.
