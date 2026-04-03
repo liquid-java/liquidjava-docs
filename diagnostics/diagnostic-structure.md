@@ -24,6 +24,8 @@ Each part gives a different piece of information:
 | `result must be positive` | The custom error message from the annotation's `msg` parameter |
 | `Counterexample: x == 1 && #ret² == 0` | A concrete model showing why the check fails. Here we can see the failure arises because if `x == 1`, then `x / 2 == 0` |
 
+The error message also includes the absolute path of the file and line where the error was reported, which can be clicked to jump the source code location in the editor.
+
 ## Understanding the Counterexample
 
 The counterexample is a concrete assignment of values that makes the verification fail.
