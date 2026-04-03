@@ -1,0 +1,49 @@
+title: LiquidJava Docs
+description: Documentation for LiquidJava, a refinement type checker for Java with support for liquid types and typestates
+theme: just-the-docs
+color_scheme: liquidjava
+
+url: https://liquid-java.github.io
+baseurl: /liquidjava-docs
+
+permalink: pretty
+search_enabled: true
+heading_anchors: true
+
+favicon_ico: "/assets/images/iconLJ.png"
+
+aux_links:
+  liquid-java: https://github.com/liquid-java/liquidjava
+  vscode-liquidjava: https://github.com/liquid-java/vscode-liquidjava
+  liquidjava-examples: https://github.com/liquid-java/liquidjava-examples
+  liquidjava-tutorial: https://github.com/liquid-java/liquidjava-tutorial
+aux_links_new_tab: true
+
+gh_edit_link: true
+gh_edit_repository: https://github.com/liquid-java/liquidjava-docs
+gh_edit_branch: main
+gh_edit_source: /
+gh_edit_view_mode: tree
+
+callouts:
+  note:
+    title: Note
+    color: blue
+  tip:
+    title: Tip
+    color: green
+  warn:
+    title: Warning
+    color: yellow
+
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+
+exclude:
+  - .DS_Store
+  - vendor
+  - Gemfile
+  - Gemfile.lock
