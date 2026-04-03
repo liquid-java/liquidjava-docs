@@ -3,6 +3,7 @@ title: Tooling
 nav_order: 5
 has_children: true
 permalink: /tooling/
+description: "Choose the LiquidJava workflow that fits your setup: VS Code for live diagnostics or CLI for scripted checks."
 ---
 
 # Tooling

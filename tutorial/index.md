@@ -3,6 +3,7 @@ title: Tutorial
 nav_order: 3
 has_children: true
 permalink: /tutorial/
+description: Work through the LiquidJava tutorial step by step with linked exercises for refinements, typestates, external refinements, and ghost variables.
 ---
 
 # LiquidJava Tutorial
@@ -21,10 +22,10 @@ To follow along comfortably, install:
 
 ### Clone the tutorial repository
 
-The exercises live in [liquidjava-tutorial](https://github.com/liquid-java/liquidjava-tutorial). Clone it locally with:
+The exercises live in [liquidjava-tutorial]({{ site.liquidjava_tutorial_url }}). Clone it locally with:
 
 ```bash
-git clone https://github.com/liquid-java/liquidjava-tutorial.git
+git clone {{ site.liquidjava_tutorial_url }}.git
 cd liquidjava-tutorial
 ```
 
@@ -36,7 +37,7 @@ code .
 
 ### Open the tutorial files
 
-Once the repository is open, each tutorial page in this docs site will point you to the exact files to edit under `src/main/java/com/tutorial/...`.
+Once the repository is open, each tutorial page in this docs site points you to the exact GitHub file to inspect and the matching local path under `src/main/java/com/tutorial/...`.
 
 ## Tutorial Parts
 

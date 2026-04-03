@@ -2,6 +2,7 @@
 title: LiquidJava Docs
 layout: default
 nav_exclude: true
+description: Start with installation, quickstart, tutorials, runnable examples, and reference material for LiquidJava.
 ---
 
 <div>

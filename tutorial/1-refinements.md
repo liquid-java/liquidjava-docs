@@ -2,6 +2,7 @@
 title: Refinements
 parent: Tutorial
 nav_order: 1
+description: Practice local variable, parameter, and return refinements in the first LiquidJava tutorial section.
 ---
 
 # Refinements
@@ -10,7 +11,7 @@ This part introduces the core `@Refinement` annotation and shows how LiquidJava 
 
 ### Refine Local Variables
 
-Open `/part1/RefinementsExample.java`.
+Open [`src/main/java/com/tutorial/part1/RefinementsExample.java`]({{ site.liquidjava_tutorial_src_url }}/part1/RefinementsExample.java).
 
 The file contains four methods, each with a single local variable. The first three variables already include comments that describe the refinement each one should satisfy. Notice that `_` can be used as a placeholder for the refined variable value.
 
@@ -24,7 +25,7 @@ Then add a refinement for the `direction` variable so it is always either `-1` o
 
 ### Refine Parameters
 
-Open `/part1/MethodRefinementExample.java`.
+Open [`src/main/java/com/tutorial/part1/MethodRefinementExample.java`]({{ site.liquidjava_tutorial_src_url }}/part1/MethodRefinementExample.java).
 
 The method `divide` is refined so that parameter `b` is never zero. Change the second argument in the sample call to `0` and inspect the resulting verification error.
 
@@ -42,7 +43,7 @@ LiquidJava should now report that the implementation does not satisfy the declar
 
 ## Exercise - Refine `Counter`
 
-Open `/part1/exercise/Counter.java`.
+Open [`src/main/java/com/tutorial/part1/exercise/Counter.java`]({{ site.liquidjava_tutorial_src_url }}/part1/exercise/Counter.java).
 
 The class models a simple counter with `increment` and `decrement`. Replace each `"true"` refinement with the correct one:
 

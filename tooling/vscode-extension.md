@@ -2,6 +2,7 @@
 title: VS Code Extension
 parent: Tooling
 nav_order: 1
+description: Install the LiquidJava VS Code extension for live verification, syntax highlighting, and protocol visualizations.
 ---
 
 # VS Code Extension
@@ -27,18 +28,18 @@ The VS Code extension is the smoothest way to work with LiquidJava day to day.
 <dependency>
     <groupId>io.github.liquid-java</groupId>
     <artifactId>liquidjava-api</artifactId>
-    <version>0.0.4</version>
+    <version>{{ site.liquidjava_api_version }}</version>
 </dependency>
 ```
 
 ## Best Way to Try It
 
-The [examples repository](https://github.com/liquid-java/liquidjava-examples) is set up for experimentation and can be opened directly in [GitHub Codespaces](https://codespaces.new/liquid-java/liquidjava-examples).
+The [examples repository]({{ site.liquidjava_examples_url }}) is set up for experimentation and can be opened directly in [GitHub Codespaces]({{ site.liquidjava_examples_codespaces_url }}).
 
 ## Source
 
 - [Extension source repository](https://github.com/liquid-java/vscode-liquidjava)
-- [Main LiquidJava repository](https://github.com/liquid-java/liquidjava)
+- [Main LiquidJava repository]({{ site.liquidjava_repo_url }})
 
 {: .tip }
 If you want to understand the annotation language before installing tooling, start with [Refinements]({{ '/reference/refinements/' | relative_url }}).

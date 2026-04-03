@@ -2,6 +2,7 @@
 title: Installation
 parent: Getting Started
 nav_order: 2
+description: Install the LiquidJava annotation API and choose between the VS Code extension or CLI verifier workflow.
 ---
 
 # Installation
@@ -27,7 +28,7 @@ Use the annotation dependency from Maven Central.
 <dependency>
     <groupId>io.github.liquid-java</groupId>
     <artifactId>liquidjava-api</artifactId>
-    <version>0.0.4</version>
+    <version>{{ site.liquidjava_api_version }}</version>
 </dependency>
 ```
 
@@ -39,7 +40,7 @@ repositories {
 }
 
 dependencies {
-    implementation 'io.github.liquid-java:liquidjava-api:0.0.4'
+    implementation 'io.github.liquid-java:liquidjava-api:{{ site.liquidjava_api_version }}'
 }
 ```
 
@@ -58,7 +59,7 @@ The extension then provides live diagnostics, syntax highlighting for refinement
 If you want the command-line verifier directly:
 
 ```bash
-git clone https://github.com/liquid-java/liquidjava.git
+git clone {{ site.liquidjava_repo_url }}.git
 cd liquidjava
 ./mvnw clean install
 ```

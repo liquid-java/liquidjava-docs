@@ -3,6 +3,7 @@ title: Reference
 nav_order: 2
 has_children: true
 permalink: /reference/
+description: Browse the LiquidJava reference for refinements, typestates, aliases, ghost variables, and external refinements.
 ---
 
 # LiquidJava Reference

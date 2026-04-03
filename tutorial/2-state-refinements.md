@@ -2,6 +2,7 @@
 title: State Refinements
 parent: Tutorial
 nav_order: 2
+description: Learn typestate-style specifications with state sets, state refinements, and protocol exercises.
 ---
 
 # State Refinements
@@ -10,7 +11,7 @@ This part introduces typestate-style specifications with `@StateSet` and `@State
 
 ### Model a Protocol
 
-Open `/part2/LightBulb.java`.
+Open [`src/main/java/com/tutorial/part2/LightBulb.java`]({{ site.liquidjava_tutorial_src_url }}/part2/LightBulb.java).
 
 This object can only be in two states: `on` or `off`. The constructor sets the initial state through `@StateRefinement(to = "off(this)")`, and the methods `turnOn` and `turnOff` describe the legal transitions between states.
 
@@ -29,7 +30,7 @@ Uncomment line 22 in the tutorial file to observe the verification error.
 
 ### Exercise - Refine `MediaPlayer`
 
-Open `/part2/exercise/MediaPlayer.java`.
+Open [`src/main/java/com/tutorial/part2/exercise/MediaPlayer.java`]({{ site.liquidjava_tutorial_src_url }}/part2/exercise/MediaPlayer.java).
 
 Replace each `"true"` refinement with the correct protocol for the `stopped`, `playing`, and `paused` states.
 

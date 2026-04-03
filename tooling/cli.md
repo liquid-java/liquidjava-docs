@@ -2,6 +2,7 @@
 title: CLI Verifier
 parent: Tooling
 nav_order: 2
+description: Run the LiquidJava verifier from the command line for local checks, debugging, and CI workflows.
 ---
 
 # CLI Verifier
@@ -11,7 +12,7 @@ LiquidJava ships with a command-line entry point for verifying Java files or pro
 ## Build the Project
 
 ```bash
-git clone https://github.com/liquid-java/liquidjava.git
+git clone {{ site.liquidjava_repo_url }}.git
 cd liquidjava
 ./mvnw clean install
 ```

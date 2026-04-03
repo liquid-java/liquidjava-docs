@@ -2,6 +2,7 @@
 title: Quickstart
 parent: Getting Started
 nav_order: 3
+description: Add LiquidJava to a Java project, run the verifier on a small example, and see a refinement failure.
 ---
 
 # Quickstart
@@ -30,7 +31,7 @@ The second call violates the refinement on `b`, so the verifier should reject it
 ## 2. Build LiquidJava
 
 ```bash
-git clone https://github.com/liquid-java/liquidjava.git
+git clone {{ site.liquidjava_repo_url }}.git
 cd liquidjava
 ./mvnw clean install
 ```
