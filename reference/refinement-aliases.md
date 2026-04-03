@@ -6,7 +6,7 @@ nav_order: 2
 
 # Refinement Aliases
 
-When the same refinement appears repeatedly, we can define it once with `@RefinementAlias` and reuse it inside other refinements.
+When the same refinement appears repeatedly, you can define it once with `@RefinementAlias` and reuse it inside other refinements.
 
 ```java
 import liquidjava.specification.*;

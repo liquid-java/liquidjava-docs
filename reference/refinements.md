@@ -6,7 +6,7 @@ nav_order: 1
 
 # Refinements
 
-In LiquidJava, refinements allow us to express restrictions as logical predicates over basic types. They let us restrict the values a variable, field, parameter, or return value can have, which helps catch bugs before the program runs.
+In LiquidJava, refinements allow you to express restrictions as logical predicates over basic types. They let you restrict the values a variable, field, parameter, or return value can have, which helps catch bugs before the program runs.
 
 These are written as strings in the `@Refinement` annotation. The predicate must be a boolean expression that refers to the refined value either by its declared name or by `_`.
 
@@ -33,7 +33,7 @@ public class RefinementExamples {
 
 ## Predicate Syntax
 
-Refinement predicates use a language similar to Java, where you can write boolean expressions using comparisons, logical connectives, arithmetic operators, conditional expressions, and calls to ghosts or aliases, which we cover in later sections.
+Refinement predicates use a language similar to Java, where you can write boolean expressions using comparisons, logical connectives, arithmetic operators, conditional expressions, and calls to ghosts or aliases, which is covered in later sections.
 
 | Form | Syntax | Example |
 | --- | --- | --- |

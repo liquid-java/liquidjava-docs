@@ -39,7 +39,7 @@ If a class follows an implicit protocol that can be described by a DFA, the prot
 
 ## Syntax
 
-Note that states are functions. These take a single parameter, which is the object being refined. Since we are describing the state of the current object, we use `this` as the parameter, which is being used implicitly in the example above. Actually, all of these are equivalent: `open()`, `this.open()`, and `open(this)`.
+Note that states are functions. These take a single parameter, which is the object being refined, in this case the implicit `this`. All of these are equivalent: `open()`, `this.open()`, and `open(this)`.
 
 ## State Initialization
 

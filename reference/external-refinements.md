@@ -6,9 +6,9 @@ nav_order: 4
 
 # External Refinements
 
-External refinements let us add refinements to an existing class that we cannot modify.
+External refinements let you add refinements to an existing class that you cannot modify.
 
-For this, we use the `@ExternalRefinementsFor` annotation to specify the qualified name of the class we want to refine in a separate interface. This lets us refine external classes from the Java standard library, third-party dependencies, or shared APIs without modifying their source code.
+For this, the `@ExternalRefinementsFor` annotation is used to specify the qualified name of the class you want to refine in a separate interface. This makes it possible to refine external classes from the Java standard library, third-party dependencies, or shared APIs without modifying their source code.
 
 ```java
 import liquidjava.specification.*;
