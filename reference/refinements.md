@@ -31,3 +31,19 @@ public class RefinementExamples {
 }
 ```
 
+## Predicate Syntax
+
+The predicates allowed inside a refinement belong to quantifier-free linear integer arithmetic. In practice, this means you can write boolean expressions over integer values using comparisons, logical connectives, arithmetic operators, and conditional expressions. You can also call ghost variables and aliases from refinements, which we cover in later sections.
+
+| Form | Syntax | Example |
+| --- | --- | --- |
+| Comparison | `==` `!=` `>` `>=` `<` `<=` | `@Refinement("x > 0") int x = 1;` |
+| Logical operators | `!` `&&` <code>&#124;&#124;</code> `-->` | `@Refinement("0 <= y && y <= 100") int y = 25;` |
+| Arithmetic | `+` `-` `*` `/` `%` | `@Refinement("v + 20 < 100") int v = 79;` |
+| Conditional | `cond ? e1 : e2` | `@Refinement("a > b ? _ == a : _ == b") int max(int a, int b)` |
+| Ghost and alias calls | `a(b)` `A(b)` | `@Refinement("Positive(_)") int c = 10;` |
+| Literals | `true` `false` `0` `1.5` | `@Refinement("_ == true") boolean ok = true;` |
+
+LiquidJava currently only supports a small set of types in refinements:
+- Primitive types: `int`, `boolean`, `long`, `double`, `float`
+- Boxed types: `Boolean`, `Integer`, `Double`
