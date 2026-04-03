@@ -3,11 +3,8 @@ title: LiquidJava Docs
 layout: default
 nav_exclude: true
 has_toc: false
-description: Start with installation, quickstart, runnable examples, and reference material for LiquidJava.
+description: Start with installation, runnable examples, and reference material for LiquidJava.
 cards:
-  - title: Quickstart
-    url: /getting-started/quickstart/
-    description: Install the annotation API, run the verifier, and see a failing refinement in a few minutes.
   - title: VS Code Extension
     url: /tooling/vscode-extension/
     description: Use real-time diagnostics, syntax highlighting, and state-machine visualizations directly in the editor.
@@ -31,7 +28,7 @@ cards:
 
   <div class="home-actions">
     <a class="home-button primary" href="{{ '/getting-started/installation/' | relative_url }}">Install LiquidJava</a>
-    <a class="home-button secondary" href="{{ '/getting-started/quickstart/' | relative_url }}">Learn More</a>
+    <a class="home-button secondary" href="{{ '/getting-started/overview/' | relative_url }}">Learn More</a>
   </div>
 
   <div class="home-banner">

@@ -8,13 +8,10 @@ description: Start with the LiquidJava basics, from overview to installation and
 cards:
   - title: Overview
     url: /getting-started/overview/
-    description: Learn what LiquidJava adds to Java and how the documentation is organized.
+    description: Learn what LiquidJava adds to Java.
   - title: Installation
     url: /getting-started/installation/
     description: Set up the API, verifier, and editor tooling needed to start checking Java code.
-  - title: Quickstart
-    url: /getting-started/quickstart/
-    description: Follow a short end-to-end example that introduces refinements and verification feedback.
 ---
 
 # Getting Started

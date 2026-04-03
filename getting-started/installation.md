@@ -7,20 +7,12 @@ description: Install the LiquidJava annotation API and choose between the VS Cod
 
 # Installation
 
-LiquidJava has two pieces in practice:
-
-- the `liquidjava-api` annotations added to your Java project
-- a verifier workflow, either through VS Code or through the command line
-
 ## Requirements
 
-- Java 20+
-- Maven 3.6+
+- Java 17 or newer
+- Maven 3.6 or newer
 - Visual Studio Code, if you want the extension workflow
-
-## Add the Annotation API
-
-Use the annotation dependency from Maven Central.
+- The `liquidjava-api` dependency in the Java project you want to verify
 
 ### Maven
 
@@ -44,32 +36,34 @@ dependencies {
 }
 ```
 
-## Option 1: VS Code Extension
+You can work use LiquidJava in two ways:
+
+- Through the [VS Code extension]({{ '/tooling/vscode-extension/' | relative_url }})
+- Through the [command-line interface]({{ '/tooling/cli/' | relative_url }})
+
+## VS Code Extension
 
 The easiest setup for most users is:
 
-1. Install the [LiquidJava VS Code extension](https://marketplace.visualstudio.com/items?itemName=AlcidesFonseca.liquid-java).
-2. Install [Language Support for Java by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.java).
-3. Open a Maven-based Java project that already includes `liquidjava-api`.
+1. Install the [LiquidJava VS Code extension](https://marketplace.visualstudio.com/items?itemName=AlcidesFonseca.liquid-java)
+2. Install [Language Support for Java by Red Hat](https://marketplace.visualstudio.com/items?itemName=redhat.java)
+3. Open a Java project with the `liquidjava-api` dependency
 
-The extension then provides live diagnostics, syntax highlighting for refinements, and richer diagnostic views.
+The extension then provides real-time diagnostics, syntax highlighting for refinements, and more.
 
-## Option 2: Build the Verifier Locally
+You can find more about the extension [here]({{ '/tooling/vscode-extension/' | relative_url }}).
+
+## Command Line Interface
 
 If you want the command-line verifier directly:
 
 ```bash
-git clone {{ site.liquidjava_repo_url }}.git
+git clone {{ site.liquidjava_repo_url }}
 cd liquidjava
-./mvnw clean install
+mvn clean install
+./liquidjava /path/to/your/project
 ```
 
-If you prefer system Maven, `mvn clean install` works as well.
+This runs the verifier on your project and prints any errors to the console.
 
-## Verify the Installation
-
-- Open [Quickstart]({{ '/getting-started/quickstart/' | relative_url }}) and run the sample verifier command.
-- Or open [Examples]({{ '/examples/' | relative_url }}) and try the example repository in Codespaces or locally.
-
-{: .note }
-The VS Code extension still expects the `liquidjava-api` dependency in the project being checked.
+You can find more about the command-line interface [here]({{ '/tooling/cli/' | relative_url }}).

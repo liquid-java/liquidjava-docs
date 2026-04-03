@@ -11,7 +11,7 @@ LiquidJava ships with a command-line entry point for verifying Java files or pro
 ## Build the Project
 
 ```bash
-git clone {{ site.liquidjava_repo_url }}.git
+git clone {{ site.liquidjava_repo_url }}
 cd liquidjava
 ./mvnw clean install
 ```
@@ -43,5 +43,3 @@ mvn exec:java -pl liquidjava-verifier \
 - quick local experiments
 - environments where you do not want to rely on VS Code
 - debugging verifier behavior separately from editor integration
-
-For a faster first experience, the [Quickstart]({{ '/getting-started/quickstart/' | relative_url }}) page uses the same command on a tiny example.
