@@ -4,7 +4,7 @@ nav_order: 3
 has_children: true
 has_toc: false
 permalink: /diagnostics/
-description: Understand LiquidJava errors, warnings, diagnostic structure, and custom diagnostic messages.
+description: Understand LiquidJava errors and warnings.
 cards:
   - title: Errors
     url: /diagnostics/errors/
@@ -15,13 +15,13 @@ cards:
   - title: Custom Messages
     url: /diagnostics/custom-messages/
     description: Learn how to provide clearer diagnostic messages using the `msg` parameter.
-  - title: Diagnostic Structure
-    url: /diagnostics/diagnostic-structure/
-    description: Learn how to understand a diagnostic message.
+  - title: Understanding Refinement Errors
+    url: /diagnostics/understanding-refinement-errors/
+    description: Learn how to read and interpret LiquidJava refinement errors.
 ---
 
 # Diagnostics
 
-Learn how to understand LiquidJava diagnostics, from verification errors and warnings to the structure of a full diagnostic message.
+Learn how to understand LiquidJava errors and warnings.
 
 {% include card_grid.html cards=page.cards %}

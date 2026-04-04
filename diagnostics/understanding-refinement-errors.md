@@ -1,10 +1,10 @@
 ---
-title: Diagnostic Structure
+title: Understanding Refinement Errors
 parent: Diagnostics
 nav_order: 4
 ---
 
-# Diagnostic Structure
+# Understanding Refinement Errors
 
 Consider the following refinement error:
 
@@ -26,7 +26,11 @@ Each part gives a different piece of information:
 
 The error message also includes the absolute path of the file and line where the error was reported, which can be clicked to jump the source code location in the editor.
 
-## Understanding the Error
+## Subtyping
+
+To verify if a refinement holds, LiquidJava checks if the inferred refinement is a subtype of the expected one. This means that every value that satisfies the inferred refinement must also satisfy the expected one. For example, the predicate `x > 0` is a subtype of `x >= 0`, since the set of positive integers is contained within the set of non-negative integers. However, `x > 0` is not a subtype of `x > 1`, since the value `x == 1` satisfies the first predicate but not the second.
+
+## Counterexamples
 
 Refinement errors may provide a counterexample, which is a concrete assignment of values that makes the verification fail.
 
