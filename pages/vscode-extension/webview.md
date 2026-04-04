@@ -37,7 +37,7 @@ The context debugger reacts to the current editor selection:
 
 This makes it easier to inspect the relevant context for a particular code region. 
 
-### Editor Interaction
+### Variable Highlighting
 
 Clicking a variable in the context debugger highlights that variable in the editor, which helps connect the displayed context with internal variables back to the ones in the source code.
 
