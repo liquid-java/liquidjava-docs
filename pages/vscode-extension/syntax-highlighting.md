@@ -11,4 +11,4 @@ LiquidJava refinements are written inside Java string literals, which makes them
 
 The extension implements refinement syntax highlighting which tokenizes the refinement language inside LiquidJava annotations and allows VS Code color those tokens according to the active theme. To make refinements visually distinct from regular Java code, the highlighted refinement text is also rendered in italic.
 
-![Syntax Highlighting Demo]({{ 'assets/vscode-extension/syntax-highlighting.gif' | relative_url }})
+![Syntax Highlighting]({{ 'assets/vscode-extension/syntax-highlighting.gif' | relative_url }})

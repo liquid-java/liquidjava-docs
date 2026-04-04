@@ -11,4 +11,4 @@ The VS Code extension provides context-aware autocomplete for LiquidJava refinem
 
 Autocomplete suggestions only appear when the cursor is inside a string literal that belongs to a LiquidJava annotation. These suggestions include variable in scope, fields, ghosts, states, aliases, and keywords like `this`, `old`, and `return`. 
 
-![Autocomplete Demo]({{ 'assets/vscode-extension/autocomplete.gif' | relative_url }})
+![Autocomplete]({{ 'assets/vscode-extension/autocomplete.gif' | relative_url }})

@@ -15,7 +15,7 @@ The diagnostic explorer provides an interactive view over LiquidJava diagnostics
 
 Clicking a displayed value can expand it into its origin expression, and clicking a variable can jump to its location in the editor. This makes simplification traceable instead of showing only the final reduced expression.
 
-![Diagnostic Explorer Demo]({{ 'assets/vscode-extension/diagnostic-explorer.gif' | relative_url }})
+![Diagnostic Explorer]({{ 'assets/vscode-extension/diagnostic-explorer.gif' | relative_url }})
 
 ## Context Debugger
 
@@ -26,7 +26,7 @@ The context debugger displays:
 - Ghosts and states (by file)
 - Variables (by file and scope)
 
-![Context Debugger Demo]({{ 'assets/vscode-extension/context-debugger.gif' | relative_url }})
+![Context Debugger]({{ 'assets/vscode-extension/context-debugger.gif' | relative_url }})
 
 ### Cursor-Aware Behavior
 
@@ -49,4 +49,4 @@ When a refinement or state refinement fails, the context debugger also shows the
 
 State refinements encode object protocols, but those protocols can be difficult to understand when read only as annotations spread across methods. The state machine visualizer turns this information into a visual state machine, making it easier to understand the protocol with a DFA representation. The diagram updates in real time and is rendered using [Mermaid](https://mermaid.ai).
 
-![State Machine Visualizer Demo]({{ 'assets/vscode-extension/state-machine-visualizer.gif' | relative_url }})
+![State Machine Visualizer]({{ 'assets/vscode-extension/state-machine-visualizer.png' | relative_url }})

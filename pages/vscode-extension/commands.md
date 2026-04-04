@@ -18,6 +18,6 @@ The extension provides commands to control the extension lifecycle, trigger veri
 | `Show Logs` | Opens the output channel with LiquidJava logs |
 | `Show View` | Opens the LiquidJava webview |
 
-![Commands Demo]({{ 'assets/vscode-extension/commands.gif' | relative_url }})
+![Commands]({{ 'assets/vscode-extension/commands.png' | relative_url }})
 
 The extension adds a command that opens a palette listing the available LiquidJava commands. This command is executed when the status bar indicator is clicked, giving users a quick way to access extension actions.
