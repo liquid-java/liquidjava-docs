@@ -16,7 +16,7 @@ cards:
     url: /diagnostics/
     description: Understand LiquidJava errors and warnings.
   - title: VS Code Extension
-    url: /vscode/
+    url: /vscode-extension/
     description: Find out about real-time diagnostics, syntax highlighting, and more in the editor.
   - title: Command Line
     url: /cli/

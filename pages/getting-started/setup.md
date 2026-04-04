@@ -47,7 +47,7 @@ dependencies {
 
 The extension then provides real-time diagnostics, syntax highlighting for refinements, and more.
 
-> You can find more about the extension [here]({{ '/vscode/' | relative_url }}).
+> You can find more about the extension [here]({{ '/vscode-extension/' | relative_url }}).
 
 ## Command-Line Interface
 
