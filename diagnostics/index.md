@@ -12,12 +12,12 @@ cards:
   - title: Warnings
     url: /diagnostics/warnings/
     description: Learn about the different verification warnings LiquidJava can report and what each one means.
-  - title: Structure
-    url: /diagnostics/diagnostic-structure/
-    description: Learn how to understand a diagnostic message.
   - title: Custom Messages
     url: /diagnostics/custom-messages/
     description: Learn how to provide clearer diagnostic messages using the `msg` parameter.
+  - title: Diagnostic Structure
+    url: /diagnostics/diagnostic-structure/
+    description: Learn how to understand a diagnostic message.
 ---
 
 # Diagnostics

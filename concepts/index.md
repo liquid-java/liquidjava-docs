@@ -15,12 +15,12 @@ cards:
   - title: State Refinements
     url: /concepts/state-refinements/
     description: Learn how to model protocol-oriented object states and valid method transitions.
-  - title: Ghosts
-    url: /concepts/ghosts/
-    description: Learn how to track logical state that helps express and verify richer object invariants.
   - title: External Refinements
     url: /concepts/external-refinements/
     description: Learn how to refine external libraries that cannot be annotated directly.
+  - title: Ghosts
+    url: /concepts/ghosts/
+    description: Learn how to track logical state that helps express and verify richer object invariants.
 ---
 
 # Concepts
