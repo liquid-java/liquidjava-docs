@@ -11,15 +11,15 @@ cards:
   - title: Concepts
     url: /concepts/
     description: Look up LiquidJava concepts, annotations, and protocol rules in a more formal, detailed format.
+  - title: Diagnostics
+    url: /diagnostics/
+    description: Understand LiquidJava errors, warnings, diagnostic structure, and custom diagnostic messages.
   - title: VS Code Extension
     url: /vscode/
     description: Find out about real-time diagnostics, syntax highlighting, and more in the editor.
   - title: Command Line
     url: /cli/
     description: Run the verifier directly from the terminal for local checks, debugging, and CI workflows.
-  - title: Diagnostics
-    url: /diagnostics/
-    description: Understand LiquidJava errors, warnings, diagnostic structure, and custom diagnostic messages.
   - title: Examples
     url: /examples/
     description: Explore focused code snippets that demonstrate how to use LiquidJava.
