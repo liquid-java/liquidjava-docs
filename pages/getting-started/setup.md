@@ -2,6 +2,7 @@
 title: Setup
 parent: Getting Started
 nav_order: 1
+permalink: /getting-started/setup/
 description: Set up the dependency, verifier, and VS Code extension to start using LiquidJava.
 ---
 

@@ -2,6 +2,7 @@
 title: Understanding Refinement Errors
 parent: Diagnostics
 nav_order: 4
+permalink: /diagnostics/understanding-refinement-errors/
 ---
 
 # Understanding Refinement Errors

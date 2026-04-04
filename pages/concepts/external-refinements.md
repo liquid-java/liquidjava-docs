@@ -2,6 +2,7 @@
 title: External Refinements
 parent: Concepts
 nav_order: 4
+permalink: /concepts/external-refinements/
 ---
 
 # External Refinements
@@ -39,4 +40,3 @@ Socket socket = new Socket();
 socket.connect(new InetSocketAddress("example.com", 80)); // type error!
 socket.close();
 ```
-

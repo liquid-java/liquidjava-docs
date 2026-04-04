@@ -2,6 +2,7 @@
 title: Custom Messages
 parent: Diagnostics
 nav_order: 3
+permalink: /diagnostics/custom-messages/
 ---
 
 # Custom Messages

@@ -2,6 +2,7 @@
 title: Warnings
 parent: Diagnostics
 nav_order: 2
+permalink: /diagnostics/warnings/
 ---
 
 # Warnings

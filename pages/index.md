@@ -1,6 +1,7 @@
 ---
 title: LiquidJava Docs
 layout: default
+permalink: /
 nav_exclude: true
 has_toc: false
 description: Documentation for LiquidJava, a lightweight verification system for Java using liquid types.

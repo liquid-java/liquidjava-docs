@@ -2,6 +2,7 @@
 title: Ghosts
 parent: Concepts
 nav_order: 5
+permalink: /concepts/ghosts/
 ---
 
 # Ghosts
@@ -44,4 +45,3 @@ In the `push` method, we specify no precondition, since we can always push an el
 In the `pop` method, we specify a precondition that the `size` must be greater than zero, since we cannot pop from an empty stack. We also specify a postcondition that decrements the `size` by one, similarly to the `push` method.
 
 In the `peek` method, we specify the same precondition, since we also cannot peek from an empty stack, but we don't specify a postcondition since peeking does not change the size of the stack.
-

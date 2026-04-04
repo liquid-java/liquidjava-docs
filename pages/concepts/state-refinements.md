@@ -2,6 +2,7 @@
 title: State Refinements
 parent: Concepts
 nav_order: 3
+permalink: /concepts/state-refinements/
 ---
 
 # State Refinements

@@ -2,6 +2,7 @@
 title: Errors
 parent: Diagnostics
 nav_order: 1
+permalink: /diagnostics/errors/
 ---
 
 # Errors

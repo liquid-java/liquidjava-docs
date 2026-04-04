@@ -2,6 +2,7 @@
 title: Refinement Aliases
 parent: Concepts
 nav_order: 2
+permalink: /concepts/refinement-aliases/
 ---
 
 # Refinement Aliases

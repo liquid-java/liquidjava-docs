@@ -2,6 +2,7 @@
 title: Overview
 parent: Getting Started
 nav_order: 2
+permalink: /getting-started/overview/
 description: Learn what LiquidJava adds to Java.
 ---
 

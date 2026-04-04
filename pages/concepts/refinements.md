@@ -2,6 +2,7 @@
 title: Refinements
 parent: Concepts
 nav_order: 1
+permalink: /concepts/refinements/
 ---
 
 # Refinements
