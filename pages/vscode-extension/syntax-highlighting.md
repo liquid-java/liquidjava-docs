@@ -3,6 +3,7 @@ title: Syntax Highlighting for Refinements
 parent: VS Code Extension
 nav_order: 2
 permalink: /vscode-extension/syntax-highlighting/
+description: Learn about syntax highlighting for refinements in the VS Code extension.
 ---
 
 # Syntax Highlighting for Refinements

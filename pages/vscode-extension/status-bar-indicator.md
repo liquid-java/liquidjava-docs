@@ -3,6 +3,7 @@ title: Status Bar Indicator
 parent: VS Code Extension
 nav_order: 5
 permalink: /vscode-extension/status-bar-indicator/
+description: Check out the indicator that shows the current state of LiquidJava.
 ---
 
 # Status Bar Indicator

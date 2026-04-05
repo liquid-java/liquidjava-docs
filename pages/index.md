@@ -5,28 +5,6 @@ permalink: /
 nav_exclude: true
 has_toc: false
 description: Documentation for LiquidJava, a lightweight verification system for Java using liquid types.
-cards:
-  - title: Getting Started
-    url: /getting-started/
-    description: Set up your environment and run your first LiquidJava verification.
-  - title: Concepts
-    url: /concepts/
-    description: Learn LiquidJava concepts to understand how to write specifications.
-  - title: Diagnostics
-    url: /diagnostics/
-    description: Understand LiquidJava errors and warnings.
-  - title: VS Code Extension
-    url: /vscode-extension/
-    description: Find out about real-time diagnostics, syntax highlighting, and more in the editor.
-  - title: Command-Line Interface
-    url: /command-line-interface/
-    description: Run the verifier directly from the terminal for local checks, debugging, and CI workflows.
-  - title: Examples
-    url: /examples/
-    description: Explore focused code snippets that demonstrate how to use LiquidJava.
-  - title: Resources
-    url: /resources/
-    description: Find related research papers, poster material, and source repositories.
 ---
 
 <div>
@@ -37,5 +15,3 @@ cards:
     <img src="{{ '/assets/images/banner.gif' | relative_url }}" alt="LiquidJava banner">
   </div>
 </div>
-
-{% include card_grid.html cards=page.cards %}

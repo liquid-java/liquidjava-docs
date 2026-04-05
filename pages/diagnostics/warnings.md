@@ -3,6 +3,7 @@ title: Warnings
 parent: Diagnostics
 nav_order: 2
 permalink: /diagnostics/warnings/
+description: Learn about the different verification warnings LiquidJava can report and what each one means.
 ---
 
 # Warnings

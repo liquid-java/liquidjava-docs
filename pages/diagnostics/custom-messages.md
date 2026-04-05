@@ -3,6 +3,7 @@ title: Custom Messages
 parent: Diagnostics
 nav_order: 3
 permalink: /diagnostics/custom-messages/
+description: Learn how to provide clearer diagnostic messages.
 ---
 
 # Custom Messages

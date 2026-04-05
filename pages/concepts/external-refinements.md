@@ -3,6 +3,7 @@ title: External Refinements
 parent: Concepts
 nav_order: 4
 permalink: /concepts/external-refinements/
+description: Learn how to refine external libraries that cannot be annotated directly.
 ---
 
 # External Refinements

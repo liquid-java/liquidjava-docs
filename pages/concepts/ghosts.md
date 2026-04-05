@@ -3,6 +3,7 @@ title: Ghosts
 parent: Concepts
 nav_order: 5
 permalink: /concepts/ghosts/
+description: Learn how to track logical state that helps express and verify richer object invariants.
 ---
 
 # Ghosts

@@ -1,0 +1,22 @@
+{%- assign docs_pages = site[page.collection] | default: site.html_pages
+      | where_exp: "item", "item.title != nil" -%}
+{%- assign docs_pages = docs_pages
+      | where_exp: "item", "item.nav_exclude != true" -%}
+
+{%- if page.url == "/" -%}
+  {%- assign card_pages = docs_pages | where_exp: "item", "item.parent == nil" -%}
+  {%- assign card_pages = card_pages | where_exp: "item", "item.url != page.url" -%}
+{%- else -%}
+  {%- assign card_pages = docs_pages | where: "parent", page.title -%}
+{%- endif -%}
+
+{%- include components/nav/sorted.html pages=card_pages -%}
+{%- assign card_pages = nav_sorted -%}
+
+{%- if page.child_nav_order == "desc" or page.child_nav_order == "reversed" -%}
+  {%- assign card_pages = card_pages | reverse -%}
+{%- endif -%}
+
+{%- if card_pages.size > 0 -%}
+  {% include card_grid.html cards=card_pages %}
+{%- endif -%}

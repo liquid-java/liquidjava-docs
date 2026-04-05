@@ -3,6 +3,7 @@ title: Commands
 parent: VS Code Extension
 nav_order: 6
 permalink: /vscode-extension/commands/
+description: Explore the commands provided by the extension for various interactions.
 ---
 
 # Commands

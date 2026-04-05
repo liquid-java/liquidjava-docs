@@ -3,6 +3,7 @@ title: Refinements
 parent: Concepts
 nav_order: 1
 permalink: /concepts/refinements/
+description: Learn about how to use refinements to specify constraints on variables, fields, parameters, and return values.
 ---
 
 # Refinements

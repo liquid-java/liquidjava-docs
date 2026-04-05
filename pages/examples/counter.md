@@ -3,7 +3,7 @@ title: Counter
 parent: Examples
 nav_order: 1
 permalink: /examples/counter/
-description: A small refinement example for exact method postconditions and safe decrementing.
+description: A simple refinement example for ensuring a counter never decrements below zero.
 ---
 
 # Counter

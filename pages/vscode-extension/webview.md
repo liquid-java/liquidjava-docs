@@ -3,6 +3,7 @@ title: Webview
 parent: VS Code Extension
 nav_order: 4
 permalink: /vscode-extension/webview/
+description: Delve into the VS Code webview with interactive diagnostic explorer, context debugger, and state machine visualizer.
 ---
 
 # Webview

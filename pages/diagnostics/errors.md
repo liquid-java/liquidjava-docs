@@ -3,6 +3,7 @@ title: Errors
 parent: Diagnostics
 nav_order: 1
 permalink: /diagnostics/errors/
+description: Learn about the different verification errors LiquidJava can report and what each one means.
 ---
 
 # Errors

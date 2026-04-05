@@ -3,6 +3,7 @@ title: Refinement Aliases
 parent: Concepts
 nav_order: 2
 permalink: /concepts/refinement-aliases/
+description: Learn how to reuse common refinement predicates with aliases to keep contracts shorter and easier to maintain.
 ---
 
 # Refinement Aliases

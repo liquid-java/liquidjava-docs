@@ -3,6 +3,7 @@ title: Autocomplete for Refinements
 parent: VS Code Extension
 nav_order: 3
 permalink: /vscode-extension/autocomplete/
+description: Explore context-aware auto-completion support for refinement predicates.
 ---
 
 # Autocomplete for Refinements

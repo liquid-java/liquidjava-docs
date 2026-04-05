@@ -3,6 +3,7 @@ title: State Refinements
 parent: Concepts
 nav_order: 3
 permalink: /concepts/state-refinements/
+description: Learn how to model protocol-oriented object states and valid method transitions.
 ---
 
 # State Refinements

@@ -3,7 +3,7 @@ title: Media Player
 parent: Examples
 nav_order: 2
 permalink: /examples/media-player/
-description: A typestate protocol for a simple media player with stopped, playing, and paused states.
+description: A typestate protocol for a simple media player.
 ---
 
 # Media Player

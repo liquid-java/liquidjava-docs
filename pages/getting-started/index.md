@@ -5,17 +5,8 @@ has_children: true
 has_toc: false
 permalink: /getting-started/
 description: Set up your environment and run your first LiquidJava verification.
-cards:
-  - title: Setup
-    url: /getting-started/setup/
-    description: Set up the dependency, verifier, and VS Code extension to start using LiquidJava.
-  - title: Overview
-    url: /getting-started/overview/
-    description: Learn what LiquidJava adds to Java.
 ---
 
 # Getting Started
 
 Start here to learn about LiquidJava, set up your environment, and run your first verification.
-
-{% include card_grid.html cards=page.cards %}

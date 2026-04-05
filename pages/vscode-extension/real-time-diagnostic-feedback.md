@@ -3,6 +3,7 @@ title: Real-Time Diagnostic Feedback
 parent: VS Code Extension
 nav_order: 1
 permalink: /vscode-extension/real-time-diagnostic-feedback/
+description: Find out about real-time diagnostic reporting directly in the editor.
 ---
 
 # Real-Time Diagnostic Feedback

@@ -3,6 +3,7 @@ title: Output Channel
 parent: VS Code Extension
 nav_order: 7
 permalink: /vscode-extension/output-channel/
+description: Discover the output channel for LiquidJava logs.
 ---
 
 # Output Channel
