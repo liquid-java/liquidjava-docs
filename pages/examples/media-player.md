@@ -38,7 +38,7 @@ player.play();
 player.pause();
 player.resume();
 player.stop();
-player.resume(); // type error!
+player.resume(); // State Refinement Error
 ```
 
 Because `resume` is only valid from `paused()`, the final call is rejected after `stop()` puts the object back in `stopped()`.

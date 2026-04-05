@@ -52,7 +52,7 @@ Order order = new Order();
 order.addItem("shirt", 60)
      .addItem("shoes", 80)
      .checkout()
-     .pay(120); // type error!
+     .pay(120); // State Refinement Error
 ```
 
 This example enforces the intended protocol:

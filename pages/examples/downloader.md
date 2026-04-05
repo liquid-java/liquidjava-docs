@@ -40,5 +40,5 @@ d.finish();
 Downloader d = new Downloader();
 d.start();
 d.update(50);
-d.finish(); // type error!
+d.finish(); // State Refinement Error
 ```

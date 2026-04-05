@@ -37,6 +37,6 @@ public interface SocketRefinements {
 
 ```java
 Socket socket = new Socket();
-socket.connect(new InetSocketAddress("example.com", 80)); // type error!
+socket.connect(new InetSocketAddress("example.com", 80)); // State Refinement Error
 socket.close();
 ```

@@ -31,7 +31,7 @@ public interface ReentrantLockRefinements {
 ReentrantLock lock = new ReentrantLock();
 lock.lock();
 lock.unlock();
-lock.unlock(); // type error
+lock.unlock(); // State Refinement Error
 ```
 
 The external refinement enforces the expected protocol: `lock()` is only allowed when the object is `unlocked()`, and `unlock()` is only allowed when it is `locked()`.

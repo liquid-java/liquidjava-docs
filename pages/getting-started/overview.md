@@ -29,7 +29,7 @@ public class Example {
         return a / b;
     }
     public static void main(String[] args) {
-        int result = divide(1, 0); // type error!
+        int result = divide(1, 0); // Refinement Error
     }
 }
 ```

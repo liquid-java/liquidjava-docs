@@ -29,7 +29,7 @@ public interface ArrayListRefinements<E> {
 ArrayList<Integer> list = new ArrayList<>();
 list.add(1);
 list.get(0);
-list.get(1); // type error!
+list.get(1); // Refinement Error
 ```
 
 The key idea is that LiquidJava turns the usual runtime condition for `get(i)` into a static precondition over the tracked `size` ghost variable.

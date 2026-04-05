@@ -74,7 +74,7 @@ email.from("me");
 Email email = new Email();
 email.from("me");
      .to("bob");
-     .build(); // type error!
+     .build(); // State Refinement Error
 ```
 
 LiquidJava enforces the intended protocol:

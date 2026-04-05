@@ -35,7 +35,7 @@ public interface StackRefinements<E> {
 Stack<String> s = new Stack<>();
 s.push("hello");
 s.pop();
-s.pop(); // type error!
+s.pop(); // State Refinement Error
 ```
 
 In the "constructor" method, the ghost variable `size` is initialized to 0. An equality in a method postcondition is how ghost variables are updated. However, here it is not necessary, since when no postcondition is declared, it is initialized to its default value, similarly to how Java initializes fields to their default values when no explicit initializer is provided (`int --> 0`, `boolean --> false`, etc.). 

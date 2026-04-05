@@ -30,7 +30,7 @@ public class Counter {
 int c = 0;
 c = Counter.increment(c);
 c = Counter.decrement(c);
-c = Counter.decrement(c); // type error!
+c = Counter.decrement(c); // Refinement Error
 ```
 
 The parameter refinement on `decrement` requires the input to be strictly positive, so LiquidJava rejects the final call when `c` is already `0`.

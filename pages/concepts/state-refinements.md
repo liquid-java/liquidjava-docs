@@ -33,7 +33,7 @@ public class File {
 File f = new File();
 f.read();
 f.close();
-f.read(); // type error!
+f.read(); // State Refinement Error
 ```
 
 If a class follows an implicit protocol that can be described by a DFA, the protocol can be encoded in LiquidJava so that methods are enforced to be called in the correct order.
