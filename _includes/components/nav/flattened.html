@@ -1,0 +1,31 @@
+{%- comment -%}
+  Include as: {%- include components/nav/flattened.html pages=page_array ancestors=title_array all=bool -%}
+  Depends on: include.pages, include.ancestors, include.all.
+  Includes: components/nav/children.html, components/nav/flattened.html.
+  Assigns to: nav_flattened_pages.
+  Overwrites:
+    node, nav_children, nav_ancestors, nav_flattened_before_children.
+{%- endcomment -%}
+
+{%- assign nav_flattened_pages = "" | split: "" -%}
+
+{%- for node in include.pages -%}
+  {%- if include.all == true or node.nav_exclude != true -%}
+    {%- assign nav_flattened_pages = nav_flattened_pages | push: node -%}
+
+    {%- unless include.ancestors contains node.title -%}
+      {%- include components/nav/children.html node=node ancestors=include.ancestors all=include.all -%}
+
+      {%- if nav_children.size >= 1 -%}
+        {%- if node.child_nav_order == 'desc' or node.child_nav_order == 'reversed' -%}
+          {%- assign nav_children = nav_children | reverse -%}
+        {%- endif -%}
+
+        {%- assign nav_ancestors = include.ancestors | push: node.title -%}
+        {%- assign nav_flattened_before_children = nav_flattened_pages -%}
+        {%- include components/nav/flattened.html pages=nav_children ancestors=nav_ancestors all=include.all -%}
+        {%- assign nav_flattened_pages = nav_flattened_before_children | concat: nav_flattened_pages -%}
+      {%- endif -%}
+    {%- endunless -%}
+  {%- endif -%}
+{%- endfor -%}

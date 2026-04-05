@@ -2,20 +2,14 @@
       | where_exp: "item", "item.title != nil"
       | where_exp: "item", "item.nav_exclude != true" -%}
 
-{%- if page.parent -%}
-  {%- assign pager_candidates = nav_pages | where: "parent", page.parent -%}
-  {%- if page.grand_parent -%}
-    {%- assign pager_candidates = pager_candidates | where: "grand_parent", page.grand_parent -%}
-  {%- endif -%}
-  {%- if page.ancestor -%}
-    {%- assign pager_candidates = pager_candidates | where: "ancestor", page.ancestor -%}
-  {%- endif -%}
-{%- else -%}
-  {%- assign pager_candidates = nav_pages | where_exp: "item", "item.parent == nil" -%}
-{%- endif -%}
-
-{%- include components/nav/sorted.html pages=pager_candidates -%}
-{%- assign pager_pages = nav_sorted -%}
+{%- assign nav_parenthood = nav_pages | group_by: "parent" -%}
+{%- assign nav_top_nodes = nav_parenthood
+      | where_exp: "item", "item.name == ''" | map: "items" | first -%}
+{%- include components/nav/sorted.html pages=nav_top_nodes -%}
+{%- assign nav_top_node_titles = nav_top_nodes | map: "title" -%}
+{%- assign nav_ancestors = "" | split: "" -%}
+{%- include components/nav/flattened.html pages=nav_sorted ancestors=nav_ancestors all=false -%}
+{%- assign pager_pages = nav_flattened_pages -%}
 
 {%- assign current_index = -1 -%}
 {%- for pager_page in pager_pages -%}
