@@ -48,6 +48,68 @@
   box-shadow: 0 18px 36px rgba(15, 23, 42, 0.18);
 }
 
+.main-content div.highlighter-rouge,
+.main-content figure.highlight,
+.main-content div.listingblock > div.content {
+  position: relative;
+}
+
+.main-content div.highlighter-rouge > button,
+.main-content figure.highlight > button,
+.main-content div.listingblock > div.content > button {
+  position: absolute;
+  top: 0.85rem;
+  right: 0.85rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  padding: 0;
+  border: none;
+  border-radius: 0.7rem;
+  background: transparent;
+  color: #e6edf7;
+  opacity: 0.92;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.28);
+  transition:
+    opacity 120ms ease,
+    transform 120ms ease,
+    background-color 120ms ease,
+    border-color 120ms ease,
+    box-shadow 120ms ease;
+  cursor: pointer;
+}
+
+.main-content div.highlighter-rouge > button:hover,
+.main-content div.highlighter-rouge > button:focus,
+.main-content figure.highlight > button:hover,
+.main-content figure.highlight > button:focus,
+.main-content div.listingblock > div.content > button:hover,
+.main-content div.listingblock > div.content > button:focus {
+  opacity: 1;
+  transform: translateY(-1px);
+  background: transparent;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.34);
+  cursor: pointer;
+}
+
+.main-content div.highlighter-rouge > button:focus,
+.main-content figure.highlight > button:focus,
+.main-content div.listingblock > div.content > button:focus {
+  outline: 2px solid rgba(125, 211, 252, 0.9);
+  outline-offset: 2px;
+}
+
+.main-content div.highlighter-rouge > button svg,
+.main-content figure.highlight > button svg,
+.main-content div.listingblock > div.content > button svg {
+  width: 1.1rem;
+  height: 1.1rem;
+  fill: currentColor;
+}
+
 .main-content .diagnostic-image {
   display: block;
   width: 100%;
