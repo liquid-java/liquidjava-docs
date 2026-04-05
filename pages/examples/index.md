@@ -23,10 +23,10 @@ cards:
     description: A typestate protocol for a downloader object.
   - title: ReentrantLock
     url: /examples/reentrant-lock/
-    description: An external typestate refinement for java.util.concurrent.locks.ReentrantLock.
+    description: An external typestate refinement for ReentrantLock to ensure proper lock usage.
   - title: ArrayList
     url: /examples/arraylist/
-    description: An external refinement for java.util.ArrayList that statically prevents out-of-bounds accesses.
+    description: An external refinement for ArrayList that statically prevents out-of-bounds accesses.
 ---
 
 # Examples
