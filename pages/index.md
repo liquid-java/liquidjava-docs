@@ -18,8 +18,8 @@ cards:
   - title: VS Code Extension
     url: /vscode-extension/
     description: Find out about real-time diagnostics, syntax highlighting, and more in the editor.
-  - title: Command Line
-    url: /cli/
+  - title: Command-Line Interface
+    url: /command-line-interface/
     description: Run the verifier directly from the terminal for local checks, debugging, and CI workflows.
   - title: Examples
     url: /examples/

@@ -69,4 +69,4 @@ mvn clean install
 
 This runs the verifier on your project and prints any errors to the console.
 
-> You can find more about the command-line interface [here]({{ '/cli/' | relative_url }}). 
+> You can find more about the command-line interface [here]({{ '/command-line-interface/' | relative_url }}). 
