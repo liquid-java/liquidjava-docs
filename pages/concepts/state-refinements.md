@@ -18,13 +18,13 @@ import liquidjava.specification.*;
 
 @StateSet({"open", "closed"})
 public class File {
-    @StateRefinement(to = "open()")
+    @StateRefinement(to="open()")
     public File() {}
 
-    @StateRefinement(from = "open()")
+    @StateRefinement(from="open()")
     public void read() {}
 
-    @StateRefinement(from = "open()", to = "closed()")
+    @StateRefinement(from="open()", to="closed()")
     public void close() {}
 }
 ```
