@@ -17,46 +17,24 @@ import liquidjava.specification.*;
 
 @StateSet({"empty", "senderSet", "receiverSet", "bodySet"})
 public class Email {
-    private String sender;
-    private List<String> receiver;
-    private String subject;
-    private String body;
 
     @StateRefinement(to="empty()")
-    public Email() {
-        receiver = new ArrayList<>();
-    }
+    public Email() {}
 
     @StateRefinement(from="empty()", to="senderSet()")
-    public void from(String s) {
-        sender = s;
-    }
+    public Email from(String s) {}
 
     @StateRefinement(from="senderSet() || receiverSet()", to="receiverSet()")
-    public void to(String s) {
-        receiver.add(s);
-    }
+    public Email to(String s) {}
 
     @StateRefinement(from="receiverSet()", to="receiverSet()")
-    public void subject(String s) {
-        subject = s;
-    }
+    public Email subject(String s) {}
 
     @StateRefinement(from="receiverSet()", to="bodySet()")
-    public void body(String s) {
-        body = s;
-    }
+    public Email body(String s) {}
 
-    @StateRefinement(from="bodySet()", to="bodySet()")
-    public String build() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("From: " + sender + "\n");
-        sb.append("To: " + String.join(", ", receiver) + "\n");
-        sb.append("Subject: " + subject + "\n");
-        sb.append("\n");
-        sb.append(body);
-        return sb.toString();
-    }
+    @StateRefinement(from="bodySet()")
+    public Email build() {}
 }
 ```
 

@@ -20,22 +20,13 @@ public class Order {
     public Order() {}
 
     @StateRefinement(from="ordering()", to="ordering() && total() == total(old(this)) + price")
-    @Refinement("_ == this")
-    public Order addItem(String name, @Refinement("_ > 0") int price) {
-        return this;
-    }
+    public Order addItem(String name, @Refinement("_ > 0") int price) {}
 
     @StateRefinement(from="ordering() && total() > 0", to="checkout() && total() == total(old(this))")
-    @Refinement("_ == this")
-    public Order checkout() {
-        return this;
-    }
+    public Order checkout() {}
 
     @StateRefinement(from="checkout() && amount == total()", to="finished()")
-    @Refinement("_ == this")
-    public Order pay(@Refinement("_ > 0") int amount) {
-        return this;
-    }
+    public Order pay(@Refinement("_ > 0") int amount) {}
 }
 ```
 

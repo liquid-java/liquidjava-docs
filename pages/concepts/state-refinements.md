@@ -63,7 +63,7 @@ Constructors must always be present for typestate checking to work correctly, be
 When refining interfaces, which cannot have a constructor, LiquidJava still needs an initialization point. In those cases, the refinement interface must declare a method whose name matches the class we are refining. For example, an interface named `ArrayListRefinements` that is refining `java.util.ArrayList` should declare the method `public void ArrayList()`. This method plays the role of a constructor for the typestate system and ensures the initial values are set correctly.
 
 
-## Multiple StateSets
+## Multiple State Sets
 
 Classes can declare more than one `@StateSet` annotation. This is useful when the object has independent, orthogonal dimensions of state.
 

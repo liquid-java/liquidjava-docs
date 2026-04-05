@@ -4,7 +4,7 @@ nav_order: 2
 has_children: true
 has_toc: false
 permalink: /concepts/
-description: "Browse LiquidJava concepts: for refinements, aliases, state refinements, ghosts, and external refinements."
+description: Learn LiquidJava concepts to understand how to write specifications.
 cards:
   - title: Refinements
     url: /concepts/refinements/

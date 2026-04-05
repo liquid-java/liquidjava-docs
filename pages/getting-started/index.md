@@ -4,7 +4,7 @@ nav_order: 1
 has_children: true
 has_toc: false
 permalink: /getting-started/
-description: Start with the LiquidJava basics, from overview to setup and a first verification run.
+description: Set up your environment and run your first LiquidJava verification.
 cards:
   - title: Setup
     url: /getting-started/setup/

@@ -8,10 +8,10 @@ description: Documentation for LiquidJava, a lightweight verification system for
 cards:
   - title: Getting Started
     url: /getting-started/
-    description: Learn the basics, set up your environment, and run your first LiquidJava verification.
+    description: Set up your environment and run your first LiquidJava verification.
   - title: Concepts
     url: /concepts/
-    description: Look up LiquidJava concepts, annotations, and protocol rules in a more formal, detailed format.
+    description: Learn LiquidJava concepts to understand how to write specifications.
   - title: Diagnostics
     url: /diagnostics/
     description: Understand LiquidJava errors and warnings.
