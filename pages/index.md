@@ -9,7 +9,7 @@ description: Documentation for LiquidJava, a lightweight verification system for
 
 <div>
   <h1>Extending Java with Liquid Types</h1>
-  <p>LiquidJava is an additional type system with liquid types for Java that allows expressing constraints that the program must follow to catch more bugs before executing the program.</p>
+  <p>LiquidJava is an additional type system for Java that uses liquid types to express constraints programs must follow, helping catch more bugs before they run.</p>
 
   <div class="home-banner">
     <img src="{{ '/assets/images/banner.gif' | relative_url }}" alt="LiquidJava banner">

@@ -8,7 +8,7 @@ description: Learn how to track logical state that helps express and verify rich
 
 # Ghosts
 
-Some protocols need more than a small set of named states. LiquidJava supports ghost variables for tracking extra state. They can be used in refinements and state refinements to express richer invariants about the object. Similarly to the states, these are functions that take the object being refined as a parameter.
+Some protocols need more than a small set of named states. LiquidJava supports ghost variables for tracking extra state. They can be used in refinements and state refinements to express richer invariants about an object. Like states, ghosts are functions that take the refined object as a parameter.
 
 Ghosts are declared with the `@Ghost` annotation, and they can be updated with `@StateRefinement` annotations on methods.
 
@@ -39,7 +39,7 @@ s.pop();
 s.pop(); // State Refinement Error
 ```
 
-In the "constructor" method, the ghost variable `size` is initialized to 0. An equality in a method postcondition is how ghost variables are updated. However, here it is not necessary, since when no postcondition is declared, it is initialized to its default value, similarly to how Java initializes fields to their default values when no explicit initializer is provided (`int --> 0`, `boolean --> false`, etc.). 
+In the "constructor" method, the ghost variable `size` is initialized to `0`. An equality in a method postcondition is how ghost variables are updated. In this case, the explicit postcondition is optional, because if no postcondition is declared the ghost variable is initialized to its default value, similarly to how Java initializes fields with no explicit initializer (`int -> 0`, `boolean -> false`, and so on).
 
 In the `push` method, we specify no precondition, since we can always push an element to the stack, but we specify a postcondition that increments the `size` by one. In this case, we tell the typechecker that the new value of `size` after calling `push` is equal to the old value of `size` plus one. This is possible using the `old` function, which takes an object instance and returns its value before the method call.
 

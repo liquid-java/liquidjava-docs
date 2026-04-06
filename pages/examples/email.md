@@ -3,7 +3,7 @@ title: Email
 parent: Examples
 nav_order: 5
 permalink: /examples/email/
-description: A typestate protocol for a Email builder API.
+description: A typestate protocol for an Email builder API.
 ---
 
 # Email
@@ -40,18 +40,18 @@ public class Email {
 
 ```java
 Email email = new Email();
-email.from("me");
-     .to("bob");
-     .to("alice");
-     .subject("greetings");
-     .body("hello!");
+email.from("me")
+     .to("bob")
+     .to("alice")
+     .subject("greetings")
+     .body("hello!")
      .build();
 ```
 
 ```java
 Email email = new Email();
-email.from("me");
-     .to("bob");
+email.from("me")
+     .to("bob")
      .build(); // State Refinement Error
 ```
 
@@ -60,4 +60,4 @@ LiquidJava enforces the intended protocol:
 - The `from` must be set first
 - The `to` must be set at least once before setting the `body`
 - The `subject` is optional
-- The `build` is only allowed to be set after the body
+- The `build` method can only be called after the body is set

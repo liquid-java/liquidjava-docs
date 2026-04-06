@@ -8,7 +8,7 @@ description: An external refinement for ArrayList that prevents out-of-bounds ac
 
 # ArrayList
 
-This example refines the `java.util.ArrayList` standard-library class without modifying its source code. A ghost variable tracks the size of the list, and method refinements to prevent out-of-bounds accesses.
+This example refines the `java.util.ArrayList` standard-library class without modifying its source code. A ghost variable tracks the size of the list, and a parameter refinement prevents out-of-bounds accesses.
 
 ```java
 import liquidjava.specification.*;

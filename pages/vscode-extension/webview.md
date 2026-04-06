@@ -12,7 +12,7 @@ The extension includes a dedicated webview with three different panels: the **di
 
 ## Diagnostic Explorer
 
-The diagnostic explorer provides an interactive view over LiquidJava diagnostics, providing extra information.
+The diagnostic explorer provides an interactive view of LiquidJava diagnostics with extra information not available in the [command-line interface]({{ '/command-line-interface/' | relative_url }}).
 
 Clicking a displayed value can expand it into its origin expression, and clicking a variable can jump to its location in the editor. This makes simplification traceable instead of showing only the final reduced expression.
 
@@ -36,11 +36,11 @@ The context debugger reacts to the current editor selection:
 - With a single point cursor, it shows all variables in scope up to the cursor position
 - With a selection, it shows all variables in scope within the selected range
 
-This makes it easier to inspect the relevant context for a particular code region. 
+This makes it easier to inspect the relevant context for a particular code region.
 
 ### Variable Highlighting
 
-Clicking a variable in the context debugger highlights that variable in the editor, which helps connect the displayed context with internal variables back to the ones in the source code.
+Clicking a variable in the context debugger highlights that variable in the editor, which helps connect the displayed context back to the corresponding source code.
 
 ### Failed Refinements
 

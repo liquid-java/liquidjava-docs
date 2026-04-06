@@ -8,7 +8,7 @@ description: Learn how to provide clearer diagnostic messages.
 
 # Custom Messages
 
-A custom message can be provided to any `@Refinement` or `@StateRefinement` annotation using the `msg` parameter. This message will be  included in the diagnostic when a violation of that annotation is reported, to provide a clearer explanation of the API rule that was violated.
+A custom message can be provided to any `@Refinement` or `@StateRefinement` annotation using the `msg` parameter. This message will be included in the diagnostic when a violation of that annotation is reported, providing a clearer explanation of the API rule that was violated.
 
 ```java
 import liquidjava.specification.*;

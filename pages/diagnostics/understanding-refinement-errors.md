@@ -41,7 +41,7 @@ In the example above:
 - `#ret² == 0` follows from the return expression `x / 2`, since integer division makes `1 / 2 == 0`
 - `0 > 0` is false, so the declared return refinement is violated
 
-So the counterexample explains exactly why LiquidJava cannot prove that `x / 2` is always positive even when `x > 0`. To fix this error, we would need to either weaken the return expression to allow to return zero with the refinement `_ >= 0`, or strengthen the parameter refinement to require `x > 1`.
+So the counterexample explains exactly why LiquidJava cannot prove that `x / 2` is always positive even when `x > 0`. To fix this error, we would need to either weaken the return refinement to allow zero with `_ >= 0`, or strengthen the parameter refinement to require `x > 1`.
 
 ## Internal Variables
 
@@ -49,7 +49,7 @@ Names such as `#ret²` are internal variables created by LiquidJava during verif
 
 LiquidJava converts expressions into an internal A-normal form (ANF) before verification. Every time it creates a fresh internal variable during that process, the counter is incremented. This is why you may see names such as `#ret²` in the diagnostics. In practice, you can read `#ret²` as "the internal variable that represents this return value occurrence".
 
-The following example shows how the internal variables are created during the typechecking:
+The following example shows how the internal variables are created in the typechecking:
 
 ```java
 int example(int x) { // x⁰

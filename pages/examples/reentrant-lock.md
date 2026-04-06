@@ -8,7 +8,7 @@ description: An external typestate refinement for ReentrantLock.
 
 # ReentrantLock
 
-This example refines the `java.util.concurrent.locks.ReentrantLock` standard-library synchronization primitive with a two-state protocol that ensures locks are properly acquired and released. 
+This example refines the `java.util.concurrent.locks.ReentrantLock` standard-library synchronization primitive with a two-state protocol that ensures locks are properly acquired and released.
 
 ```java
 import liquidjava.specification.*;

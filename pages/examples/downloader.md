@@ -11,6 +11,8 @@ description: A typestate protocol for a downloader object.
 This example models a simple downloader object that tracks the progress of a download operation by combining typestates and ghost variables.
 
 ```java
+import liquidjava.specification.*;
+
 @Ghost("int progress")
 @StateSet({"created", "downloading", "completed"})
 public class Downloader {

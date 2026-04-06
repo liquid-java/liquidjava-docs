@@ -48,5 +48,5 @@ order.addItem("shirt", 60)
 
 This example enforces the intended protocol:
 - Items can only be added in the `ordering` state, and the total is updated accordingly
-- The `checkout` can only be called after at least one item has been added, and the total must remain the same
-- The `pay` can only be called after checkout, and the amount must match the total order value
+- The `checkout` method can only be called after at least one item has been added, and the total must remain the same
+- The `pay` method can only be called after checkout, and the amount must match the order total
