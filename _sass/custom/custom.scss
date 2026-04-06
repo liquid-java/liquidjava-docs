@@ -15,6 +15,12 @@
   text-decoration: none;
 }
 
+.nav-list-expander,
+.nav-list-expander:hover,
+.nav-list-expander:focus {
+  cursor: pointer;
+}
+
 .side-bar {
   background:
     radial-gradient(circle at top left, rgba(255, 255, 255, 0.7), transparent 24%),
