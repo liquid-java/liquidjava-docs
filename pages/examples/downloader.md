@@ -14,16 +14,16 @@ This example models a simple downloader object that tracks the progress of a dow
 @Ghost("int progress")
 @StateSet({"created", "downloading", "completed"})
 public class Downloader {
-    @StateRefinement(to="created(this) && progress(this) == 0")
+    @StateRefinement(to="created() && progress() == 0")
     public Downloader() {}
 
-    @StateRefinement(from="created(this) && progress(this) == 0", to="downloading(this) && progress(this) == 0")
+    @StateRefinement(from="created() && progress() == 0", to="downloading() && progress() == 0")
     public void start() {}
 
-    @StateRefinement(from="downloading(this)", to="downloading(this) && progress(this) == percentage")
-    public void update(@Refinement("percentage > progress(this)") int percentage) {}
+    @StateRefinement(from="downloading()", to="downloading() && progress() == percentage")
+    public void update(@Refinement("percentage > progress()") int percentage) {}
 
-    @StateRefinement(from="downloading(this) && progress(this) == 100", to="completed(this)")
+    @StateRefinement(from="downloading() && progress() == 100", to="completed()")
     public void finish() {}
 }
 ```

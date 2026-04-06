@@ -1,7 +1,7 @@
 ---
 title: ReentrantLock
 parent: Examples
-nav_order: 6
+nav_order: 7
 permalink: /examples/reentrant-lock/
 description: An external typestate refinement for ReentrantLock.
 ---
