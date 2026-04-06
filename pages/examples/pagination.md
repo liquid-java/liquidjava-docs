@@ -15,6 +15,7 @@ import liquidjava.specification.*;
 
 @RefinementAlias("Page(int p) { p >= 1 }")
 @RefinementAlias("PageSize(int s) { 1 <= s && s <= 100 }")
+@RefinementAlias("PageCount(int p) { p >= 0 }")
 @RefinementAlias("ItemCount(int n) { n >= 0 }")
 public class Pagination {
     @Refinement("ItemCount(_) && _ == (page - 1) * size")
@@ -30,7 +31,7 @@ public class Pagination {
         return page + 1;
     }
 
-    @Refinement("Page(_) && _ == (items + size - 1) / size")
+    @Refinement("PageCount(_) && _ == (items + size - 1) / size")
     public static int totalPages(
         @Refinement("ItemCount(_)") int items,
         @Refinement("PageSize(_)") int size
@@ -60,4 +61,5 @@ The aliases capture the key domain concepts for pagination:
 
 - `Page` says page numbers start at `1`
 - `PageSize` constrains the accepted page size range
+- `PageCount` prevents negative page counts
 - `ItemCount` prevents negative item counts
