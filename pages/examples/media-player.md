@@ -1,7 +1,7 @@
 ---
 title: Media Player
 parent: Examples
-nav_order: 2
+nav_order: 4
 permalink: /examples/media-player/
 description: A typestate protocol for a simple media player.
 ---

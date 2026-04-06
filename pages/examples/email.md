@@ -1,7 +1,7 @@
 ---
 title: Email
 parent: Examples
-nav_order: 3
+nav_order: 5
 permalink: /examples/email/
 description: A typestate protocol for a Email builder API.
 ---

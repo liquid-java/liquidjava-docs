@@ -1,7 +1,7 @@
 ---
 title: Downloader
 parent: Examples
-nav_order: 5
+nav_order: 7
 permalink: /examples/downloader/
 description: A typestate protocol for a downloader object.
 ---
