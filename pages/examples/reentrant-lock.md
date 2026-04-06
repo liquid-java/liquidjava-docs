@@ -37,4 +37,4 @@ lock.unlock(); // State Refinement Error
 The external refinement enforces the expected protocol: `lock()` is only allowed when the object is `unlocked()`, and `unlock()` is only allowed when it is `locked()`.
 
 {: .note }
-This refinement models lock state for a single thread only. It does not account for concurrent access across multiple threads, so the protocol should be understood as valid only in single-threaded usage.
+This specification models lock state for a single thread only. It does not account for concurrent access across multiple threads.
