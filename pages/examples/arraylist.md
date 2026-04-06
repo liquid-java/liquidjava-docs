@@ -21,7 +21,7 @@ public interface ArrayListRefinements<E> {
     @StateRefinement(to="size() == size(old(this)) + 1")
     public boolean add(E elem);
 
-    public E get(@Refinement("_ < size()") int index);
+    public E get(@Refinement("0 <= _ && _ < size()") int index);
 }
 ```
 

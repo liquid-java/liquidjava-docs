@@ -32,7 +32,7 @@ public class Pagination {
 
     @Refinement("Page(_) && _ == (items + size - 1) / size")
     public static int totalPages(
-        @Refinement("_ > 0") int items,
+        @Refinement("ItemCount(_)") int items,
         @Refinement("PageSize(_)") int size
     ) {
         return (items + size - 1) / size;
@@ -60,4 +60,4 @@ The aliases capture the key domain concepts for pagination:
 
 - `Page` says page numbers start at `1`
 - `PageSize` constrains the accepted page size range
-- `ItemCount` marks non-negative counts such as offsets
+- `ItemCount` prevents negative item counts
