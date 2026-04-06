@@ -2,14 +2,34 @@
       | where_exp: "item", "item.title != nil"
       | where_exp: "item", "item.nav_exclude != true" -%}
 
-{%- assign nav_parenthood = nav_pages | group_by: "parent" -%}
-{%- assign nav_top_nodes = nav_parenthood
-      | where_exp: "item", "item.name == ''" | map: "items" | first -%}
+{%- assign nav_top_nodes = nav_pages
+      | where_exp: "item", "item.parent == nil" -%}
 {%- include components/nav/sorted.html pages=nav_top_nodes -%}
-{%- assign nav_top_node_titles = nav_top_nodes | map: "title" -%}
-{%- assign nav_ancestors = "" | split: "" -%}
-{%- include components/nav/flattened.html pages=nav_sorted ancestors=nav_ancestors all=false -%}
-{%- assign pager_pages = nav_flattened_pages -%}
+{%- assign pager_pages = "" | split: "" -%}
+
+{%- for top_node in nav_sorted -%}
+  {%- assign pager_pages = pager_pages | push: top_node -%}
+
+  {%- assign child_pages = nav_pages | where: "parent", top_node.title -%}
+  {%- include components/nav/sorted.html pages=child_pages -%}
+  {%- assign child_pages = nav_sorted -%}
+  {%- if top_node.child_nav_order == 'desc' or top_node.child_nav_order == 'reversed' -%}
+    {%- assign child_pages = child_pages | reverse -%}
+  {%- endif -%}
+
+  {%- for child_page in child_pages -%}
+    {%- assign pager_pages = pager_pages | push: child_page -%}
+
+    {%- assign grandchild_pages = nav_pages | where: "parent", child_page.title -%}
+    {%- include components/nav/sorted.html pages=grandchild_pages -%}
+    {%- assign grandchild_pages = nav_sorted -%}
+    {%- if child_page.child_nav_order == 'desc' or child_page.child_nav_order == 'reversed' -%}
+      {%- assign grandchild_pages = grandchild_pages | reverse -%}
+    {%- endif -%}
+
+    {%- assign pager_pages = pager_pages | concat: grandchild_pages -%}
+  {%- endfor -%}
+{%- endfor -%}
 
 {%- assign current_index = -1 -%}
 {%- for pager_page in pager_pages -%}

@@ -19,7 +19,6 @@ The extension provides commands to control the extension lifecycle, trigger veri
 | `Restart` | Stops and then starts the LiquidJava extension |
 | `Verify` | Manually triggers the verification |
 
-
 The extension adds a command that opens a palette listing the available LiquidJava commands. This command is executed when the status bar indicator is clicked, giving users a quick way to access extension actions.
 
 ![Commands]({{ 'assets/images/commands.png' | relative_url }})
