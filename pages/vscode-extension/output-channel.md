@@ -10,4 +10,4 @@ description: Discover the output channel for LiquidJava logs.
 
 The extension provides an output channel for displaying LiquidJava logs from both the client and the language server.
 
-![Output Channel]({{ 'assets/vscode-extension/output-channel.png' | relative_url }})
+![Output Channel]({{ 'assets/images/output-channel.png' | relative_url }})

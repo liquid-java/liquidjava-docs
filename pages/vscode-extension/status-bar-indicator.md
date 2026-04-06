@@ -19,4 +19,4 @@ The extension displays an indicator in the status bar in the bottom-left of the 
 
 Clicking on this indicator shows the available LiquidJava commands, which is covered in the next section.
 
-![Status Bar Indicator]({{ 'assets/vscode-extension/status-bar-indicator.gif' | relative_url }})
+![Status Bar Indicator]({{ 'assets/images/status-bar-indicator.gif' | relative_url }})
