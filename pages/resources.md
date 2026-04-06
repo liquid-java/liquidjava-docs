@@ -24,6 +24,7 @@ description: Find LiquidJava papers, posters, and source repositories for deeper
 - [liquidjava-examples](https://github.com/liquid-java/liquidjava-examples)
 - [liquidjava-tutorial](https://github.com/liquid-java/liquidjava-tutorial)
 - [liquid-java-external-libs](https://github.com/liquid-java/liquid-java-external-libs)
+- [liquid-java-docs](https://github.com/liquid-java/liquidjava-docs)
 
 ## Website
 
