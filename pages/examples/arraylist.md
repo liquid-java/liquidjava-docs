@@ -26,8 +26,8 @@ public interface ArrayListRefinements<E> {
 ```
 
 ```java
-ArrayList<Integer> list = new ArrayList<>();
-list.add(1);
+ArrayList<String> list = new ArrayList<>();
+list.add("apple");
 list.get(0);
 list.get(1); // Refinement Error
 ```
