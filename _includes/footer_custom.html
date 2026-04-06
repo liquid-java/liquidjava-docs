@@ -22,6 +22,7 @@
 {%- if current_index >= 0 -%}
   {%- assign previous_page = nil -%}
   {%- assign next_page = nil -%}
+  {%- assign current_children = nav_pages | where: "parent", page.title | sort_natural: "title" | sort: "nav_order" -%}
 
   {%- if current_index > 0 -%}
     {%- assign previous_index = current_index | minus: 1 -%}
@@ -33,6 +34,10 @@
   {%- if current_index < last_index -%}
     {%- assign next_index = current_index | plus: 1 -%}
     {%- assign next_page = pager_pages[next_index] -%}
+  {%- endif -%}
+
+  {%- if page.has_children and current_children.size > 0 -%}
+    {%- assign next_page = current_children.first -%}
   {%- endif -%}
 
   {%- if previous_page or next_page -%}
