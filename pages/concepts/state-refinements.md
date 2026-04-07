@@ -59,7 +59,7 @@ public class Buffer {
 
 If no `to` transition is declared, LiquidJava defaults the constructor to the first state listed in the corresponding `@StateSet`.
 
-Constructors must always be present for typestate checking to work correctly, because they are the point where the initial state values are assigned. Otherwise, the initial values are not set and the verifier won't be able to track the state of the object across method calls, which can lead to unexpected type errors.
+Constructors must always be present for typestate checking to work correctly, because they are the point where the initial state values are assigned. Otherwise, the initial values are not set and the verifier won't be able to track the state of the object across method calls.
 
 When refining interfaces, which cannot have a constructor, LiquidJava still needs an initialization point. In those cases, the refinement interface must declare a method whose name matches the class we are refining. For example, an interface named `ArrayListRefinements` that is refining `java.util.ArrayList` should declare the method `public void ArrayList()`. This method plays the role of a constructor for the typestate system and ensures the initial values are set correctly.
 
@@ -88,6 +88,4 @@ public class Device {
 }
 ```
 
-Each state set is exclusive: at any moment, the object can only be in one state from that specific set. In the example above, the object cannot be both `open` and `closed`, and it cannot be both `clean` and `dirty`.
-
-When using more than one state set, the states must be combined with `&&` in the `from` and `to` annotations, as shown in the example above. This is because the object must always be in exactly one state from each set, so we need to specify the full state of the object in the preconditions and postconditions.
+Each state set is **mutually exclusive**: at any given moment, the object must be in exactly one state from each state set. To this end, in state transitions, the states must be combined with `&&` to specify the object's complete state. In the example above, the object cannot be both `open` and `closed`, and it cannot be both `clean` and `dirty`.
