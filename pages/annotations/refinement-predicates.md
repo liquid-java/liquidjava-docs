@@ -16,7 +16,7 @@ The `@Ghost` and `@StateSet` annotations are sugar for the `@RefinementPredicate
 | --- | --- |
 | `@Ghost("int size")` | `@RefinementPredicate("int size(ArrayList)")` |
 | `@Ghost("boolean open")` | `@RefinementPredicate("boolean open(InputStreamReader)")` |
-| `@StateSet({"open", "closed"})` | `@RefinementPredicate("int state1(File)")`<br>`state1(this) == 0 <=> empty(this)`<br>`state1(this) == 1 <=> full(this)` |
+| `@StateSet({"open", "closed"})` | `@RefinementPredicate("int state1(File)")`<br>`state1(this) == 0 <=> open(this)`<br>`state1(this) == 1 <=> closed(this)` |
 
 In the current implementation, `@RefinementPredicate` is only supported on methods and constructors, but it is not currently scoped to the annotated method or constructor. Instead, is a global declaration that is available for the whole verification.
 
