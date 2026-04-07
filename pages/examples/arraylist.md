@@ -1,7 +1,7 @@
 ---
 title: ArrayList
 parent: Examples
-nav_order: 10
+nav_order: 8
 permalink: /examples/arraylist/
 description: An external refinement for ArrayList that prevents out-of-bounds access.
 ---

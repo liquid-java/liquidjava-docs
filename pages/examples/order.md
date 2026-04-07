@@ -1,7 +1,7 @@
 ---
 title: Order
 parent: Examples
-nav_order: 6
+nav_order: 5
 permalink: /examples/order/
 description: A typestate protocol for a simple order processing system.
 ---

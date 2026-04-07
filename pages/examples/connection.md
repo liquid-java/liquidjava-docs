@@ -1,7 +1,7 @@
 ---
 title: Connection
 parent: Examples
-nav_order: 8
+nav_order: 7
 permalink: /examples/connection/
 description: A typestate protocol with a value-dependent conditional transition.
 ---
