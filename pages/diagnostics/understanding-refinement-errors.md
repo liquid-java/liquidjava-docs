@@ -11,7 +11,6 @@ description: Learn how to read and interpret LiquidJava refinement errors.
 Consider the following refinement error:
 
 ![Example LiquidJava refinement error]({{ '/assets/images/error-message.png' | relative_url }})
-{: .diagnostic-image }
 
 Each part gives a different piece of information:
 

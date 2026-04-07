@@ -116,7 +116,7 @@
   fill: currentColor;
 }
 
-.main-content img {
+.main-content img:not(.home-banner img) {
   display: block;
   width: 100%;
   max-width: 100%;
