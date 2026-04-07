@@ -1,12 +1,12 @@
 ---
-title: External Refinements
-parent: Concepts
+title: "@ExternalRefinementsFor"
+parent: Annotations
 nav_order: 4
-permalink: /concepts/external-refinements/
+permalink: /annotations/external-refinements-for/
 description: Learn how to refine external libraries that cannot be annotated directly.
 ---
 
-# External Refinements
+# @ExternalRefinementsFor
 
 External refinements let you add refinements to an existing class that you cannot modify.
 

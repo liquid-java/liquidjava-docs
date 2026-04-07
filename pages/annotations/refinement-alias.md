@@ -1,12 +1,12 @@
 ---
-title: Refinement Aliases
-parent: Concepts
+title: "@RefinementAlias"
+parent: Annotations
 nav_order: 2
-permalink: /concepts/refinement-aliases/
+permalink: /annotations/refinement-alias/
 description: Learn how to reuse common refinement predicates with aliases to keep contracts shorter and easier to maintain.
 ---
 
-# Refinement Aliases
+# @RefinementAlias
 
 When the same refinement appears repeatedly, you can define it once with `@RefinementAlias` and reuse it inside other refinements.
 

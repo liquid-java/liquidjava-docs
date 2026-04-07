@@ -1,12 +1,12 @@
 ---
-title: Ghosts
-parent: Concepts
+title: "@Ghost"
+parent: Annotations
 nav_order: 5
-permalink: /concepts/ghosts/
+permalink: /annotations/ghost/
 description: Learn how to track logical state that helps express and verify richer object invariants.
 ---
 
-# Ghosts
+# @Ghost
 
 Some protocols need more than a small set of named states. LiquidJava supports ghost variables for tracking extra state. They can be used in refinements and state refinements to express richer invariants about an object. Like states, ghosts are functions that take the refined object as a parameter.
 

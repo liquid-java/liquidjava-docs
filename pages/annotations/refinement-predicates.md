@@ -1,12 +1,12 @@
 ---
-title: Refinement Predicates
-parent: Concepts
+title: "@RefinementPredicate"
+parent: Annotations
 nav_order: 6
-permalink: /concepts/refinement-predicates/
+permalink: /annotations/refinement-predicate/
 description: Learn how to declare custom ghost functions and how they relate to ghosts and states.
 ---
 
-# Refinement Predicates
+# @RefinementPredicate
 
 LiquidJava also supports a more general mechanism for declaring ghost functions, through the `@RefinementPredicate` annotation. This is a more flexible but less user-friendly way to declare ghosts. It allows declaring any ghost function with an explicit signature.
 

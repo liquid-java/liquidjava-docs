@@ -1,12 +1,12 @@
 ---
-title: Refinements
-parent: Concepts
+title: "@Refinement"
+parent: Annotations
 nav_order: 1
-permalink: /concepts/refinements/
+permalink: /annotations/refinement/
 description: Learn about how to use refinements to specify constraints on variables, fields, parameters, and return values.
 ---
 
-# Refinements
+# @Refinement
 
 In LiquidJava, refinements allow you to express restrictions as logical predicates over basic types. They let you restrict the values that a variable, field, parameter, or return value can have, which helps catch bugs before the program runs.
 

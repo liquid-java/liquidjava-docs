@@ -1,12 +1,12 @@
 ---
-title: State Refinements
-parent: Concepts
+title: "@StateRefinement"
+parent: Annotations
 nav_order: 3
-permalink: /concepts/state-refinements/
+permalink: /annotations/state-refinement/
 description: Learn how to model protocol-oriented object states and valid method transitions.
 ---
 
-# State Refinements
+# @StateRefinement
 
 Beyond basic refinements, LiquidJava supports object state modeling through typestates. This lets you describe when a method can or cannot be called based on the state of the object.
 
