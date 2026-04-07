@@ -13,6 +13,7 @@ This example models a simple downloader object that tracks the progress of a dow
 ```java
 import liquidjava.specification.*;
 
+@RefinementAlias("Percentage(int p) { 0 <= p && p <= 100 }")
 @Ghost("int progress")
 @StateSet({"created", "downloading", "completed"})
 public class Downloader {
@@ -22,8 +23,8 @@ public class Downloader {
     @StateRefinement(from="created() && progress() == 0", to="downloading() && progress() == 0")
     public void start() {}
 
-    @StateRefinement(from="downloading()", to="downloading() && progress() == percentage")
-    public void update(@Refinement("percentage > progress()") int percentage) {}
+    @StateRefinement(from="downloading() && percentage > progress()", to="downloading() && progress() == percentage")
+    public void update(@Refinement("Percentage(_)") int percentage) {}
 
     @StateRefinement(from="downloading() && progress() == 100", to="completed()")
     public void finish() {}

@@ -18,9 +18,7 @@ The `@Ghost` and `@StateSet` annotations are sugar for the `@RefinementPredicate
 | `@Ghost("boolean open")` | `@RefinementPredicate("boolean open(InputStreamReader)")` |
 | `@StateSet({"open", "closed"})` | `@RefinementPredicate("int state1(File)")`<br>`state1(this) == 0 <=> open(this)`<br>`state1(this) == 1 <=> closed(this)` |
 
-In the current implementation, `@RefinementPredicate` is only supported on methods and constructors, but it is not currently scoped to the annotated method or constructor. Instead, is a global declaration that is available for the whole verification.
-
-## What's a Ghost Function?
+## Ghost Functions
 
 A ghost function is an uninterpreted function used only during verification. In practice, that means:
 
@@ -51,7 +49,7 @@ The meaning comes from those constraints, not from a body.
 
 ## Example
 
-You can model any typestate protocol without using the `@StateSet` annotation, by declaring a ghost function that represents the state and then using aliases to give names to the different states, which is kind of like how `@StateSet` works. Under the hood, states are just ghost functions that return an integer representing current the state. For example:
+You can model any typestate protocol without using the `@StateSet` annotation, by declaring a ghost function that represents the state and then using aliases to give names to the different states, which is kind of like how `@StateSet` works. Under the hood, states are just ghost functions that return an integer representing the current state. For example:
 
 ```java
 import liquidjava.specification.*;

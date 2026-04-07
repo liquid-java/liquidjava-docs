@@ -27,7 +27,7 @@ public class Email {
     @StateRefinement(from="senderSet() || receiverSet()", to="receiverSet()")
     public Email to(String s) {}
 
-    @StateRefinement(from="receiverSet()", to="receiverSet()")
+    @StateRefinement(from="receiverSet()")
     public Email subject(String s) {}
 
     @StateRefinement(from="receiverSet()", to="bodySet()")
@@ -59,5 +59,5 @@ LiquidJava enforces the intended protocol:
 
 - The `from` must be set first
 - The `to` must be set at least once before setting the `body`
-- The `subject` is optional
+- The `subject` is optional, but if used it must be set before the `body`
 - The `build` method can only be called after the body is set
