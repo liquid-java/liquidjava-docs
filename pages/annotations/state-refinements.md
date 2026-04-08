@@ -39,9 +39,8 @@ f.read(); // State Refinement Error
 
 If a class follows an implicit protocol that can be described by a DFA, the protocol can be encoded in LiquidJava so that methods are enforced to be called in the correct order.
 
-## Syntax
-
-Note that states are functions. These take a single parameter, which is the object being refined, in this case the implicit `this`. All of these are equivalent: `open()`, `this.open()`, and `open(this)`.
+{: .note }
+States are functions. These take a single parameter, which is the object being refined, in this case the implicit `this` receiver. All of these are equivalent: `open(this)`, `this.open()`, and `open()`.
 
 ## State Initialization
 
