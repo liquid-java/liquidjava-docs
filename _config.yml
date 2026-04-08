@@ -8,7 +8,7 @@ liquidjava_examples_codespaces_url: https://codespaces.new/liquid-java/liquidjav
 liquidjava_tutorial_url: https://github.com/liquid-java/liquidjava-tutorial
 
 url: https://liquid-java.github.io
-baseurl: /docs
+baseurl: /liquidjava-docs
 
 permalink: pretty
 search_enabled: true

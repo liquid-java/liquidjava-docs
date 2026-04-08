@@ -13,9 +13,9 @@ bundle install
 bundle exec jekyll serve
 ```
 
-Then open `http://127.0.0.1:4000/docs/`.
+Then open `http://127.0.0.1:4000/liquidjava-docs/`.
 
-To serve the site at the root path locally instead of `/docs`, run:
+To serve the site at the root path locally instead of `/liquidjava-docs`, run:
 
 ```bash
 bundle exec jekyll serve --baseurl ""
@@ -29,4 +29,4 @@ bundle exec jekyll build
 
 ## Publishing
 
-The site is configured as a GitHub Pages project site at `https://liquid-java.github.io/docs`.
+The site is configured as a GitHub Pages project site at `https://liquid-java.github.io/liquidjava-docs`.
