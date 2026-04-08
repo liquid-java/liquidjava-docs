@@ -21,10 +21,10 @@ description: Find LiquidJava papers, posters, and source repositories for deeper
 
 - [liquidjava](https://github.com/liquid-java/liquidjava)
 - [vscode-liquidjava](https://github.com/liquid-java/vscode-liquidjava)
-- [liquidjava-docs](https://github.com/liquid-java/liquidjava-docs)
 - [liquidjava-examples](https://github.com/liquid-java/liquidjava-examples)
 - [liquidjava-tutorial](https://github.com/liquid-java/liquidjava-tutorial)
 - [liquid-java-external-libs](https://github.com/liquid-java/liquid-java-external-libs)
+- [liquidjava-docs](https://github.com/liquid-java/docs)
 
 ## Website
 
