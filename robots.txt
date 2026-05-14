@@ -1,0 +1,28 @@
+---
+layout: null
+permalink: /robots.txt
+---
+# robots.txt for {{ site.title }}
+# See RFC 9309: https://www.rfc-editor.org/rfc/rfc9309
+
+User-agent: *
+Allow: {{ site.baseurl }}/
+Disallow: {{ site.baseurl }}/404.html
+
+# AI search and answer agents are allowed to retrieve public documentation.
+User-agent: OAI-SearchBot
+Allow: {{ site.baseurl }}/
+
+User-agent: Claude-Web
+Allow: {{ site.baseurl }}/
+
+# Training-focused crawlers are not authorized to use this site for model training.
+User-agent: GPTBot
+Disallow: {{ site.baseurl }}/
+
+User-agent: Google-Extended
+Disallow: {{ site.baseurl }}/
+
+Content-Signal: ai-train=no, search=yes, ai-input=yes
+
+Sitemap: {{ site.url }}{{ site.baseurl }}/sitemap.xml

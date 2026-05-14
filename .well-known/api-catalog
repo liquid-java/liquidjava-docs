@@ -1,0 +1,25 @@
+---
+layout: null
+permalink: /.well-known/api-catalog
+---
+{
+  "name": {{ site.title | jsonify }},
+  "description": "Public documentation for LiquidJava.",
+  "links": [
+    {
+      "rel": "service-doc",
+      "href": "{{ '/resources/' | absolute_url }}",
+      "type": "text/html"
+    },
+    {
+      "rel": "sitemap",
+      "href": "{{ '/sitemap.xml' | absolute_url }}",
+      "type": "application/xml"
+    },
+    {
+      "rel": "robots",
+      "href": "{{ '/robots.txt' | absolute_url }}",
+      "type": "text/plain"
+    }
+  ]
+}

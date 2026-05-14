@@ -13,6 +13,9 @@ baseurl: /liquidjava-docs
 permalink: pretty
 search_enabled: true
 heading_anchors: true
+include:
+  - .well-known
+  - _headers
 
 favicon_ico: "/assets/images/favicon.ico"
 

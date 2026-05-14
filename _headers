@@ -1,0 +1,13 @@
+---
+layout: null
+permalink: /_headers
+---
+/
+  Link: <{{ '/.well-known/api-catalog' | relative_url }}>; rel="api-catalog"; type="application/json"
+  Link: <{{ '/resources/' | relative_url }}>; rel="service-doc"; type="text/html"
+  Link: <{{ '/sitemap.xml' | relative_url }}>; rel="sitemap"; type="application/xml"
+
+{{ site.baseurl }}/
+  Link: <{{ '/.well-known/api-catalog' | relative_url }}>; rel="api-catalog"; type="application/json"
+  Link: <{{ '/resources/' | relative_url }}>; rel="service-doc"; type="text/html"
+  Link: <{{ '/sitemap.xml' | relative_url }}>; rel="sitemap"; type="application/xml"
