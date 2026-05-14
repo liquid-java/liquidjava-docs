@@ -12,8 +12,9 @@ The LiquidJava verifier can be run from the command line with the following opti
 | Option | Description |
 | --- | --- |
 | `<...paths>` | Paths (files or directories) to be verified by LiquidJava |
-| `--help` | Show the help message with available options |
-| `--version` | Show the current version of the verifier |
-| `--debug` | Enable debug logging and skip expression simplification for troubleshooting |
+| `-h`, `--help` | Show the help message with available options |
+| `-v`, `--version` | Show the current version of the verifier |
+| `-d`, `--debug` | Enable debug logging and skip expression simplification for troubleshooting |
+| `-lsp`, `--language-server` | Enable language server mode for editor support |
 
 > To start using the command-line interface, you can follow the setup guide [here]({{ 'getting-started/setup/#command-line-interface' | relative_url }}).
