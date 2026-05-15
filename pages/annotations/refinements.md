@@ -39,12 +39,12 @@ Refinement predicates use a language similar to Java, where you can write boolea
 
 | Form | Syntax | Example |
 | --- | --- | --- |
-| Comparison operators | `==` `!=` `>` `>=` `<` `<=` | `@Refinement("x > 0") int x = 1` |
-| Logical operators | `!` `&&` <code>&#124;&#124;</code> `-->` | `@Refinement("0 <= y && y <= 100") int y = 25` |
-| Arithmetic operators | `+` `-` `*` `/` `%` | `@Refinement("v + 20 < 100") int v = 79` |
-| Ternary operator | `cond ? e1 : e2` | `@Refinement("a > b ? _ == a : _ == b") int max(int a, int b)` |
-| Ghost calls | `ghost(...args)` | `@Refinement("0 <= _ < size(this)") int index` |
-| Alias calls | `Alias(...args)` | `@Refinement("Positive(_)") int c = 10` |
+| Comparison | `==` `!=` `>` `>=` `<` `<=` | `@Refinement("x > 0") int x = 1` |
+| Logic | `!` `&&` <code>&#124;&#124;</code> `-->` | `@Refinement("0 <= y && y <= 100") int y = 25` |
+| Arithmetic | `+` `-` `*` `/` `%` | `@Refinement("v + 20 < 100") int v = 79` |
+| Conditional | `cond ? e1 : e2` | `@Refinement("a > b ? _ == a : _ == b") int max(int a, int b)` |
+| Ghosts | `ghost(...args)` | `@Refinement("0 <= _ < size(this)") int index` |
+| Aliases | `Alias(...args)` | `@Refinement("Positive(_)") int c = 10` |
 | Literals | `true` `false` `0` `1.5` | `@Refinement("true") void print()` |
 | Enums | `EnumType.VAlue` | `@Refinement("_ == Status.Open") Status status` |
 | Static final fields | `Type.FIELD` | `@Refinement("_ <= Integer.MAX_VALUE") int value` |
