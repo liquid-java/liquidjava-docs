@@ -35,17 +35,21 @@ public class RefinementExamples {
 
 ## Predicate Syntax
 
-Refinement predicates use a language similar to Java, where you can write boolean expressions using comparisons, logical connectives, arithmetic operators, conditional expressions, and calls to ghosts or aliases, which are covered in later sections.
+Refinement predicates use a language similar to Java, where you can write boolean expressions using comparisons, logical connectives, arithmetic operators, conditional expressions, ghosts and alias calls, and enum and field constants.
 
 | Form | Syntax | Example |
 | --- | --- | --- |
-| Comparison | `==` `!=` `>` `>=` `<` `<=` | `@Refinement("x > 0") int x = 1;` |
-| Logical operators | `!` `&&` <code>&#124;&#124;</code> `-->` | `@Refinement("0 <= y && y <= 100") int y = 25;` |
-| Arithmetic | `+` `-` `*` `/` `%` | `@Refinement("v + 20 < 100") int v = 79;` |
-| Conditional | `cond ? e1 : e2` | `@Refinement("a > b ? _ == a : _ == b") int max(int a, int b)` |
-| Ghost and alias calls | `a(b)` `A(b)` | `@Refinement("Positive(_)") int c = 10;` |
-| Literals | `true` `false` `0` `1.5` | `@Refinement("_ == true") boolean ok = true;` |
+| Comparison operators | `==` `!=` `>` `>=` `<` `<=` | `@Refinement("x > 0") int x = 1` |
+| Logical operators | `!` `&&` <code>&#124;&#124;</code> `-->` | `@Refinement("0 <= y && y <= 100") int y = 25` |
+| Arithmetic operators | `+` `-` `*` `/` `%` | `@Refinement("v + 20 < 100") int v = 79` |
+| Ternary operator | `cond ? e1 : e2` | `@Refinement("a > b ? _ == a : _ == b") int max(int a, int b)` |
+| Ghost calls | `ghost(...args)` | `@Refinement("0 <= _ < size(this)") int index` |
+| Alias calls | `Alias(...args)` | `@Refinement("Positive(_)") int c = 10` |
+| Literals | `true` `false` `0` `1.5` | `@Refinement("true") void print()` |
+| Enums | `EnumType.VAlue` | `@Refinement("_ == Status.Open") Status status` |
+| Static final fields | `Type.FIELD` | `@Refinement("_ <= Integer.MAX_VALUE") int value` |
 
-LiquidJava currently only supports a small set of types in refinements:
+LiquidJava currently supports a small set of types in refinements:
 - The primitive types `int` `boolean` `long` `double` `float`
 - The boxed types `Boolean` `Integer` `Double`
+- Enum and static final field types whose values can be resolved as constants, such as `Status.Open` or `Integer.MAX_VALUE`

@@ -14,4 +14,5 @@ Warnings do not affect the verification like errors, but they indicate that ther
 | --- | --- |
 | `ExternalClassNotFoundWarning` | A class referenced by an external refinement cannot be found |
 | `ExternalMethodNotFoundWarning` | A method referenced by an external refinement cannot be found in the target class |
+| `UnsatisfiableRefinementWarning` | A refinement is logically unsatisfiable and can never be true |
 | `CustomWarning` | Any other warning, such as reporting that Java compilation errors are present in the program |
