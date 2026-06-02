@@ -56,12 +56,8 @@ public class Buffer {
 }
 ```
 
-If no `to` transition is declared, LiquidJava defaults the constructor to the first state listed in the corresponding `@StateSet`.
-
-Constructors must always be present for typestate checking to work correctly, because they are the point where the initial state values are assigned. Otherwise, the initial values are not set and the verifier won't be able to track the state of the object across method calls.
-
-When refining interfaces, which cannot have a constructor, LiquidJava still needs an initialization point. In those cases, the refinement interface must declare a method whose name matches the class we are refining. For example, an interface named `ArrayListRefinements` that is refining `java.util.ArrayList` should declare the method `public void ArrayList()`. This method plays the role of a constructor for the typestate system and ensures the initial values are set correctly.
-
+If no `to` transition is declared, LiquidJava defaults the constructor to the first state of each state set.
+When refining interfaces, which cannot have constructors, a method whose name matches the target class or interface can be used to play the role of a constructor. For example, an interface named `ArrayListRefinements` that is refining the class `java.util.ArrayList` can declare the method `public void ArrayList()` for setting the initial state.
 
 ## Multiple State Sets
 
