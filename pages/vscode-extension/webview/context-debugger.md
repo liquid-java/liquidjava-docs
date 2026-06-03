@@ -32,4 +32,4 @@ Clicking a variable in the context debugger highlights that variable in the edit
 
 ## Failed Refinements
 
-When a refinement or state refinement fails, the context debugger also shows the expected type in red after the turnstile (`⊢`). Hovering that expected type reveals the corresponding error message and clicking on it highlights the failure in the editor.
+When a refinement or state refinement fails, the context debugger also shows the expected type in red after the turnstile (`⊢`). Clicking this expected type makes the webview navigate to the corresponding error in the diagnostic explorer.

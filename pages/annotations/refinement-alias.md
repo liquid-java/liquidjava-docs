@@ -24,4 +24,4 @@ public class MyClass {
 }
 ```
 
-This helps keep contracts shorter and easier to maintain by giving common constraints a domain-specific name.
+This helps keep contracts shorter and easier to maintain by giving common constraints a domain-specific name and reusing them in.

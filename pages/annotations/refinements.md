@@ -46,7 +46,7 @@ Refinement predicates use a language similar to Java, where you can write boolea
 | Ghosts | `ghost(...args)` | `@Refinement("0 <= _ < size(this)") int index` |
 | Aliases | `Alias(...args)` | `@Refinement("Positive(_)") int c = 10` |
 | Literals | `true` `false` `0` `1.5` | `@Refinement("true") void print()` |
-| Enums | `EnumType.VAlue` | `@Refinement("_ == Status.Open") Status status` |
+| Enums | `EnumType.Value` | `@Refinement("_ == Status.Open") Status status` |
 | Static final fields | `Type.FIELD` | `@Refinement("_ <= Integer.MAX_VALUE") int value` |
 
 LiquidJava currently supports a small set of types in refinements:

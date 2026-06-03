@@ -8,13 +8,14 @@ description: Check out the indicator that shows the current state of LiquidJava.
 
 # Status Bar Indicator
 
-The extension displays an indicator in the status bar in the bottom-left of the editor that shows the current LiquidJava state inside VS Code, with four possible states:
+The extension displays an indicator in the status bar in the bottom-left of the editor that shows the current LiquidJava state inside VS Code, with five possible states:
 
 | Status | Description |
 | --- | --- |
 | `loading` | The verification is in progress |
 | `passed` | The verification succeeded |
 | `failed` | The verification failed with one or more errors |
+| `crashed` | The verification crashed with an unexpected error |
 | `stopped` | The extension was stopped, failed to connect, or lost connection with the language server |
 
 ![Status Bar Indicator]({{ 'assets/images/status-bar-indicator.gif' | relative_url }})
