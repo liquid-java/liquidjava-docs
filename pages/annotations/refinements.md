@@ -43,7 +43,7 @@ Refinement predicates use a language similar to Java, where you can write boolea
 | Logic | `!` `&&` <code>&#124;&#124;</code> `-->` | `@Refinement("0 <= y && y <= 100") int y = 25` |
 | Arithmetic | `+` `-` `*` `/` `%` | `@Refinement("v + 20 < 100") int v = 79` |
 | Conditional | `cond ? e1 : e2` | `@Refinement("a > b ? _ == a : _ == b") int max(int a, int b)` |
-| Ghosts | `ghost(...args)` | `@Refinement("0 <= _ < size(this)") int index` |
+| Ghosts | `ghost(...args)` | `@Refinement("0 <= _ && _ < size(this)") int index` |
 | Aliases | `Alias(...args)` | `@Refinement("Positive(_)") int c = 10` |
 | Literals | `true` `false` `0` `1.5` | `@Refinement("true") void print()` |
 | Enums | `EnumType.Value` | `@Refinement("_ == Status.Open") Status status` |

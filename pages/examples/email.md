@@ -21,20 +21,25 @@ public class Email {
     @StateRefinement(to="empty()")
     public Email() {}
 
+    @Refinement("_ == this")
     @StateRefinement(from="empty()", to="senderSet()")
-    public Email from(String s) {}
+    public Email from(String s) { return this; }
 
+    @Refinement("_ == this")
     @StateRefinement(from="senderSet() || receiverSet()", to="receiverSet()")
-    public Email to(String s) {}
+    public Email to(String s) { return this; }
 
+    @Refinement("_ == this")
     @StateRefinement(from="receiverSet()")
-    public Email subject(String s) {}
+    public Email subject(String s) { return this; }
 
+    @Refinement("_ == this")
     @StateRefinement(from="receiverSet()", to="bodySet()")
-    public Email body(String s) {}
+    public Email body(String s) { return this; }
 
+    @Refinement("_ == this")
     @StateRefinement(from="bodySet()")
-    public Email build() {}
+    public Email build() { return this; }
 }
 ```
 

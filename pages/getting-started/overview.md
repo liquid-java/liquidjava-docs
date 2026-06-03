@@ -24,6 +24,8 @@ These make it possible to catch bugs that the standard Java type system cannot, 
 ## Example
 
 ```java
+import liquidjava.specification.Refinement;
+
 public class Example {
     public static int divide(int a, @Refinement("b != 0") int b) {
         return a / b;

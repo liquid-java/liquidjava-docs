@@ -19,14 +19,17 @@ public class Order {
     @StateRefinement(to="ordering() && total() == 0")
     public Order() {}
 
+    @Refinement("_ == this")
     @StateRefinement(from="ordering()", to="ordering() && total() == total(old(this)) + price")
-    public Order addItem(String name, @Refinement("_ > 0") int price) {}
+    public Order addItem(String name, @Refinement("_ > 0") int price) { return this; }
 
+    @Refinement("_ == this")
     @StateRefinement(from="ordering() && total() > 0", to="checkout() && total() == total(old(this))")
-    public Order checkout() {}
+    public Order checkout() { return this; }
 
+    @Refinement("_ == this")
     @StateRefinement(from="checkout() && amount == total()", to="finished()")
-    public Order pay(@Refinement("_ > 0") int amount) {}
+    public Order pay(@Refinement("_ > 0") int amount) { return this; }
 }
 ```
 
