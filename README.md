@@ -2,6 +2,8 @@
 
 Documentation website for LiquidJava, a refinement type checker for Java with support for liquid types and typestates.
 
+**Live documentation:** [liquid-java.github.io/liquidjava-docs](https://liquid-java.github.io/liquidjava-docs/)
+
 The site is built with Jekyll and the `just-the-docs` theme.
 
 ## Run Locally
@@ -29,4 +31,4 @@ bundle exec jekyll build
 
 ## Publishing
 
-The site is configured as a GitHub Pages project site at `https://liquid-java.github.io/liquidjava-docs`.
+The site is configured as a GitHub Pages project site at [https://liquid-java.github.io/liquidjava-docs/](https://liquid-java.github.io/liquidjava-docs/).
