@@ -1,6 +1,6 @@
 ---
 title: Command-Line Interface
-nav_order: 5
+nav_order: 6
 permalink: /command-line-interface/
 description: Run the LiquidJava verifier from the command line for local checks, debugging, and CI workflows.
 ---
