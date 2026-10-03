@@ -1,0 +1,19 @@
+{
+  "name": "liquidjava-docs",
+  "private": true,
+  "scripts": {
+    "build:playground": "python3 scripts/playground/build.py && node scripts/playground/build.mjs",
+    "test:playground": "node --test scripts/playground/*.test.mjs",
+    "serve:playground": "bundle exec jekyll build --baseurl \"\" && http-server _site -a 127.0.0.1 -p 8770 -c-1"
+  },
+  "devDependencies": {
+    "esbuild": "0.25.10",
+    "http-server": "14.1.1",
+    "z3-solver": "4.16.0"
+  },
+  "dependencies": {
+    "@codemirror/lang-java": "6.0.2",
+    "@codemirror/lint": "6.8.5",
+    "codemirror": "6.0.2"
+  }
+}

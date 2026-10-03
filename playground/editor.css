@@ -1,0 +1,17 @@
+.lj-playground { border: 1px solid var(--border-color, #d7dce2); border-radius: 8px; overflow: hidden; margin: 1.5rem 0; }
+.lj-toolbar { display: flex; align-items: center; flex-wrap: wrap; gap: .6rem; padding: 1rem; background: #f5f7fa; }
+.lj-toolbar label { font-weight: 600; }
+.lj-toolbar select { font: inherit; max-width: 100%; padding: .35rem; border: 1px solid #bbc4ce; border-radius: 4px; background: white; }
+.lj-toolbar button:disabled { opacity: .5; cursor: default; }
+.lj-playground .cm-editor { font-size: 14px; background: #fff; }
+.lj-playground .cm-scroller { min-height: 300px; max-height: 560px; overflow: auto; font-family: 'JetBrains Mono', monospace; }
+.lj-playground .cm-focused { outline: 2px solid #1269a8; outline-offset: -2px; }
+#lj-status { margin: 0; padding: 1rem; border-top: 1px solid #d7dce2; font-size: .9rem; }
+#lj-status[data-state="success"] { color: #156b35; background: #eef9f1; }
+#lj-status[data-state="error"], #lj-status[data-state="failure"] { color: #9b2323; background: #fff1f1; }
+.lj-issue { padding: 1rem; border-top: 1px solid #d7dce2; }
+.lj-issue h3 { margin: 0 0 .5rem; font-size: 1rem; }
+.lj-issue p { margin: .5rem 0; white-space: pre-wrap; }
+.lj-issue pre { white-space: pre-wrap; margin: .5rem 0; }
+.lj-issue button { font: inherit; border: 0; padding: 0; background: transparent; color: #1269a8; cursor: pointer; text-decoration: underline; }
+@media (max-width: 600px) { .lj-toolbar { gap: .5rem; padding: .75rem; } .lj-playground .cm-editor { font-size: 12px; } }
