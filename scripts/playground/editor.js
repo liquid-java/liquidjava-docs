@@ -2,6 +2,7 @@ import { EditorView, basicSetup } from 'codemirror';
 import { java } from '@codemirror/lang-java';
 import { setDiagnostics } from '@codemirror/lint';
 import { examples } from './examples.mjs';
+import { editorDiagnostic } from './diagnostics.mjs';
 
 const root = document.querySelector('#lj-playground');
 const example = document.querySelector('#lj-example');
@@ -43,11 +44,12 @@ function render(result) {
   for (const issue of issues) {
     const article = document.createElement('article'); article.className = 'lj-issue';
     const title = document.createElement('h3'); title.textContent = issue.title; article.append(title);
+    const mark = editorDiagnostic(issue, view.state.doc.length);
+    if (mark) marks.push(mark);
     if (issue.line && issue.line <= view.state.doc.lines) {
       const line = view.state.doc.line(issue.line);
-      marks.push({ from: line.from, to: line.to, severity: issue.severity, message: `${issue.title}: ${issue.message}` });
       const jump = document.createElement('button'); jump.textContent = `Line ${issue.line}`;
-      jump.onclick = () => { view.dispatch({ selection: { anchor: line.from }, scrollIntoView: true }); view.focus(); };
+      jump.onclick = () => { view.dispatch({ selection: { anchor: mark?.from ?? line.from }, scrollIntoView: true }); view.focus(); };
       article.append(jump);
     }
     for (const text of [issue.message, issue.hint, issue.counterexample]) {

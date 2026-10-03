@@ -20,6 +20,8 @@ import spoon.compiler.builder.JDTBuilderImpl;
 import spoon.compiler.builder.SourceOptions;
 import spoon.processing.ProcessingManager;
 import spoon.reflect.factory.Factory;
+import spoon.reflect.cu.SourcePosition;
+import spoon.reflect.cu.position.CompoundSourcePosition;
 import spoon.support.QueueProcessingManager;
 import spoon.support.compiler.jdt.JDTBasedSpoonCompiler;
 
@@ -53,6 +55,8 @@ public final class BrowserRunner {
                 issue.put("title", "Java Error");
                 issue.put("message", problem.getMessage());
                 issue.put("line", problem.getSourceLineNumber());
+                issue.put("from", problem.getSourceStart());
+                issue.put("to", problem.getSourceEnd() + 1);
                 issues.add(issue);
             }
             if (issues.isEmpty()) {
@@ -88,6 +92,15 @@ public final class BrowserRunner {
         if (issue.getPosition() != null && issue.getPosition().isValidPosition()) {
             result.put("line", issue.getPosition().getLine());
             result.put("column", issue.getPosition().getColumn());
+            SourcePosition position = issue.getPosition();
+            // declaration ranges include annotations; underline the declared name
+            if (position instanceof CompoundSourcePosition declaration) {
+                result.put("from", declaration.getNameStart());
+                result.put("to", declaration.getNameEnd() + 1);
+            } else {
+                result.put("from", position.getSourceStart());
+                result.put("to", position.getSourceEnd() + 1);
+            }
         }
         return result;
     }
