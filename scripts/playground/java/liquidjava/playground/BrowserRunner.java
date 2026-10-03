@@ -93,10 +93,10 @@ public final class BrowserRunner {
             result.put("line", issue.getPosition().getLine());
             result.put("column", issue.getPosition().getColumn());
             SourcePosition position = issue.getPosition();
-            // declaration ranges include annotations; underline the declared name
+            // match VS Code: start at the name and span the declaration, excluding its closing delimiter
             if (position instanceof CompoundSourcePosition declaration) {
                 result.put("from", declaration.getNameStart());
-                result.put("to", declaration.getNameEnd() + 1);
+                result.put("to", position.getSourceEnd());
             } else {
                 result.put("from", position.getSourceStart());
                 result.put("to", position.getSourceEnd() + 1);
