@@ -1,6 +1,6 @@
 ---
 title: Resources
-nav_order: 7
+nav_order: 8
 has_children: false
 permalink: /resources/
 description: Find LiquidJava papers, posters, and source repositories for deeper reading and experimentation.
