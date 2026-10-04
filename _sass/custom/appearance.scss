@@ -1,0 +1,154 @@
+.search-input::placeholder, .search-icon { color: #66707b; }
+
+.appearance-control {
+  display: none;
+  align-items: center;
+  padding: .5rem 1rem;
+  flex-shrink: 0;
+  font-size: .75rem;
+
+  button {
+    display: grid;
+    place-items: center;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: .5rem;
+    border: 0;
+    border-radius: .5rem;
+    background: transparent;
+    color: #2a2f36;
+    font: inherit;
+    cursor: pointer;
+  }
+}
+
+:root[data-theme] .appearance-control { display: flex; }
+.appearance-control button:hover { background: #e5e9ed; }
+.appearance-control svg { width: 1.25rem; height: 1.25rem; }
+.appearance-sun { display: none; }
+:root[data-theme="dark"] .appearance-moon { display: none; }
+:root[data-theme="dark"] .appearance-sun { display: block; }
+
+.appearance-control button:focus-visible {
+  outline: 2px solid #5f7ea1;
+  outline-offset: 3px;
+}
+
+// keep appearance available when the mobile navigation is collapsed
+@media (max-width: 49.99rem) {
+  body .side-bar + .main .main-header,
+  body .side-bar + .main .main-header.nav-open { display: flex; }
+  .search { min-width: 0; }
+  .appearance-control { padding-left: 0; }
+}
+
+@mixin dark-appearance {
+  color-scheme: dark;
+
+  body { color: #c9d2de; background: #141a23; }
+  h1, h2, h3, h4, h5, h6, #toctitle { color: #edf2f8; }
+  a, .main-content a { color: #9cc9ec; }
+  a:not([class]) { text-decoration-color: #526b82; }
+  a:not([class]):hover { text-decoration-color: #9cc9ec; }
+  :focus-visible { outline-color: #9cc9ec; }
+  hr { background: #303c4c; }
+
+  .side-bar {
+    background: radial-gradient(ellipse at top left, rgba(104, 151, 194, .08), transparent 65%), #191f29;
+    border-color: #303c4c;
+  }
+  .site-header, .main-header, .site-nav, .site-footer { border-color: #303c4c; }
+  body .side-bar + .main .main-header { background: #141a23; }
+  .site-title { color: #edf2f8 !important; }
+  .site-title:hover, .site-button:hover { background: #242f3e; }
+  .site-footer { color: #9baabc; }
+  .icon, .site-button, .nav-list .nav-list-item .nav-list-expander { color: #9cc9ec; }
+  .nav-list .nav-list-item > .nav-list .nav-list-item .nav-list-link,
+  .nav-list .nav-list-item > .nav-list .nav-list-item .nav-list-expander { color: #b8c7d8; }
+  .nav-list .nav-list-item .nav-list-link:hover,
+  .nav-list .nav-list-item .nav-list-link.active,
+  .nav-list .nav-list-item .nav-list-expander:hover {
+    background: linear-gradient(90deg, rgba(104, 151, 194, .04), rgba(104, 151, 194, .16));
+    color: #d1e9ff;
+  }
+  .nav-list-link.active { box-shadow: inset 3px 0 #8dbce2; }
+  .breadcrumb-nav-list-item::after { color: #77889b; }
+
+  .search-input, .search-results, .search-result { color: #c9d2de; background: #191f29; }
+  .search-input { background: #141a23; }
+  .search-input::placeholder, .search-icon { color: #9baabc; }
+  .search-result:hover, .search-result.active { background: #243244; }
+  .search-result-title, .search-result-doc, .search-result-section { color: #d1e9ff; }
+  .search-result-preview { color: #b8c7d8; }
+  .search-result-previews { border-color: #405169; }
+  .search-result-doc.search-result-doc-parent { opacity: 1; color: #9baabc; }
+  .search-result-doc .search-result-icon { color: #9baabc; }
+  .search-result-rel-url { color: #9baabc; }
+  .search-result-highlight { color: #edf2f8; }
+  .search-results { border: 1px solid #303c4c; box-shadow: 0 16px 40px #0006; }
+
+  .appearance-control { color: #9baabc; }
+  .appearance-control button { color: #dce6f2; }
+  .appearance-control button:hover { background: #29394c; }
+  .appearance-control button:focus-visible { outline-color: #9cc9ec; }
+
+  .main-content :not(pre) > code { color: #d1e9ff; background: #253142; border-color: #35465b; }
+  .main-content pre.highlight,
+  .main-content div.highlighter-rouge,
+  .main-content #lj-editor,
+  .main-content .lj-output {
+    background: #101620;
+    border-color: #344256;
+    box-shadow: none;
+  }
+  .main-content .highlight .c,
+  .main-content .highlight .cm,
+  .main-content .highlight .c1,
+  .main-content .highlight .cs { color: #9baabc; }
+  .main-content img:not(.home-banner img) { border-color: #344256; box-shadow: none; }
+  .home-banner img { filter: brightness(.82) saturate(.9); }
+  .home-banner { border: 1px solid #344256; background: #101620; }
+  .main-content blockquote { background: #1d2836; border-color: #718da9; }
+
+  .card-panel, .page-nav-link {
+    background: #1c2531;
+    border-color: #334154;
+    box-shadow: none;
+  }
+  .card-panel:hover, .page-nav-link:hover { background: #232f3e; border-color: #6383a2; box-shadow: none; }
+  .page-nav-label { color: #9baabc; }
+  .page-nav-title { color: #dce6f2; }
+  .page-nav-link:focus-visible { outline: 2px solid #9cc9ec; outline-offset: 3px; box-shadow: none; }
+  .main-content .home-button { background: #9cc9ec; color: #142332; box-shadow: none; }
+  .main-content .home-button:hover { background: #bcdef7; color: #142332; }
+  th, td { background: #1c2531; border-color: #334154; }
+  thead th { background: #253142; border-color: #405169; color: #edf2f8; }
+  .table-wrapper { border: 1px solid #334154; box-shadow: none; }
+
+  @each $name, $accent, $surface in (note, #9cc9ec, #1d2c3d), (tip, #a7d9b9, #1d302d), (warn, #e5c784, #322e23) {
+    .main-content p.#{$name}, .main-content blockquote.#{$name} {
+      background: $surface;
+      border-color: $accent;
+      box-shadow: none;
+      &::before, > .#{$name}-title { color: $accent; }
+    }
+  }
+
+  .lj-toolbar label { color: #b8c7d8; }
+  .lj-toolbar select { color: #dce6f2; background: #202b39; border-color: #405169; }
+  .lj-toolbar select:hover { background: #29394c; border-color: #8dbce2; }
+  .lj-toolbar button { color: #9cc9ec; border-color: #405169; }
+  .lj-toolbar button:hover:not(:disabled) { background: #29394c; border-color: #8dbce2; }
+  .lj-toolbar #lj-verify, .lj-toolbar #lj-reset { color: #142332; background: #9cc9ec; border-color: #9cc9ec; }
+  .lj-toolbar #lj-verify:hover:not(:disabled), .lj-toolbar #lj-reset:hover { color: #142332; background: #bcdef7; border-color: #bcdef7; }
+  .lj-toolbar #lj-verify[data-state="busy"] { color: #fff; background: #a8323d; border-color: #cb6871; }
+  .lj-toolbar #lj-verify[data-state="busy"]:hover { background: #bd3d49; }
+  .lj-toolbar button:disabled, .lj-toolbar #lj-verify:disabled { color: #9baabc; background: #293342; border-color: #405169; }
+}
+
+:root[data-theme="dark"] { @include dark-appearance; }
+
+// the system theme also works without JavaScript
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) { @include dark-appearance; }
+}
