@@ -1,7 +1,7 @@
 import { AnsiUp } from 'ansi_up';
 
 function shortenLocations(output) {
-  return output.replace(/^\/files\/playground\/(?=[^/\r\n]+:\d+)/gm, '');
+  return output.replace(/^\/files\/playground\/(?=[^/\r\n]+:\d+)/gm, '/playground/');
 }
 
 export function editorDiagnostic(issue, length) {

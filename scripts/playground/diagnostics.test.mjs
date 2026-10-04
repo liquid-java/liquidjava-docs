@@ -7,9 +7,9 @@ test('omit leading CLI blank lines while preserving diagnostic spacing and color
   assert.equal(diagnosticHtml('\n\n' + diagnostic), diagnosticHtml(diagnostic));
 });
 
-test('show only the filename and line in diagnostic locations', () => {
+test('show the playground path, filename and line in diagnostic locations', () => {
   const output = '\u001b[31mError\u001b[0m\n\n/files/playground/Example.java:6\u001b[0m\n\n--> Refinement declared here:\n/files/playground/Example.java:5\u001b[0m\n';
-  const expected = output.replaceAll('/files/playground/', '');
+  const expected = output.replaceAll('/files/playground/', '/playground/');
   assert.equal(diagnosticHtml(output), diagnosticHtml(expected));
   assert.equal(editorDiagnostic({ from: 0, to: 1, output }, 1).message,
     expected.replace(/\u001b\[[0-9;]*m/g, ''));
