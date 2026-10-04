@@ -14,7 +14,7 @@ description: Find LiquidJava papers, posters, and source repositories for deeper
 
 ## Posters
 
-- [Usability-Oriented Design of Liquid Types for Java](https://icse2023.paperlessevents.com.au/share/Gamboa-85), ICSE 2023 Digital Poster Session
+- [Usability-Oriented Design of Liquid Types for Java](https://conf.researchr.org/details/icse-2023/icse-2023-technical-track/142/Usability-Oriented-Design-of-Liquid-Types-for-Java), ICSE 2023 Poster Session
 - [LiquidJava: Adding Lightweight Verification to Java](https://catarinagamboa.github.io/assets/docs/poster_LiquidJava.pdf), INForum 2021
 - [Improving the Usability of LiquidJava](https://rcosta358.github.io/improving_the_usability_of_liquidjava.pdf), 11th LASIGE Workshop Poster Session
 - [Barista: Synthesizing Typestate Specifications with LLM Agents](https://rcosta358.github.io/barista.pdf), 11th LASIGE Workshop Poster Session
