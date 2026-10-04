@@ -1,6 +1,6 @@
 ---
 title: Playground
-nav_order: 1.5
+nav_order: 8
 permalink: /playground/
 has_toc: false
 description: Try LiquidJava refinements and typestates directly in your browser.
