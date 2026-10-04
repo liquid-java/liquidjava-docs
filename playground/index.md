@@ -21,6 +21,7 @@ Run the LiquidJava verification directly in your browser. Edit an example and se
           <option value="bounds">Parameter bounds</option>
           <option value="alias">Refinement aliases</option>
           <option value="state">Object states</option>
+          <option value="ghost">Ghost state tracking</option>
         </select>
       </div>
       <button id="lj-reset" type="button">Reset</button>

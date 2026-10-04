@@ -47,5 +47,26 @@ class Example {
         resource.read();
     }
 }
+`,
+  ghost: `import liquidjava.specification.*;
+
+@Ghost("int count")
+class Example {
+    @StateRefinement(to="count(this) == 0")
+    Example() {}
+
+    @StateRefinement(to="count(this) == count(old(this)) + 1")
+    void increment() {}
+
+    @StateRefinement(from="count(this) > 0", to="count(this) == count(old(this)) - 1")
+    void decrement() {}
+
+    static void demo() {
+        Example counter = new Example();
+        counter.increment();
+        counter.decrement();
+        counter.decrement();
+    }
+}
 `
 };
