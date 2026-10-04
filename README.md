@@ -32,3 +32,32 @@ bundle exec jekyll build
 ## Publishing
 
 The site is configured as a GitHub Pages project site at [https://liquid-java.github.io/liquidjava-docs/](https://liquid-java.github.io/liquidjava-docs/).
+
+## Browser playground
+
+The `/playground/` page runs LiquidJava in a browser worker with CheerpJ 4.3 and the official Z3 WebAssembly package. Code is checked locally. Stop terminates the worker, including a running solver, and the next check creates a fresh runtime.
+
+Build the runtime before building Jekyll:
+
+```bash
+npm ci --ignore-scripts --no-audit --no-fund
+npm run build:playground
+npm run test:playground
+bundle exec jekyll build
+```
+
+The build requires JDK 17, Python 3, Node.js, and access to Maven Central. It recompiles the published verifier 0.0.35 and annotation API 0.0.7 sources for Java 17 without changing them, packages their dependencies, and adds the docs-owned runner and Z3 loader. The standard-library classpath comes from the build JDK's `java.base.jmod`. Generated runtime files are ignored by Git and included in the Pages artifact. The normal Pages workflow builds everything automatically.
+
+The browser package also adapts Spoon 10.4.2's query initialization: when CheerpJ supplies an empty cast-exception stack trace, it selects Spoon's existing exotic-JVM query mode. The pinned source is downloaded and the adaptation checked during the build. This change is limited to the docs' generated dependency; the verifier repository and published sources remain unchanged.
+
+For local testing, after building the runtime:
+
+```bash
+npm run serve:playground
+```
+
+Open `http://127.0.0.1:8770/playground/`. This uses a static server with HTTP range support, which CheerpJ needs when loading JARs. Ordinary `jekyll serve` does not supply the required range responses.
+
+`playground/isolation.js` is a service worker scoped to `/playground/`. It adds the cross-origin isolation response headers Z3 requires on static hosting, including GitHub Pages. The first visit registers it and reloads once. Other docs pages are outside its scope. CheerpJ loads from its official CDN inside the verification worker; its runtime is not copied into this repository.
+
+The playground checks a single Java file using Java 8 source syntax, bundled annotations and core standard-library types from `java.base`. External dependencies and other Java modules are not available. Z3 4.16 runs behind the verifier's 4.8.17 Java API; browser integration tests must be repeated when updating either version. Unsupported native operations and unknown solver results fail explicitly instead of reporting success. This integration is kept entirely in `liquidjava-docs`.

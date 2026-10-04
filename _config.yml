@@ -46,6 +46,11 @@ defaults:
       image: /assets/images/Liquid2.png
 
 exclude:
+  - node_modules
+  - scripts
+  - package.json
+  - package-lock.json
+  - .playground-build
   - .DS_Store
   - vendor
   - Gemfile
