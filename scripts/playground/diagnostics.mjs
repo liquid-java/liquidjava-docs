@@ -13,5 +13,7 @@ export function editorDiagnostic(issue, length) {
 export function diagnosticHtml(output) {
   const ansi = new AnsiUp();
   ansi.use_classes = true;
-  return ansi.ansi_to_html(shortenLocations(output).replace(/^(?:\r?\n)+/, ''));
+  return ansi.ansi_to_html(shortenLocations(output).replace(/^(?:\r?\n)+/, ''))
+    .replace(/^(\/playground\/[^<\r\n]+:(\d+))(?=\r?\n|$|<\/span>)/gm,
+      '<a href="#lj-editor" data-line="$2">$1</a>');
 }

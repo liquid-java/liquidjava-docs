@@ -1,8 +1,9 @@
-import { EditorView, basicSetup } from 'codemirror';
+import { EditorView } from '@codemirror/view';
 import { setDiagnostics } from '@codemirror/lint';
 import { examples } from './examples.mjs';
 import { diagnosticHtml, editorDiagnostic } from './diagnostics.mjs';
 import { editorJava, editorTheme } from './editor-theme.mjs';
+import { editorSetup } from './editor-setup.mjs';
 
 const root = document.querySelector('#lj-playground');
 const example = document.querySelector('#lj-example');
@@ -18,7 +19,7 @@ let source;
 let timer;
 const view = new EditorView({
   doc: examples.positive,
-  extensions: [basicSetup, editorJava, editorTheme, EditorView.contentAttributes.of({ 'aria-label': 'Java source code' }),
+  extensions: [editorSetup, editorJava, editorTheme, EditorView.contentAttributes.of({ 'aria-label': 'Java source code' }),
     EditorView.updateListener.of(update => {
       if (update.docChanged) {
         queueMicrotask(() => view.dispatch(setDiagnostics(view.state, [])));
@@ -57,6 +58,20 @@ function render(result) {
     const pre = document.createElement('pre');
     const code = document.createElement('code');
     code.innerHTML = diagnosticHtml(issues.map(issue => issue.output).join('\n') + (result.details || ''));
+    for (const link of code.querySelectorAll('a[data-line]')) {
+      const lineNumber = Number(link.dataset.line);
+      if (lineNumber < 1 || lineNumber > view.state.doc.lines) continue;
+      link.onclick = event => {
+        event.preventDefault();
+        const issue = issues.find(issue => issue.line === lineNumber);
+        const mark = issue && editorDiagnostic(issue, view.state.doc.length);
+        const line = view.state.doc.line(lineNumber);
+        const anchor = mark?.from ?? line.from + line.text.search(/\S|$/);
+        view.dom.scrollIntoView({ block: 'center', inline: 'nearest' });
+        view.dispatch({ selection: { anchor }, effects: EditorView.scrollIntoView(anchor, { y: 'center' }) });
+        view.focus();
+      };
+    }
     pre.append(code);
     results.append(pre);
   }

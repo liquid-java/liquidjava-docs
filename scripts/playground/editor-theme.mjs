@@ -1,4 +1,4 @@
-import { EditorView } from 'codemirror';
+import { EditorView } from '@codemirror/view';
 import { javaLanguage } from '@codemirror/lang-java';
 import { HighlightStyle, LanguageSupport, syntaxHighlighting } from '@codemirror/language';
 import { styleTags, tags } from '@lezer/highlight';

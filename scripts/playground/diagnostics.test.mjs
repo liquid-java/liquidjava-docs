@@ -2,6 +2,13 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { diagnosticHtml, editorDiagnostic } from './diagnostics.mjs';
 
+test('make diagnostic and declaration locations editor links without linking source excerpts', () => {
+  const html = diagnosticHtml('Error\n6 | String path = "/playground/Example.java:99";\n\n/files/playground/Example.java:6\u001b[0m\n\n--> Refinement declared here:\n/files/playground/Example.java:5\u001b[0m\n');
+  assert.match(html, /<a href="#lj-editor" data-line="6">\/playground\/Example.java:6<\/a>/);
+  assert.match(html, /<a href="#lj-editor" data-line="5">\/playground\/Example.java:5<\/a>/);
+  assert.equal((html.match(/<a /g) || []).length, 2);
+});
+
 test('omit leading CLI blank lines while preserving diagnostic spacing and colors', () => {
   const diagnostic = '\u001b[31mError\u001b[0m\n6 | code\n  | ^^^\n\nExample.java:6\n';
   assert.equal(diagnosticHtml('\n\n' + diagnostic), diagnosticHtml(diagnostic));

@@ -31,6 +31,9 @@
 #lj-status[data-state="warning"] { color: #f6c177; }
 #lj-status:not(.sr-only) + #lj-results:not(:empty) { border-top: 1px solid #ffffff1a; }
 .main-content #lj-results pre { margin: 0; }
+.main-content #lj-results a { color: #e6edf7; text-decoration: underline; text-underline-offset: .2em; }
+.main-content #lj-results a:hover { color: #e6edf7; }
+.main-content #lj-results a:focus-visible { outline: 2px solid #7dd3fc; outline-offset: 3px; }
 #lj-results .ansi-black-fg { color: #111827; }
 #lj-results .ansi-bright-black-fg { color: #9ca3af; }
 #lj-status[data-state="error"],
