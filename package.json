@@ -16,6 +16,7 @@
     "@codemirror/language": "6.12.4",
     "@codemirror/lint": "6.8.5",
     "@lezer/highlight": "1.2.5",
+    "ansi_up": "6.0.6",
     "codemirror": "6.0.2"
   }
 }

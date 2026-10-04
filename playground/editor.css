@@ -19,12 +19,20 @@
 .lj-playground .cm-editor { font-size: .75em; border-radius: inherit; overflow: hidden; }
 .lj-playground .cm-scroller { min-height: 300px; max-height: 560px; overflow: auto; font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; line-height: 1.6; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, .72) rgba(255, 255, 255, .16); }
 .lj-playground .cm-focused { outline: 2px solid #7dd3fc; outline-offset: -2px; }
-#lj-status { margin: 0; padding: 1rem; border-top: 1px solid #d7dce2; font-size: .9rem; }
-#lj-status[data-state="success"] { color: #156b35; background: #eef9f1; }
-#lj-status[data-state="error"], #lj-status[data-state="failure"] { color: #9b2323; background: #fff1f1; }
-.lj-issue { padding: 1rem; border-top: 1px solid #d7dce2; }
-.lj-issue h3 { margin: 0 0 .5rem; font-size: 1rem; }
-.lj-issue p { margin: .5rem 0; white-space: pre-wrap; }
-.lj-issue pre { white-space: pre-wrap; margin: .5rem 0; }
-.lj-issue button { font: inherit; border: 0; padding: 0; background: transparent; color: #1269a8; cursor: pointer; text-decoration: underline; }
+.lj-output { color: #e6edf7; }
+#lj-status { margin: 0; padding: 1rem 1.15rem; font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; font-size: .75em; line-height: 1.6; }
+#lj-status[data-state="success"] { color: #a7f3c1; }
+#lj-status[data-state="warning"] { color: #f6c177; }
+#lj-status[data-state="error"], #lj-status[data-state="failure"] { color: #ffd6d6; }
+#lj-results:not(:empty) { border-top: 1px solid #ffffff1a; }
+.main-content #lj-results pre { margin: 0; }
+#lj-results .ansi-black-fg { color: #111827; }
+#lj-results .ansi-bright-black-fg { color: #9ca3af; }
+#lj-results :is(.ansi-red-fg, .ansi-bright-red-fg) { color: #f29e9e; }
+#lj-results :is(.ansi-green-fg, .ansi-bright-green-fg) { color: #a7f3c1; }
+#lj-results :is(.ansi-yellow-fg, .ansi-bright-yellow-fg) { color: #f6c177; }
+#lj-results :is(.ansi-blue-fg, .ansi-bright-blue-fg) { color: #93b4f4; }
+#lj-results :is(.ansi-magenta-fg, .ansi-bright-magenta-fg) { color: #c4b5fd; }
+#lj-results :is(.ansi-cyan-fg, .ansi-bright-cyan-fg) { color: #7dd3fc; }
+#lj-results :is(.ansi-white-fg, .ansi-bright-white-fg) { color: #e6edf7; }
 @media (max-width: 600px) { .lj-example-picker { width: 100%; } }

@@ -1,6 +1,27 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { editorDiagnostic } from './diagnostics.mjs';
+import { diagnosticHtml, editorDiagnostic } from './diagnostics.mjs';
+
+test('render CLI colors and bold with resets and escaped source text', () => {
+  const html = diagnosticHtml('\u001b[1;31mRefinement Error\u001b[0m: <script>alert("x")</script>\n\u001b[38;5;208m^^^\u001b[0m\n');
+  assert.match(html, /font-weight:bold/);
+  assert.match(html, /ansi-red-fg/);
+  assert.match(html, /color:rgb\(/);
+  assert.match(html, /rgb\(255,135,0\)/);
+  assert.match(html, /&lt;script&gt;/);
+  assert.doesNotMatch(html, /<script>|\u001b/);
+  assert.match(html, /<\/span>: &lt;script&gt;/);
+  assert.equal(diagnosticHtml('plain output'), 'plain output');
+});
+
+test('remove terminal color codes from plain-text editor tooltips', () => {
+  assert.equal(editorDiagnostic({ from: 0, to: 1, output: '\u001b[31mError\u001b[0m\n' }, 1).message, 'Error\n');
+});
+
+test('use the complete CLI diagnostic in editor tooltips without rewriting it', () => {
+  const output = '\nRefinement Error: count¹ == -5 is not a subtype of count¹ > 0\n6 | int count = -5;\n  | ^^^^^^^^^^^^^^^\n --> hint\n\nExample.java:6\n';
+  assert.equal(editorDiagnostic({ from: 0, to: 1, severity: 'error', output }, 1).message, output);
+});
 
 test('underline the reported expression without expanding into indentation or surrounding code', () => {
   const source = 'class Example {\n    int count = -5;\n}';

@@ -29,8 +29,10 @@ Edit an example and select **Verify** to check it with LiquidJava. Verification 
     </div>
   </div>
   <div id="lj-editor"></div>
-  <p id="lj-status" role="status" aria-live="polite">Choose an example or edit the code, then verify. Ctrl+Enter / ⌘+Enter also verifies.</p>
-  <div id="lj-results" aria-label="Verification results"></div>
+  <div class="lj-output" aria-label="Verification output">
+    <p id="lj-status" role="status" aria-live="polite">Choose an example or edit the code, then verify. Ctrl+Enter / ⌘+Enter also verifies.</p>
+    <div id="lj-results" aria-label="Verification results"></div>
+  </div>
   <noscript>Enable JavaScript to use the playground.</noscript>
 </div>
 

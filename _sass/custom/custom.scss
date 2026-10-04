@@ -44,7 +44,8 @@
 
 .main-content pre.highlight,
 .main-content div.highlighter-rouge,
-.main-content #lj-editor {
+.main-content #lj-editor,
+.main-content .lj-output {
   overflow-x: auto;
   overflow-y: hidden;
   scrollbar-width: thin;

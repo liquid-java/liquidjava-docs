@@ -1,7 +1,7 @@
 import { EditorView, basicSetup } from 'codemirror';
 import { setDiagnostics } from '@codemirror/lint';
 import { examples } from './examples.mjs';
-import { editorDiagnostic } from './diagnostics.mjs';
+import { diagnosticHtml, editorDiagnostic } from './diagnostics.mjs';
 import { editorJava, editorTheme } from './editor-theme.mjs';
 
 const root = document.querySelector('#lj-playground');
@@ -42,24 +42,18 @@ function render(result) {
   const issues = result.diagnostics || [];
   const marks = [];
   for (const issue of issues) {
-    const article = document.createElement('article'); article.className = 'lj-issue';
-    const title = document.createElement('h3'); title.textContent = issue.title; article.append(title);
     const mark = editorDiagnostic(issue, view.state.doc.length);
     if (mark) marks.push(mark);
-    if (issue.line && issue.line <= view.state.doc.lines) {
-      const line = view.state.doc.line(issue.line);
-      const jump = document.createElement('button'); jump.textContent = `Line ${issue.line}`;
-      jump.onclick = () => { view.dispatch({ selection: { anchor: mark?.from ?? line.from }, scrollIntoView: true }); view.focus(); };
-      article.append(jump);
-    }
-    for (const text of [issue.message, issue.hint, issue.counterexample]) {
-      if (!text) continue;
-      const paragraph = document.createElement('p'); paragraph.textContent = text; article.append(paragraph);
-    }
-    results.append(article);
+  }
+  if (issues.length || result.details) {
+    const pre = document.createElement('pre');
+    const code = document.createElement('code');
+    code.innerHTML = diagnosticHtml(issues.map(issue => issue.output).join('\n') + (result.details || ''));
+    pre.append(code);
+    results.append(pre);
   }
   view.dispatch(setDiagnostics(view.state, marks));
-  const messages = { success: 'Passed verification.', warning: 'Verification finished with warnings.', error: 'Verification found errors.', failure: 'Verification could not complete. ' + (result.message || '') };
+  const messages = { success: 'Correct! Passed Verification.', warning: 'Verification finished with warnings.', error: 'Verification found errors.', failure: 'Verification could not complete. ' + (result.message || '') };
   message(messages[result.status] || 'Verification could not complete.', result.status);
   if (result.status === 'failure') discard();
 }

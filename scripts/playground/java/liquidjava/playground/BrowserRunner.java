@@ -52,8 +52,7 @@ public final class BrowserRunner {
                 if (!problem.isError()) continue;
                 Map<String, Object> issue = new LinkedHashMap<>();
                 issue.put("severity", "error");
-                issue.put("title", "Java Error");
-                issue.put("message", problem.getMessage());
+                issue.put("output", problem.toString());
                 issue.put("line", problem.getSourceLineNumber());
                 issue.put("from", problem.getSourceStart());
                 issue.put("to", problem.getSourceEnd() + 1);
@@ -67,8 +66,8 @@ public final class BrowserRunner {
                 manager.process(factory.Package().getRootPackage());
             }
             Diagnostics diagnostics = Diagnostics.getInstance();
-            for (LJDiagnostic error : diagnostics.getErrors()) issues.add(issue(error, "error"));
             for (LJDiagnostic warning : diagnostics.getWarnings()) issues.add(issue(warning, "warning"));
+            for (LJDiagnostic error : diagnostics.getErrors()) issues.add(issue(error, "error"));
             result.put("status", !issues.isEmpty() && issues.stream().anyMatch(i -> "error".equals(i.get("severity")))
                 ? "error" : diagnostics.foundWarning() ? "warning" : "success");
         } catch (Throwable error) {
@@ -85,10 +84,7 @@ public final class BrowserRunner {
     private static Map<String, Object> issue(LJDiagnostic issue, String severity) {
         Map<String, Object> result = new LinkedHashMap<>();
         result.put("severity", severity);
-        result.put("title", issue.getTitle());
-        result.put("message", issue.getMessage());
-        result.put("hint", issue.getHint());
-        result.put("counterexample", issue.getCounterexampleStr());
+        result.put("output", issue.toString());
         if (issue.getPosition() != null && issue.getPosition().isValidPosition()) {
             result.put("line", issue.getPosition().getLine());
             result.put("column", issue.getPosition().getColumn());
