@@ -2,6 +2,19 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { diagnosticHtml, editorDiagnostic } from './diagnostics.mjs';
 
+test('omit leading CLI blank lines while preserving diagnostic spacing and colors', () => {
+  const diagnostic = '\u001b[31mError\u001b[0m\n6 | code\n  | ^^^\n\nExample.java:6\n';
+  assert.equal(diagnosticHtml('\n\n' + diagnostic), diagnosticHtml(diagnostic));
+});
+
+test('show only the filename and line in diagnostic locations', () => {
+  const output = '\u001b[31mError\u001b[0m\n\n/files/playground/Example.java:6\u001b[0m\n\n--> Refinement declared here:\n/files/playground/Example.java:5\u001b[0m\n';
+  const expected = output.replaceAll('/files/playground/', '');
+  assert.equal(diagnosticHtml(output), diagnosticHtml(expected));
+  assert.equal(editorDiagnostic({ from: 0, to: 1, output }, 1).message,
+    expected.replace(/\u001b\[[0-9;]*m/g, ''));
+});
+
 test('render CLI colors and bold with resets and escaped source text', () => {
   const html = diagnosticHtml('\u001b[1;31mRefinement Error\u001b[0m: <script>alert("x")</script>\n\u001b[38;5;208m^^^\u001b[0m\n');
   assert.match(html, /font-weight:bold/);

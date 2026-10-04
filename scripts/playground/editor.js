@@ -7,8 +7,8 @@ import { editorJava, editorTheme } from './editor-theme.mjs';
 const root = document.querySelector('#lj-playground');
 const example = document.querySelector('#lj-example');
 const verify = document.querySelector('#lj-verify');
-const stop = document.querySelector('#lj-stop');
 const status = document.querySelector('#lj-status');
+const output = document.querySelector('.lj-output');
 const results = document.querySelector('#lj-results');
 const runtime = new URL(root.dataset.runtime, location.href);
 let worker;
@@ -25,13 +25,21 @@ const view = new EditorView({
       }
       if (update.docChanged && !checking && !loading) {
         results.replaceChildren();
-        message('Code changed. Verify to check it.');
+        message('');
       }
     })],
   parent: document.querySelector('#lj-editor')
 });
-function message(text, state = '') { status.textContent = text; status.dataset.state = state; }
-function controls(busy) { verify.disabled = busy; stop.disabled = !busy; }
+function message(text, state = '') {
+  output.hidden = !text;
+  status.textContent = text;
+  status.dataset.state = state;
+  status.classList.toggle('sr-only', state === 'error');
+}
+function controls(busy) {
+  verify.textContent = busy ? 'Stop' : 'Verify';
+  verify.dataset.state = busy ? 'busy' : 'idle';
+}
 function finish() { clearTimeout(timer); checking = loading = false; controls(false); }
 function discard() { worker?.terminate(); worker = undefined; finish(); }
 function failure(text) { discard(); message(text, 'failure'); }
@@ -89,25 +97,23 @@ async function run() {
     if (data.type === 'failure') failure('Verification could not complete. ' + data.message);
   };
 }
-verify.onclick = run;
-stop.onclick = () => { discard(); message('Verification stopped.'); };
+verify.onclick = () => {
+  if (checking || loading) { discard(); message('Verification stopped.'); }
+  else run();
+};
 function reset() {
   if (checking || loading) discard();
   view.dispatch({ changes: { from: 0, to: view.state.doc.length, insert: examples[example.value] } });
-  view.dispatch(setDiagnostics(view.state, [])); results.replaceChildren(); message('Example ready. Select Verify to check it.');
+  view.dispatch(setDiagnostics(view.state, [])); results.replaceChildren(); message('');
 }
 example.onchange = reset;
 document.querySelector('#lj-reset').onclick = reset;
-root.addEventListener('keydown', event => {
-  if ((event.ctrlKey || event.metaKey) && event.key === 'Enter') { event.preventDefault(); run(); }
-});
 // Restrict the isolation worker to this page's directory; other docs stay unaffected.
 if (!crossOriginIsolated) {
   verify.disabled = true;
   if (!('serviceWorker' in navigator) || !isSecureContext) {
     message('The playground requires HTTPS or localhost and service worker support.', 'failure');
   } else {
-    message('Preparing the playground…');
     try {
       await navigator.serviceWorker.register(new URL('../isolation.js', runtime), { scope: new URL('../', runtime).pathname, updateViaCache: 'none' });
       await navigator.serviceWorker.ready;

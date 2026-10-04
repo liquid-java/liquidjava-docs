@@ -13,24 +13,23 @@ Edit an example and select **Verify** to check it with LiquidJava. Verification 
 <link rel="stylesheet" href="{{ '/playground/editor.css' | relative_url }}">
 <div id="lj-playground" class="lj-playground" data-runtime="{{ '/playground/runtime/' | relative_url }}">
   <div class="lj-toolbar">
-    <div class="lj-example-picker">
-      <label for="lj-example">Example</label>
-      <select id="lj-example">
-        <option value="positive">Positive numbers</option>
-        <option value="bounds">Parameter bounds</option>
-        <option value="alias">Refinement aliases</option>
-        <option value="state">Object states</option>
-      </select>
-    </div>
-    <div class="lj-actions">
-      <button id="lj-verify" type="button" disabled>Verify</button>
-      <button id="lj-stop" type="button" disabled>Stop</button>
+    <div class="lj-examples">
+      <div class="lj-example-picker">
+        <label for="lj-example">Example</label>
+        <select id="lj-example">
+          <option value="positive">Positive numbers</option>
+          <option value="bounds">Parameter bounds</option>
+          <option value="alias">Refinement aliases</option>
+          <option value="state">Object states</option>
+        </select>
+      </div>
       <button id="lj-reset" type="button">Reset example</button>
     </div>
+    <button id="lj-verify" type="button" disabled>Verify</button>
   </div>
   <div id="lj-editor"></div>
-  <div class="lj-output" aria-label="Verification output">
-    <p id="lj-status" role="status" aria-live="polite">Choose an example or edit the code, then verify. Ctrl+Enter / ⌘+Enter also verifies.</p>
+  <div class="lj-output" aria-label="Verification output" hidden>
+    <p id="lj-status" role="status" aria-live="polite"></p>
     <div id="lj-results" aria-label="Verification results"></div>
   </div>
   <noscript>Enable JavaScript to use the playground.</noscript>
