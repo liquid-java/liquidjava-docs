@@ -2,7 +2,7 @@ import { EditorState } from '@codemirror/state';
 import { lineNumbers, highlightActiveLineGutter, highlightSpecialChars, drawSelection, dropCursor, rectangularSelection, crosshairCursor, highlightActiveLine, keymap } from '@codemirror/view';
 import { indentOnInput, bracketMatching } from '@codemirror/language';
 import { history, defaultKeymap, historyKeymap } from '@codemirror/commands';
-import { highlightSelectionMatches, searchKeymap } from '@codemirror/search';
+import { searchKeymap } from '@codemirror/search';
 import { closeBrackets, autocompletion, closeBracketsKeymap, completionKeymap } from '@codemirror/autocomplete';
 import { linter, lintKeymap } from '@codemirror/lint';
 
@@ -21,7 +21,6 @@ export const editorSetup = [
   rectangularSelection(),
   crosshairCursor(),
   highlightActiveLine(),
-  highlightSelectionMatches(),
   linter(null, { tooltipFilter: () => [] }),
   keymap.of([
     ...closeBracketsKeymap,
