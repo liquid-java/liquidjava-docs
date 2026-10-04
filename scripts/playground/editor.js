@@ -126,7 +126,7 @@ document.querySelector('#lj-reset').onclick = reset;
 if (!crossOriginIsolated) {
   verify.disabled = true;
   if (!('serviceWorker' in navigator) || !isSecureContext) {
-    message('The playground requires HTTPS or localhost and service worker support.', 'failure');
+    message('The LiquidJava playground is not supported in this browser.', 'failure');
   } else {
     try {
       await navigator.serviceWorker.register(new URL('../isolation.js', runtime), { scope: new URL('../', runtime).pathname, updateViaCache: 'none' });
