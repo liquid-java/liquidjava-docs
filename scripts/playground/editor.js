@@ -4,6 +4,7 @@ import { examples } from './examples.mjs';
 import { diagnosticHtml, editorDiagnostic } from './diagnostics.mjs';
 import { editorJava, editorTheme } from './editor-theme.mjs';
 import { editorSetup } from './editor-setup.mjs';
+import { navigateTo } from './editor-navigation.mjs';
 
 const root = document.querySelector('#lj-playground');
 const example = document.querySelector('#lj-example');
@@ -67,9 +68,7 @@ function render(result) {
         const mark = issue && editorDiagnostic(issue, view.state.doc.length);
         const line = view.state.doc.line(lineNumber);
         const anchor = mark?.from ?? line.from + line.text.search(/\S|$/);
-        view.dom.scrollIntoView({ block: 'center', inline: 'nearest' });
-        view.dispatch({ selection: { anchor }, effects: EditorView.scrollIntoView(anchor, { y: 'center' }) });
-        view.focus();
+        navigateTo(view, anchor);
       };
     }
     pre.append(code);
