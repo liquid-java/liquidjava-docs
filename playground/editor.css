@@ -22,7 +22,7 @@
 .lj-toolbar button:focus-visible { outline: 2px solid #5f7ea1; outline-offset: 3px; }
 #lj-editor { margin: 1rem 0; overflow: hidden; }
 .lj-playground .cm-editor { font-size: .75em; border-radius: inherit; overflow: hidden; }
-.lj-playground .cm-scroller { min-height: 300px; max-height: 560px; overflow: auto; font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; line-height: 1.6; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, .72) rgba(255, 255, 255, .16); }
+.lj-playground .cm-scroller { min-height: 200px; max-height: 560px; overflow: auto; font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; line-height: 1.6; scrollbar-width: thin; scrollbar-color: rgba(255, 255, 255, .72) rgba(255, 255, 255, .16); }
 .lj-playground .cm-focused { outline: 2px solid #7dd3fc; outline-offset: -2px; }
 .lj-output { color: #e6edf7; }
 #lj-status { margin: 0; padding: 1rem 1.15rem; font-family: 'JetBrains Mono', 'SFMono-Regular', Menlo, Consolas, monospace; font-size: .75em; line-height: 1.6; }
