@@ -1,0 +1,9 @@
+version: 2
+updates:
+  - package-ecosystem: maven
+    directory: /scripts/playground
+    schedule:
+      interval: daily
+    allow:
+      - dependency-name: io.github.liquid-java:liquidjava-verifier
+      - dependency-name: io.github.liquid-java:liquidjava-api

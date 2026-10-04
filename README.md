@@ -46,7 +46,9 @@ npm run test:playground
 bundle exec jekyll build
 ```
 
-The build requires JDK 17, Python 3, Node.js, and access to Maven Central. It recompiles the published verifier 0.0.35 and annotation API 0.0.7 sources for Java 17 without changing them, packages their dependencies, and adds the docs-owned runner and Z3 loader. The standard-library classpath comes from the build JDK's `java.base.jmod`. Generated runtime files are ignored by Git and included in the Pages artifact. The normal Pages workflow builds everything automatically.
+The build requires JDK 17, Python 3, Node.js, and access to Maven Central. It recompiles the published verifier and annotation API sources for Java 17 without changing them, packages their dependencies, and adds the docs-owned runner and Z3 loader. `scripts/playground/pom.xml` is the single source of truth for the Maven artifact versions; the Python build reads it directly, without requiring Maven. The verifier binary and sources always use the same version. The standard-library classpath comes from the build JDK's `java.base.jmod`. Generated runtime files are ignored by Git and included in the Pages artifact.
+
+After the configuration is merged into `main`, Dependabot checks the manifest daily and opens update PRs for the LiquidJava verifier and annotation API. Every pull request builds the playground, runs its tests, and builds Jekyll. Review upgrades with browser verification before merging, including successful and failing refinements and typestate transitions. Pages deployment runs only after a push to `main` or a manual workflow run.
 
 The browser package also adapts Spoon 10.4.2's query initialization: when CheerpJ supplies an empty cast-exception stack trace, it selects Spoon's existing exotic-JVM query mode. The pinned source is downloaded and the adaptation checked during the build. This change is limited to the docs' generated dependency; the verifier repository and published sources remain unchanged.
 
