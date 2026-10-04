@@ -1,8 +1,8 @@
 import { EditorView, basicSetup } from 'codemirror';
-import { java } from '@codemirror/lang-java';
 import { setDiagnostics } from '@codemirror/lint';
 import { examples } from './examples.mjs';
 import { editorDiagnostic } from './diagnostics.mjs';
+import { editorJava, editorTheme } from './editor-theme.mjs';
 
 const root = document.querySelector('#lj-playground');
 const example = document.querySelector('#lj-example');
@@ -18,7 +18,7 @@ let source;
 let timer;
 const view = new EditorView({
   doc: examples.positive,
-  extensions: [basicSetup, java(), EditorView.contentAttributes.of({ 'aria-label': 'Java source code' }),
+  extensions: [basicSetup, editorJava, editorTheme, EditorView.contentAttributes.of({ 'aria-label': 'Java source code' }),
     EditorView.updateListener.of(update => {
       if (update.docChanged) {
         queueMicrotask(() => view.dispatch(setDiagnostics(view.state, [])));
