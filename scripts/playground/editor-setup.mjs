@@ -4,7 +4,7 @@ import { indentOnInput, bracketMatching } from '@codemirror/language';
 import { history, defaultKeymap, historyKeymap } from '@codemirror/commands';
 import { highlightSelectionMatches, searchKeymap } from '@codemirror/search';
 import { closeBrackets, autocompletion, closeBracketsKeymap, completionKeymap } from '@codemirror/autocomplete';
-import { lintKeymap } from '@codemirror/lint';
+import { linter, lintKeymap } from '@codemirror/lint';
 
 export const editorSetup = [
   lineNumbers(),
@@ -22,6 +22,7 @@ export const editorSetup = [
   crosshairCursor(),
   highlightActiveLine(),
   highlightSelectionMatches(),
+  linter(null, { tooltipFilter: () => [] }),
   keymap.of([
     ...closeBracketsKeymap,
     ...defaultKeymap,

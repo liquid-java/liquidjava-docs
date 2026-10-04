@@ -14,8 +14,8 @@
 .lj-toolbar #lj-reset { min-width: 5rem; padding: .6rem .9rem; color: #fff; background: #334e68; border-color: #334e68; white-space: nowrap; flex-shrink: 0; }
 .lj-toolbar #lj-verify:hover:not(:disabled),
 .lj-toolbar #lj-reset:hover { background: #253b50; border-color: #253b50; }
-.lj-toolbar #lj-verify[data-state="busy"] { background: #7a4343; border-color: #7a4343; }
-.lj-toolbar #lj-verify[data-state="busy"]:hover { background: #643535; border-color: #643535; }
+.lj-toolbar #lj-verify[data-state="busy"] { background: #c62828; border-color: #c62828; }
+.lj-toolbar #lj-verify[data-state="busy"]:hover { background: #a61f1f; border-color: #a61f1f; }
 .lj-toolbar button:disabled { color: #8a929b; background: #efefec; border-color: #e4e4e7; cursor: default; }
 .lj-toolbar #lj-verify:disabled { color: #fff; background: #7f90a1; border-color: #7f90a1; }
 .lj-toolbar select:focus-visible,
