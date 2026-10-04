@@ -19,7 +19,7 @@ export const editorTheme = [
     '.cm-line': { padding: '0 1.15rem' },
     '.cm-gutters': { color: '#7f90ad', backgroundColor: 'transparent', border: 'none' },
     '.cm-activeLine, .cm-activeLineGutter': { backgroundColor: '#ffffff08' },
-    '&.cm-focused .cm-selectionBackground, .cm-selectionBackground, ::selection': { backgroundColor: '#334e6880' },
+    '&.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground, .cm-selectionBackground, ::selection': { backgroundColor: 'Highlight' },
     '.cm-cursor, .cm-dropCursor': { borderLeftColor: '#e6edf7' },
     '.cm-tooltip, .cm-panels': { color: '#e6edf7', backgroundColor: '#172033', borderColor: '#334e68' },
     '.cm-searchMatch': { backgroundColor: '#b39b5e55' },
