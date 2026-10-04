@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.github.liquid-java</groupId>
+  <artifactId>liquidjava-browser-playground</artifactId>
+  <version>1.0.0</version>
+  <packaging>pom</packaging>
+  <dependencies>
+    <dependency>
+      <groupId>io.github.liquid-java</groupId>
+      <artifactId>liquidjava-verifier</artifactId>
+      <version>0.0.35</version>
+    </dependency>
+    <dependency>
+      <groupId>io.github.liquid-java</groupId>
+      <artifactId>liquidjava-api</artifactId>
+      <version>0.0.7</version>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>tools.aqua</groupId>
+      <artifactId>z3-turnkey</artifactId>
+      <version>4.8.17</version>
+      <classifier>sources</classifier>
+    </dependency>
+    <dependency>
+      <groupId>fr.inria.gforge.spoon</groupId>
+      <artifactId>spoon-core</artifactId>
+      <version>10.4.2</version>
+      <classifier>sources</classifier>
+    </dependency>
+  </dependencies>
+</project>

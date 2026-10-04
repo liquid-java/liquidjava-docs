@@ -4,16 +4,25 @@ import re
 import subprocess
 import shutil
 import urllib.request
+import xml.etree.ElementTree as ET
 import zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[2]
 WORK = ROOT / '.playground-build'
 OUTPUT = ROOT / 'playground/runtime'
-VERIFIER = '0.0.35'
-API = '0.0.7'
-Z3 = '4.8.17'
-SPOON = '10.4.2'
+
+
+def dependency_artifacts():
+    namespace = {'m': 'http://maven.apache.org/POM/4.0.0'}
+    pom = ET.parse(ROOT / 'scripts/playground/pom.xml')
+    return {
+        dependency.findtext('m:artifactId', namespaces=namespace): tuple(
+            dependency.findtext(f'm:{field}', namespaces=namespace)
+            for field in ['groupId', 'artifactId', 'version']
+        )
+        for dependency in pom.findall('m:dependencies/m:dependency', namespace)
+    }
 
 
 def artifact(group, name, version, classifier=''):
@@ -33,11 +42,12 @@ def main():
         raise RuntimeError('Build the playground with JDK 17 (set JAVA_HOME and PATH)')
     WORK.mkdir(exist_ok=True)
     OUTPUT.mkdir(parents=True, exist_ok=True)
-    verifier = artifact('io.github.liquid-java', 'liquidjava-verifier', VERIFIER)
-    sources = artifact('io.github.liquid-java', 'liquidjava-verifier', VERIFIER, '-sources')
-    annotations = artifact('io.github.liquid-java', 'liquidjava-api', API, '-sources')
-    z3_sources = artifact('tools.aqua', 'z3-turnkey', Z3, '-sources')
-    spoon_sources = artifact('fr.inria.gforge.spoon', 'spoon-core', SPOON, '-sources')
+    dependencies = dependency_artifacts()
+    verifier = artifact(*dependencies['liquidjava-verifier'])
+    sources = artifact(*dependencies['liquidjava-verifier'], '-sources')
+    annotations = artifact(*dependencies['liquidjava-api'], '-sources')
+    z3_sources = artifact(*dependencies['z3-turnkey'], '-sources')
+    spoon_sources = artifact(*dependencies['spoon-core'], '-sources')
     source_dir = WORK / 'sources'
     if source_dir.exists():
         shutil.rmtree(source_dir)
