@@ -14,6 +14,7 @@ An error can be caused by a refinement violation, an invalid refinement, or anot
 | --- | --- |
 | `RefinementError` | A refinement was violated or could not be proven |
 | `StateRefinementError` | A state refinement was violated or could not be proven |
+| `SMTUnknownError` | The solver could not determine whether a refinement holds; the diagnostic includes the reason as a hint |
 | `NotFoundError` | An element used in a refinement could not be found |
 | `SyntaxError` | The syntax used in a refinement is invalid |
 | `ArgumentMismatchError` | A ghost or state invocation has the wrong number or type of arguments |
