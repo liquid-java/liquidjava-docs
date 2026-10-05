@@ -84,7 +84,7 @@ function send() {
   clearTimeout(timer);
   message('Verifying…');
   timer = setTimeout(() => failure('Verification timed out. Simplify the example and try again.'), 30000);
-  worker.postMessage({ type: 'verify', source });
+  worker.postMessage({ type: 'verify', files: { 'Example.java': source } });
 }
 async function run() {
   if (checking || loading) return;

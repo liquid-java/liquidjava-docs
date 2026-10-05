@@ -1,10 +1,12 @@
 package liquidjava.playground;
 
 import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import liquidjava.diagnostics.Diagnostics;
 import liquidjava.diagnostics.LJDiagnostic;
@@ -26,18 +28,29 @@ import spoon.support.QueueProcessingManager;
 import spoon.support.compiler.jdt.JDTBasedSpoonCompiler;
 
 public final class BrowserRunner {
-    public static String verify(String source, String jar, String javaBase) {
+    public static String verify(String sources, String jar, String javaBase) {
         Map<String, Object> result = new LinkedHashMap<>();
         ArrayList<Map<String, Object>> issues = new ArrayList<>();
         try {
             Path dir = Path.of("/files/playground");
             Files.createDirectories(dir);
-            Path input = dir.resolve("Example.java");
-            Files.writeString(input, source);
+            try (var previous = Files.list(dir)) {
+                for (Path file : previous.toList()) Files.delete(file);
+            }
+            Map<String, String> files = new Gson().fromJson(sources, new TypeToken<Map<String, String>>() {}.getType());
+            if (files == null || files.isEmpty()) throw new IllegalArgumentException("No Java files supplied");
+            List<String> inputs = new ArrayList<>();
+            for (var file : files.entrySet()) {
+                if (!file.getKey().matches("[A-Za-z_$][A-Za-z0-9_$]*\\.java"))
+                    throw new IllegalArgumentException("Invalid Java filename");
+                Path input = dir.resolve(file.getKey());
+                Files.writeString(input, file.getValue());
+                inputs.add(input.toString());
+            }
             Diagnostics.getInstance().clear();
             ContextHistory.getInstance().clearHistory();
             Launcher launcher = new Launcher();
-            launcher.addInputResource(input.toString());
+            launcher.addInputResource(dir.toString());
             launcher.getEnvironment().setNoClasspath(true);
             launcher.getEnvironment().setComplianceLevel(8);
             launcher.getEnvironment().setSourceClasspath(new String[] {jar});
@@ -45,13 +58,15 @@ public final class BrowserRunner {
                 .classpathOptions(new ClasspathOptions().classpath(jar).bootclasspath(javaBase))
                 .complianceOptions(new ComplianceOptions().compliance(8))
                 .advancedOptions(new AdvancedOptions().preserveUnusedVars().continueExecution().enableJavadoc())
-                .sources(new SourceOptions().sources(input.toString()));
+                .sources(new SourceOptions().sources(inputs.toArray(String[]::new)));
             JDTBasedSpoonCompiler compiler = (JDTBasedSpoonCompiler) launcher.getModelBuilder();
             boolean built = compiler.build(builder);
             for (CategorizedProblem problem : compiler.getProblems()) {
                 if (!problem.isError()) continue;
                 Map<String, Object> issue = new LinkedHashMap<>();
                 issue.put("severity", "error");
+                issue.put("title", "Java error");
+                issue.put("message", problem.getMessage());
                 issue.put("output", problem.toString());
                 issue.put("line", problem.getSourceLineNumber());
                 issue.put("from", problem.getSourceStart());
@@ -84,6 +99,8 @@ public final class BrowserRunner {
     private static Map<String, Object> issue(LJDiagnostic issue, String severity) {
         Map<String, Object> result = new LinkedHashMap<>();
         result.put("severity", severity);
+        result.put("title", issue.getTitle());
+        result.put("message", issue.getMessage());
         result.put("output", issue.toString());
         if (issue.getPosition() != null && issue.getPosition().isValidPosition()) {
             result.put("line", issue.getPosition().getLine());
