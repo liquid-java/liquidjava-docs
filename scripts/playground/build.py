@@ -89,10 +89,13 @@ def main():
             out.writestr(item.filename, jar.read(item.filename))
         for file in classes.rglob('*.class'):
             out.writestr(file.relative_to(classes).as_posix(), file.read_bytes())
-    with zipfile.ZipFile(java_home / 'jmods/java.base.jmod') as jar, zipfile.ZipFile(OUTPUT / 'java-base.jar', 'w', zipfile.ZIP_DEFLATED) as out:
-        for name in jar.namelist():
-            if name.startswith('classes/') and name.endswith('.class') and name != 'classes/module-info.class':
-                out.writestr(name[len('classes/'):], jar.read(name))
+    with zipfile.ZipFile(OUTPUT / 'java-base.jar', 'w', zipfile.ZIP_DEFLATED) as out:
+        # include the JDK types used by the website's Swing and image examples
+        for module in ['java.base', 'java.desktop', 'java.datatransfer', 'java.xml']:
+            with zipfile.ZipFile(java_home / f'jmods/{module}.jmod') as jar:
+                for name in jar.namelist():
+                    if name.startswith('classes/') and name.endswith('.class') and name != 'classes/module-info.class':
+                        out.writestr(name[len('classes/'):], jar.read(name))
     with zipfile.ZipFile(z3_sources) as jar:
         native = jar.read('com/microsoft/z3/Native.java').decode()
     methods = []

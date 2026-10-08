@@ -1,8 +1,12 @@
-// GitHub Pages cannot set these response headers; isolate only the playground.
+// GitHub Pages cannot set these headers; isolate pages within this worker’s scope.
 self.addEventListener('install', () => self.skipWaiting());
 self.addEventListener('activate', event => event.waitUntil(self.clients.claim()));
 self.addEventListener('fetch', event => {
-  if (new URL(event.request.url).origin !== self.location.origin) return;
+  const url = new URL(event.request.url);
+  if (url.origin !== self.location.origin) return;
+  // a root-hosted website must not isolate neighboring GitHub Pages projects
+  const relative = url.pathname.slice(new URL('./', self.location.href).pathname.length);
+  if (event.request.mode === 'navigate' && relative.includes('/')) return;
   event.respondWith((async () => {
     const response = await fetch(event.request);
     if (response.type === 'opaque') return response;

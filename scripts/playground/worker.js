@@ -30,7 +30,7 @@ self.onmessage = async event => {
   busy = true;
   try {
     await ready;
-    postMessage({ type: 'result', result: JSON.parse(await runner.verify(event.data.source, runnerJar, standardLibrary)) });
+    postMessage({ type: 'result', result: JSON.parse(await runner.verify(JSON.stringify(event.data.files), runnerJar, standardLibrary)) });
   } catch (error) {
     postMessage({ type: 'failure', message: await describe(error) });
   } finally { busy = false; }
